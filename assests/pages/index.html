@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;500;600;800&display=swap" rel="stylesheet">
+    <title>Proplan</title>
+    <link rel="stylesheet" href="./assests/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="../images/icons/proplan_logo.png" alt="logo">
+            <div class="nav_right">
+                <input type="text" id="search" placeholder="Search">
+                <a href="">Contact us</a>
+                <a href="">Support</a>
+                <h4>Jan 30, 2023</h4>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- --------------left side div--------------- -->
+        <div class="left_side">
+            <div class="tabs">
+                <a href="index.html" id="homeicon"><img src="../images/icons/home.png" alt="icons" > Home</a>
+                <a href="expenses.html"><img src="../images/icons/statistics.png" alt=""> Expenses</a>
+                <a href="savings.html"><img src="../images/icons/savings.png" alt="icons"> Savings</a>
+                <a href="notes.html"><img src="../images/icons/notes.png" alt="icons">Notes</a>
+                <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
+                <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
+            </div>
+        </div>
+        <!--------------- Center Content ------------------ -->
+        <div class="center_side">
+            <h3>Overview</h3>
+            <h1>Welcome Back <span id="name"> Tony</span></h1>
+            <div class="homestats">
+                <canvas id="homechart"></canvas>
+                <div class="add">
+                    <h4>Expenses - 67.30%</h4>
+                    <h4>Balance - 32.69%</h4>
+                    <div><button><img src="../images/icons/add.png" alt="icon"></button>
+                        <h3>ADD an Income</h3>
+                    </div>
+                    <div><button><img src="../images/icons/add.png" alt="icon"></button>
+                        <h3>ADD an Expense </h3>
+                    </div>
+                </div>
+            </div>
+            <!-- -------------- Home Table------------- -->
+            <div class="home_transactions">
+                <h2>This month - January</h2>
+                <table>
+                    <th>
+                        <tr>
+                            <td>Sl.no</td>
+                            <td>Type</td>
+                            <td>Amount</td>
+                            <td>Date</td>
+                            <td>Balance</td>
+                        </tr>
+                    </th>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Balance<br>
+                                <span>December's</span>
+                            </td>
+                            <td id="income">4000</td>
+                            <td>01/01</td>
+                            <td id="balance">4000</td>
+
+                        </tr>
+                        <tr>
+
+                            <td>2</td>
+                            <td>Salary <br>
+                                <span>income</span>
+                            </td>
+                            <td id="income">+20,000</td>
+                            <td>02/01</td>
+                            <td id="balance">24,000</td>
+
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>House Rent <br>
+                                <span>Bills</span>
+                            </td>
+                            <td id="expense">-5,000</td>
+                            <td>03/01</td>
+                            <td id="balance">19,000</td>
+
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Bike Insurance <br>
+                                <span>Bills</span>
+                            </td>
+                            <td id="expense">-2,500</td>
+                            <td>05/01</td>
+                            <td id="balance">16,500</td>
+
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Debitted <br>
+                                <span>Personal expense</span>
+                            </td>
+                            <td id="expense">-2,000</td>
+                            <td>06/01</td>
+                            <td id="balance">14,500</td>
+
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Dresses <br>
+                                <span>Shopping</span>
+                            </td>
+                            <td id="expense">-2000</td>
+                            <td>06/01</td>
+                            <td id="balance">12,500</td>
+
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Movie <br>
+                                <span>Entertainment</span>
+                            </td>
+                            <td id="expense">-500</td>
+                            <td>08/01</td>
+                            <td id="balance">12,500</td>
+
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Journey to hometown<br>
+                                <span>Travel</span>
+                            </td>
+                            <td id="expense">-1000</td>
+                            <td>12/01</td>
+                            <td id="balance">11,500</td>
+
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Tradings <br>
+                                <span>Stocks</span>
+                            </td>
+                            <td id="income">+2000</td>
+                            <td>15/01</td>
+                            <td id="balance">13,500</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>OTT Subscription<br>
+                                <span>Bills</span>
+                            </td>
+                            <td id="expense">-1000</td>
+                            <td>17/01</td>
+                            <td id="balance">12,500</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Accessories<br>
+                                <span>Shopping</span>
+                            </td>
+                            <td id="expense">-1000</td>
+                            <td>19/01</td>
+                            <td id="balance">11,500</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td> Investment<br>
+                                <span>Stocks</span>
+                            </td>
+                            <td id="expense">-2000</td>
+                            <td>22/01</td>
+                            <td id="balance">9,500</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>lended amount <br>
+                                <span>Income</span>
+                            </td>
+                            <td id="income">+2000</td>
+                            <td>24/01</td>
+                            <td id="balance">11,500</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>General check up<br>
+                                <span>Health</span>
+                            </td>
+                            <td id="expense">-1000</td>
+                            <td>26/01</td>
+                            <td id="balance">10,500</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Bike Maintainance<br>
+                                <span>Vehicle</span>
+                            </td>
+                            <td id="expense">-2000</td>
+                            <td>27/01</td>
+                            <td id="balance">8,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- -----------Right Side Div ------------------ -->
+        <div class="right_side">
+            <div class="right_side_1">
+                <div class="profile">
+                    <img src="../images/tony.jpg" alt="profile img">
+                </div>
+                <h2>Tony</h2>
+                <h5>Software Engineer</h5>
+                <div class="this_month">
+                    <h5>This month</h5>
+                    <h5>January</h5>
+                </div>
+                <div class="total_balance">
+                    <p>Total Balance</p>
+                    <h1>&#8377; 8,000</h1>
+                </div>
+                <div class="total_income">
+                    <p>Total Income</p>
+                    <h1>&#8377; 28,000</h1>
+                </div>
+                <div class="total_expense">
+                    <p>Total Expense</p>
+                    <h1>&#8377; 20,000</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        var xValues = ["Expense", "Balance"];
+        var yValues = [17500, 8500];
+        var barColors = [
+            "#f68685",
+            "#ececec",
+        ];
+
+        new Chart("homechart", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Expenses in January 2023"
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

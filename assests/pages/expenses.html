@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/expenses.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;500;600;800&display=swap" rel="stylesheet">
+    <title>Proplan</title>
+    <link rel="stylesheet" href="./assests/style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="../images/icons/proplan_logo.png" alt="logo">
+            <div class="nav_right">
+                <input type="text" id="search" placeholder="Search">
+                <a href="">Contact us</a>
+                <a href="">Support</a>
+                <h4>Jan 30, 2023</h4>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- --------------left side div--------------- -->
+        <div class="left_side">
+            <div class="tabs">
+                <a href="index.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
+                <a href="expenses.html" id="expensesicon"><img src="../images/icons/statistics.png" alt=""> Expenses</a>
+                <a href="savings.html"><img src="../images/icons/savings.png" alt="icons"> Savings</a>
+                <a href="notes.html"><img src="../images/icons/notes.png" alt="icons">Notes</a>
+                <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
+                <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
+            </div>
+        </div>
+
+        <!--------------------Center Side--------------->
+        <div class="center_side">
+            <h2>Statistics</h2>
+            <div class="month-scroll">
+                <img src="../images/icons/Arrow-left.svg" alt="ICON">
+                <div class="month ">
+                    <h3>Sept</h3>
+                    <h5>2022</h5>
+                </div>
+                <div class="month">
+                    <h3>OCT</h3>
+                    <h5>2022</h5>
+                </div>
+                <div class="month">
+                    <h3>NOV</h3>
+                    <h5>2022</h5>
+                </div>
+                <div class="month">
+                    <h3>DEC</h3>
+                    <h5>2022</h5>
+                </div>
+                <div class="month jan">
+                    <h3>JAN</h3>
+                    <h5>2023</h5>
+                </div>
+                <img src="../images/icons/arrow-right.svg" alt="ICON">
+
+            </div>
+            <canvas id="myChart"></canvas>
+            <div class="bar">
+            <div class="bar_list"><div class="category_color color_8"></div><p>Expenses</p></div>
+            <div class="bar_list"><div class="category_color color_9"></div><p>Income</p></div>
+            </div>
+            <h2> Categories of Expense</h2>
+            <canvas id="categorychart"></canvas>
+            <div class="category">
+                <div class="category_list"><div class="category_color color_1"></div><p>Bills</p></div>
+                <div class="category_list"><div class="category_color color_2"></div><p>Personal</p></div>
+                <div class="category_list"><div class="category_color color_3"></div><p>Shopping</p></div>
+                <div class="category_list"><div class="category_color color_4"></div><p>Entertainment</p></div>
+                <div class="category_list"><div class="category_color color_5"></div><p>Travel</p></div>
+                <div class="category_list"><div class="category_color color_6"></div><p>Vehicle</p></div>
+                <div class="category_list"><div class="category_color color_7"></div><p>Investment</p></div>
+
+            </div>
+            
+        </div>
+            <!--------------- Right side--------------- -->
+        <div class="right_side">
+            <div class="right_side_1">
+                <div class="profile">
+                    <img src="../images/tony.jpg" alt="profile img">
+                </div>
+                <h2>Tony</h2>
+                <h5>Software Engineer</h5>
+                <div class="this_month">
+                    <h5>This month</h5>
+                    <h5>January</h5>
+                </div>
+                <div class="total_balance">
+                    <p>Total Balance</p>
+                    <h1>&#8377; 8,000</h1>
+                </div>
+                <div class="total_income">
+                    <p>Total Income</p>
+                    <h1>&#8377; 28,000</h1>
+                </div>
+                <div class="total_expense">
+                    <p>Total Expense</p>
+                    <h1>&#8377; 20,000</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+
+        var xValues =['01/01', '02/01', '03/01', '05/01', '06/01','06/01','08/01','12/01','15/01','17/01','19/01','22/01','24/01','26/01','27/01','28/01'];
+        var yValues = [4000,5000,5000,2500,2000,2000,500,1000,2000,1000,1000,2000,2000,1000,2000,0];
+        var barColors = [ "#f3d251", "#f3d251", "#f78787","#f78787","#f78787","#f78787","#f78787","#f78787","#f3d251","#f78787","#f78787","#f78787","#f3d251","#f78787","#f78787","#f78787"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Statistics on day to day Expenses - JAN 2023"
+                }
+            }
+        });
+
+        var xValues =["Bills","Personal","Shopping","Entertainment","Travel","Vehicle","Investment"];
+        var yValues = [8500,3000,3000,500,1000,2000,2000];
+        var barColors = ["#a179bf","#fe7676","#f4cf28","#5dbeaa","#6fa6df","#603cb5","#a2bfc6"];
+
+        new Chart("categorychart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Category wise expenses of JAN 2023"
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

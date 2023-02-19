@@ -1,0 +1,59 @@
+#about_icon{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #f0f1f1;
+}
+.about_content{
+    width: 100%;
+    margin: 20px auto;
+}
+#logo{
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+}
+.container1, .container2{
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    box-sizing: border-box;
+}
+.vision ,.mission , .proplan_div{
+    width: 40%;
+    /* height: 200px; */
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    font-weight: bolder;
+
+}
+.vision p,.mission p, .proplan_div p{
+    margin-top: 10px;
+    text-indent: 30px;
+    font-size: 15px;
+}
+.vision {
+    background-color: #f5be61;
+    font-family: 'Lexend Deca', sans-serif ;
+}
+.mission{
+    background-color: #00bea7;
+}
+.container2 .mission_img{
+    width: 40%;
+
+}
+.mission_img img{
+    width: 100%;
+}
+.container2 .proplan_div{
+    background-color: #ff7b59;
+}
+.proplan_div ul{
+    padding: 10px 20px;
+}
+.proplan_div ul li{
+    margin-bottom: 10px;
+    font-size: 15px;
+}

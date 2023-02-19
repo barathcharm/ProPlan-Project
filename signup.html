@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="./assests/css/login-signup.css">
+
+</head>
+
+<body>
+    <div id="circle">
+
+    </div>
+
+    <!-- <label for="name">User-Name</label>
+        <input type="text" name="name" id="name" pattern="[A-Za-z]" required><br>
+
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" pattern="[A-Za-z]" required><br>
+
+        <label for="phone_num"> Phone_number</label>
+        <input type="number" id="phone_num" name="email" pattern="[0-9]{10}" required><br>
+
+        <label for="password">Enter password</label>
+        <input type="password" name="password" id="password" pattern="[A-Za-z]{8}" required><br>
+
+        <label for="cpassword">Confirm password</label>
+        <input type="password" name="password" id="cpassword" pattern="[A-Za-z]{8}" required><br>
+        
+        <button onclick="store()">Submit</button> -->
+    <main>
+        <div class="top">
+            <a href=""><img src="./assests/images/icons/proplan_logo.png" alt="icon"></a>
+            <p>Already have a account? <a href="./assests/pages/login.html">Log in</a></p>
+        </div>
+        <div class="maincontainer">
+            <div class="left">
+                <img src="./assests/images/signup image.jpg" alt="img">
+            </div>
+            <div class="right">
+                <h2>Get Started !</h2>
+                <h5>Enter your details</h5>
+                <form onsubmit="store()" action="./assests/pages/login.html">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control input" id="name" pattern="[A-Za-z]{0,32}" Title="1.Don't enter numbers, 2.Must include a uppercase character"placeholder="enter your name" required>
+                        <label for="name">Enter your name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control input" id="email" placeholder="Email id" required>
+                        <label for="email">Email id</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control input" id="phone_num" pattern="[0-9]{10}" title="1.Enter Numbers only, 2.Must enter 10 numbers" placeholder="Mobile Number" required>
+                        <label for="phone_num">Mobile Number</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control input" id="password" pattern="[A-Za-z0-9]{0,10}" 
+                        title="Enter a password mixed of uppercase characters, lowercase characters and Numbers" placeholder="Enter password"  required >
+                        <label for="password">Enter password</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control input" id="cpassword" placeholder="Confirm password" required >
+                        <label for="cpassword" required>Confirm password</label>
+                    </div>
+
+                    <button type="submit">Sign Up</button>
+                    <h5>OR</h5>
+                </form>
+                <div class="bottom">
+                    <span>Signin with</span>
+                    <a href="#"><img src="./assests/images/icons/google icon.png" alt=""></a>
+                    <a href="#"><img src="./assests/images/icons/fb icon.png" alt=""></a>
+                    <a href="#"><img src="./assests/images/icons/twitter icon.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function store() {
+            let password = document.getElementById("password").value
+            let cpassword = document.getElementById("cpassword").value
+            if (password == cpassword) {
+
+                let user_name = document.getElementById("name").value
+                let user_email = document.getElementById("email").value
+                let user_number = document.getElementById("phone_num").value
+                let user_pass = document.getElementById("password").value
+
+                let user_data = {
+                    "name": user_name,
+                    "email": user_email,
+                    "number": user_number,
+                    "password": user_pass,
+                }
+                let json = JSON.parse(localStorage.getItem("json")) ?? [];
+                json.push(user_data)
+                localStorage.setItem("json", JSON.stringify(json))
+                window.location.href = "assests/pages/login.html";
+            }
+            else {
+                alert("password & confirm password doesn't match")
+            }
+        }
+    </script>
+</body>
+
+</html>

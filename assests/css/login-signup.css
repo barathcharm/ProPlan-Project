@@ -1,0 +1,115 @@
+#circle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(80% at 50% 130%);
+    background-image: linear-gradient(to bottom, #6c3dd9, #6c3dd9, #6c3dd9, white);
+    z-index: 1;
+
+}
+a{
+    text-decoration: none;
+    color: #6333d6;
+}
+
+main {
+    width: 80%;
+    position: relative;
+    height: 70vh;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    margin: 120px auto;
+    font-family: "Merienda";
+    border-radius: 10px;
+    z-index: 5;
+    background-color: white;
+}
+
+.top {
+    height: 15%;
+    box-sizing: border-box;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top img {
+    width: 180px;
+}
+
+.top p {
+    font-size: 12px;
+}
+
+.left img {
+    width: 400px;
+    margin: 50px 0px 0px 90px;
+}
+
+.right h2 {
+    font-weight: 1000;
+    color: #383b50;
+}
+
+.right h5 {
+    color: grey;
+    font-size: 15px;
+}
+
+.maincontainer {
+    display: flex;
+}
+
+.maincontainer {
+    height: 85%;
+
+}
+
+.left,
+.right {
+    width: 50%;
+    line-height: 20px;
+}
+
+
+form {
+    margin-top: 30px;
+    width: 60%;
+    text-align: center;
+    /* align-items: center; */
+}
+
+.form-floating .input {
+    height: 40px;
+    padding: 15px 10px;
+}
+
+.form-floating label {
+    font-size: 12px;
+    padding-top: 8px;
+    color: rgb(71, 70, 70);
+}
+
+form button {
+    padding: 15px 30px;
+    border-radius: 30px;
+    border-width: 0px;
+    font-size: 14px;
+    background-color: #6333d6;
+    color: white;
+    margin-bottom: 17px;
+    font-weight: 600;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    color: #383b50;
+    margin-top: 17px;
+}
+
+.bottom img {
+    width: 30px;
+    margin: 0px 20px;
+}

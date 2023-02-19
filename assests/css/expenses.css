@@ -1,0 +1,99 @@
+.month-scroll{
+    display: flex;
+    padding: 20px;
+   border-radius: 5px;
+    margin: 20px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.month-scroll img{
+   background-color: rgb(96, 96, 96);
+   width: 30px;  
+   height: 30px; 
+   padding: 13px 5px;
+   border-radius: 10px;
+}
+.month-scroll .month{
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 15px;
+   border-radius: 10px;
+   cursor: pointer;
+
+}
+.month-scroll .jan,.month-scroll .jan h4{
+   background-color:  #6f41da;
+   color: white;
+   border: 0px;
+}
+.month h4{
+    color: grey;
+}
+#myChart{
+margin: 50px auto;
+   max-width: 750px;
+}
+#expensesicon{     
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: #f0f1f1;
+
+}
+#categorychart{
+  margin-top: 50px; 
+}
+.category,.category_list{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+}
+.category{
+   width: 70%;
+   margin: 30px auto;
+}
+.category_list{
+   margin: 5px 20px;
+}
+.category_color{
+    width: 15px;
+ height: 15px;
+ margin: 0px 10px;
+}
+.category_list .color_1{
+ background-color: #a179bf;
+}
+.category_list .color_2{
+ background-color: #fe7676;
+}
+.category_list .color_3{
+ background-color: #f4cf28;
+ 
+}
+.category_list .color_4{
+ background-color: #5dbeaa;
+}
+.category_list .color_5{
+ background-color: #6fa6df;
+ 
+}
+.category_list .color_6{
+ background-color: #603cb5;
+ 
+}
+.category_list .color_7{
+ background-color: #a2bfc6;
+ 
+}
+.bar_list .color_8{
+   background-color: #fe7676;
+}
+.bar_list .color_9{
+background-color: #f4cf28;
+}
+.bar_list {
+   margin: 0px 30px 50px 30px;
+}
+.bar, .bar_list{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

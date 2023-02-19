@@ -44,7 +44,7 @@ nav a{
     color: rgb(88, 88, 88);
     font-size: 14px;
 }
-nav img {
+nav >img {
 
     width: 160px;
 }
@@ -72,7 +72,17 @@ nav img {
     align-items: center;
     width: 45%;
 }
+.nav_right a:nth-of-type(2){
+    padding: 10px;
+    border-radius: 50%;
+}
+.nav_right a:nth-of-type(2):hover{
 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#log_out{
+    width: 30px;
+}
 /* -----------Main Content Starts--------- */
 main {
     display: flex;

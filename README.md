@@ -19,5 +19,5 @@ Wire Frame link - https://drive.google.com/file/d/1mbzb-GVCxjvnXQOOPZqGGm8ptoUpW
 
 User Flow - https://drive.google.com/file/d/1eGPsJSsxU7TaIWSY7FHAOOujAd_xvHlS/view?usp=share_link
 
-Criclife live website - https://barathcharm.github.io/100-Day-project/
+ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
  

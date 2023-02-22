@@ -1,4 +1,4 @@
-MY website - ProPlan
+My Website - ProPlan
 
 Money comes under the proior things for everyone. Those arn't aware of the savings and expenses will suffer in future. This website will make notes of every expense the user make and track it. It will be very user- friendly and minimalistic. The user will get the knowledge of his/her/ owm expenses and can manage it easily.
 

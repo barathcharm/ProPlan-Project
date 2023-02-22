@@ -175,7 +175,12 @@ main {
 .add h4 {
     margin-top: 10px;
 }
-
+.add h4:nth-of-type(1) span{
+    color: #e76967;
+}
+.add h4:nth-of-type(2) span{
+    color: rgb(91, 197, 91) ;
+}
 .add div {
     display: flex;
     align-items: center;
@@ -183,7 +188,7 @@ main {
 }
 
 .add button {
-    background-color: #f2d14f;
+    background-color: #f4d660;
     padding: 8px;
     border-radius: 5px;
     border-width: 0px;
@@ -197,8 +202,69 @@ main {
 .home_transactions {
     margin-top: 40px;
 }
+/*---------------- Adding income form -------------*/
+.add_income_form, .add_expense_form{
+    width: 23%;
+    padding: 20px;
+    border-radius: 5px;
+    height: 400px;
+    position: fixed;
+    top: 23%;
+    left: 35%;
+    background-color: white;
+    transition: 1s;
+    display: none;
+    border-radius: 10px;
+    z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.view {
+    display: block;
+    transition: 1s;
 
+}
+.add_income_form h2,.add_expense_form h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.add_income_form label,.add_expense_form label{
+    color: rgb(68, 68, 68);
+}
+.add_income_form input,.add_expense_form input{
+    padding: 10px 15px;
+    width: 80%;
+    border: solid black;
+    border-width: 0px 0px 0px 0px;
+    box-shadow: 0px 10px 10px -15px #111;    
+    margin:10px 0px 30px 20px;
+    font-weight: 400;
+}
+.button_div{
+    display: flex;
+    justify-content: space-between;
+}
+.button_div button{
+    padding:10px  20px;
+    border: none;
+    border-radius: 5px;
+}
+.add_income_form input:focus,.add_expense_form input:focus{
+    outline: none;
+}
+.add_income_form button:nth-of-type(1){
+    background-color:rgb(94, 211, 94) ;
+    color: white;
+}
+.add_expense_form button:nth-of-type(1){
+    background-color:rgb(211, 81, 81) ;
+    color: white;
+}
+.add_income_form button:nth-of-type(2),.add_expense_form button:nth-of-type(2){
+    background-color:#4d8ab6 ;
+    color: white;
+}
 /* ------------------Home table------------------ */
+
 .home_transactions table {
     width: 100%;
     border-spacing: 0px 20px;
@@ -212,6 +278,9 @@ main {
 
 .home_transactions table tr td {
     padding: 6px 0px;
+}
+table tr td:nth-of-type(2){
+    color: #454545;
 }
 
 .home_transactions table tr td:nth-child(2) span {
@@ -277,7 +346,7 @@ main {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 10px;
+    padding:10px  20px;
     box-sizing: border-box;
 }
 

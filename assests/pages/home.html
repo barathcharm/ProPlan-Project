@@ -40,23 +40,54 @@
                 <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
             </div>
         </div>
-        <!--------------- Center Content ------------------ -->
+       <!----------------Add income expense form--------------->
+        
+        <form class="add_income_form">
+            <h2>Add an Income</h2>
+            <label for="type">Title
+            <input type="text" id="type" placeholder="Ex: Salary /  Stock returns..,"></label><br>
+            <label for="category">Category
+                <input type="text" id="category" placeholder="Ex: Bills / Entertainment..," >
+            </label>
+            <label for="amount">Amount
+            <input type="number" id="amount" placeholder="Ex: 1000/2000/3000...,"></label>
+            <div class="button_div">
+            <button> Add Income</button>
+            <button> Back</button>
+            </div>
+        </form>
+        <form class="add_expense_form">
+            <h2>Add an Expense</h2>
+            <label for="type">Title
+            <input type="text" id="type" placeholder="Ex: movie,accessories..,"></label><br>
+            <label for="category">Category
+                <input type="text" id="category" placeholder="Ex: Bills / Entertainment..," >
+            </label>
+            <label for="amount">Amount
+            <input type="number" id="amount" placeholder="Ex: 1000/2000/3000...,"></label>
+            <div class="button_div">
+            <button> Add Expense</button>
+            <button> Back</button>
+            </div>
+        </form>
+         <!--------------- Center Content ------------------ -->
         <div class="center_side">
             <h3>Overview</h3>
             <h1>Welcome Back <span id="name"> Tony</span></h1>
             <div class="homestats">
                 <canvas id="homechart"></canvas>
                 <div class="add">
-                    <h4>Expenses - 67.30%</h4>
-                    <h4>Balance - 32.69%</h4>
-                    <div><button><img src="../images/icons/add.png" alt="icon"></button>
+                    <h4>Expenses - <span> 67.30%</span></h4>
+                    <h4>Balance - <span>32.69%</span></h4>
+                    <div><button id="add_income"><img src="../images/icons/add.png" alt="icon"></button>
                         <h3>ADD an Income</h3>
                     </div>
-                    <div><button><img src="../images/icons/add.png" alt="icon"></button>
-                        <h3>ADD an Expense </h3>
+                    <div><button id="add_expense"><img src="../images/icons/add.png" alt="icon"></button>
+                        <h3>ADD an Expense</h3>
                     </div>
                 </div>
             </div>
+           
             <!-- -------------- Home Table------------- -->
             <div class="home_transactions">
                 <h2>This month - January</h2>
@@ -246,6 +277,8 @@
             </div>
         </div>
     </main>
+    <script src="../js/script.js"></script>
+
     <script>
         var xValues = ["Expense", "Balance"];
         var yValues = [17500, 8500];

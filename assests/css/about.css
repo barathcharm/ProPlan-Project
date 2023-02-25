@@ -28,10 +28,14 @@
     font-weight: bolder;
 
 }
-.vision p,.mission p, .proplan_div p{
+.vision p,.mission p, .proplan_div p ul li{
     margin-top: 10px;
     text-indent: 30px;
     font-size: 15px;
+    font-weight: 500;
+}
+.vision h3,.mission h3, .proplan_div h3{
+    font-size: 20px;
 }
 .vision {
     background-color: #f5be61;
@@ -56,4 +60,33 @@
 .proplan_div ul li{
     margin-bottom: 10px;
     font-size: 15px;
+}
+.expense_saving{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px;
+    background-color: #eaf0f6;
+}
+.about_expense, .about_saving{
+    width: 32%;
+    padding: 20px ;
+    box-sizing: border-box;
+    margin: 0px 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+.about_expense h2, .about_saving h2{
+
+    color: #2e475d;
+}
+.about_expense p, .about_saving p{
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .5px ;
+    margin: 20px 0px 10px 0px;
+    text-indent: 30px;
+}
+.about_expense a, .about_saving a{
+    color:#259191 ;
+    font-size: 14px;
 }

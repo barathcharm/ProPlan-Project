@@ -62,6 +62,14 @@ add_expense.addEventListener("click",e=>{
     document.querySelector(".left_side").style.filter= "blur(2.5px)"
     document.querySelector(".right_side").style.filter= "blur(2.5px)"
     document.querySelector(".center_side").style.filter= "blur(2.5px)"
+})
 
+let add_income_button = document.getElementById("add_income_button")
 
+add_income_button.addEventListener("click",e=>{
+    let income_type =document.getElementById("income_type").value
+    let income_category =document.getElementById("income_category").value
+    let income_amount =document.getElementById("income_amount").value
+
+    
 })

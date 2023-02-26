@@ -45,29 +45,29 @@
         
         <form class="add_income_form">
             <h2>Add an Income</h2>
-            <label for="type">Title
-            <input type="text" id="type" placeholder="Ex: Salary /  Stock returns..,"></label><br>
-            <label for="category">Category
-                <input type="text" id="category" placeholder="Ex: Bills / Entertainment..," >
+            <label for="income_type">Title
+            <input type="text" id="income_type" placeholder="Ex: Salary /  Stock returns..,"></label><br>
+            <label for="income_category">Category
+                <input type="text" id="income_category" placeholder="Ex: Bills / Entertainment..," >
             </label>
-            <label for="amount">Amount
-            <input type="number" id="amount" placeholder="Ex: 1000/2000/3000...,"></label>
+            <label for="income_amount">Amount
+            <input type="number" id="income_amount" placeholder="Ex: 1000/2000/3000...,"></label>
             <div class="button_div">
-            <button> Add Income</button>
+            <button id="add_income_button"> Add Income</button>
             <button> Back</button>
             </div>
         </form>
         <form class="add_expense_form">
             <h2>Add an Expense</h2>
-            <label for="type">Title
-            <input type="text" id="type" placeholder="Ex: movie,accessories..,"></label><br>
-            <label for="category">Category
-                <input type="text" id="category" placeholder="Ex: Bills / Entertainment..," >
+            <label for="expense_type">Title
+            <input type="text" id="expense_type" placeholder="Ex: movie,accessories..,"></label><br>
+            <label for="expense_category">Category
+                <input type="text" id="expense_category" placeholder="Ex: Bills / Entertainment..," >
             </label>
-            <label for="amount">Amount
-            <input type="number" id="amount" placeholder="Ex: 1000/2000/3000...,"></label>
+            <label for="expense_amount">Amount
+            <input type="number" id="expense_amount" placeholder="Ex: 1000/2000/3000...,"></label>
             <div class="button_div">
-            <button> Add Expense</button>
+            <button id="add_expense_button"> Add Expense</button>
             <button> Back</button>
             </div>
         </form>
@@ -100,6 +100,8 @@
                             <td>Amount</td>
                             <td>Date</td>
                             <td>Balance</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
                         </tr>
                     </th>
                     <tbody>
@@ -111,6 +113,8 @@
                             <td id="income">4000</td>
                             <td>01/01</td>
                             <td id="balance">4000</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
                         </tr>
                         <tr>
@@ -122,6 +126,8 @@
                             <td id="income">+20,000</td>
                             <td>02/01</td>
                             <td id="balance">24,000</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
                         </tr>
                         <tr>
@@ -132,6 +138,8 @@
                             <td id="expense">-5,000</td>
                             <td>03/01</td>
                             <td id="balance">19,000</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
                         </tr>
                         <tr>
@@ -142,6 +150,8 @@
                             <td id="expense">-2,500</td>
                             <td>05/01</td>
                             <td id="balance">16,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
                         </tr>
                         <tr>
@@ -152,6 +162,8 @@
                             <td id="expense">-2,000</td>
                             <td>06/01</td>
                             <td id="balance">14,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
                         </tr>
                         <tr>
@@ -162,6 +174,8 @@
                             <td id="expense">-2000</td>
                             <td>06/01</td>
                             <td id="balance">12,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
                         </tr>
                         <tr>
@@ -172,6 +186,8 @@
                             <td id="expense">-500</td>
                             <td>08/01</td>
                             <td id="balance">12,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
                         </tr>
                         <tr>
@@ -182,6 +198,8 @@
                             <td id="expense">-1000</td>
                             <td>12/01</td>
                             <td id="balance">11,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
                         </tr>
                         <tr>
@@ -192,6 +210,8 @@
                             <td id="income">+2000</td>
                             <td>15/01</td>
                             <td id="balance">13,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
                         </tr>
                         <tr>
                             <td>10</td>
@@ -201,6 +221,8 @@
                             <td id="expense">-1000</td>
                             <td>17/01</td>
                             <td id="balance">12,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
                         </tr>
                         <tr>
                             <td>11</td>
@@ -210,6 +232,8 @@
                             <td id="expense">-1000</td>
                             <td>19/01</td>
                             <td id="balance">11,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
                         </tr>
                         <tr>
                             <td>12</td>
@@ -219,6 +243,8 @@
                             <td id="expense">-2000</td>
                             <td>22/01</td>
                             <td id="balance">9,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
                         </tr>
                         <tr>
                             <td>13</td>
@@ -228,6 +254,8 @@
                             <td id="income">+2000</td>
                             <td>24/01</td>
                             <td id="balance">11,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
                         </tr>
                         <tr>
                             <td>14</td>
@@ -237,6 +265,8 @@
                             <td id="expense">-1000</td>
                             <td>26/01</td>
                             <td id="balance">10,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
                         </tr>
                         <tr>
                             <td>15</td>
@@ -246,6 +276,8 @@
                             <td id="expense">-2000</td>
                             <td>27/01</td>
                             <td id="balance">8,500</td>
+                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
                         </tr>
                     </tbody>
                 </table>

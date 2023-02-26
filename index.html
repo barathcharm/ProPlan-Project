@@ -90,6 +90,8 @@
         function store() {
             let password = document.getElementById("password").value
             let cpassword = document.getElementById("cpassword").value
+
+            
             if (password == cpassword) {
 
                 let user_name = document.getElementById("name").value
@@ -103,6 +105,7 @@
                     "number": user_number,
                     "password": user_pass,
                 }
+
                 let json = JSON.parse(localStorage.getItem("json")) ?? [];
                 json.push(user_data)
                 localStorage.setItem("json", JSON.stringify(json))

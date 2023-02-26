@@ -299,6 +299,12 @@ table tr td:nth-of-type(2){
 #balance {
     color: #4d8ab6;
 }
+#edit_icon img{
+    width: 33px;
+}
+#delete_icon img{
+    width: 28px;
+}
 
 /* --------------Right Side Content --------------- */
 

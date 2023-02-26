@@ -63,13 +63,35 @@ add_expense.addEventListener("click",e=>{
     document.querySelector(".right_side").style.filter= "blur(2.5px)"
     document.querySelector(".center_side").style.filter= "blur(2.5px)"
 })
-
-let add_income_button = document.getElementById("add_income_button")
-
-add_income_button.addEventListener("click",e=>{
+//---------------Adding income lists-------------------
+let add_income_submit = document.getElementsByClassName("add_income_form")
+let count=0
+add_income_submit[0].addEventListener("submit",e=>{
+    e.preventDefault()
+    count++;
+    let form1=document.getElementsByClassName("add_income_form")
     let income_type =document.getElementById("income_type").value
     let income_category =document.getElementById("income_category").value
     let income_amount =document.getElementById("income_amount").value
+    let home_table_body = document.getElementById("home_table_body")
 
+    home_table_body.innerHTML += ` <tr>
+    <td>${count}</td>
+    <td>${income_type}<br>
+        <span>${income_category}</span>
+    </td>
+    <td id="income">${income_amount}</td>
+    <td>27/01</td>
+    <td id="balance">8,500</td>
+    <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
+    <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
+    </tr>`
+
+    form1[0].classList.remove("view")
+    document.querySelector("header").style.filter= "blur(0px)"
+    document.querySelector(".left_side").style.filter= "blur(0px)"
+    document.querySelector(".right_side").style.filter= "blur(0px)"
+    document.querySelector(".center_side").style.filter= "blur(0px)"
+    
     
 })

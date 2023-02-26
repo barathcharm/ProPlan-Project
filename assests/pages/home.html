@@ -46,29 +46,29 @@
         <form class="add_income_form">
             <h2>Add an Income</h2>
             <label for="income_type">Title
-            <input type="text" id="income_type" placeholder="Ex: Salary /  Stock returns..,"></label><br>
+            <input type="text" id="income_type" placeholder="Ex: Salary /  Stock returns..," required></label><br>
             <label for="income_category">Category
-                <input type="text" id="income_category" placeholder="Ex: Bills / Entertainment..," >
+                <input type="text" id="income_category" placeholder="Ex: Bills / Entertainment..," required >
             </label>
             <label for="income_amount">Amount
-            <input type="number" id="income_amount" placeholder="Ex: 1000/2000/3000...,"></label>
+            <input type="number" id="income_amount" placeholder="Ex: 1000/2000/3000...," required></label>
             <div class="button_div">
-            <button id="add_income_button"> Add Income</button>
-            <button> Back</button>
+            <button type="submit" id="add_income_button"> Add Income</button>
+            <a href="./home.html" id="back_button"> Back</a>
             </div>
         </form>
         <form class="add_expense_form">
             <h2>Add an Expense</h2>
             <label for="expense_type">Title
-            <input type="text" id="expense_type" placeholder="Ex: movie,accessories..,"></label><br>
+            <input type="text" id="expense_type" placeholder="Ex: movie,accessories..," required></label><br>
             <label for="expense_category">Category
-                <input type="text" id="expense_category" placeholder="Ex: Bills / Entertainment..," >
+                <input type="text" id="expense_category" placeholder="Ex: Bills / Entertainment..," required >
             </label>
             <label for="expense_amount">Amount
-            <input type="number" id="expense_amount" placeholder="Ex: 1000/2000/3000...,"></label>
+            <input type="number" id="expense_amount" placeholder="Ex: 1000/2000/3000...," required></label>
             <div class="button_div">
-            <button id="add_expense_button"> Add Expense</button>
-            <button> Back</button>
+            <button type="submit" id="add_expense_button"> Add Expense</button>
+            <a href="./home.html" id="back_button"> Back</a>
             </div>
         </form>
          <!--------------- Center Content ------------------ -->
@@ -104,7 +104,7 @@
                             <td>Delete</td>
                         </tr>
                     </th>
-                    <tbody>
+                    <tbody id="home_table_body">
                         <tr>
                             <td>1</td>
                             <td>Balance<br>

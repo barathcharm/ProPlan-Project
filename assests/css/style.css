@@ -259,7 +259,10 @@ main {
     background-color:rgb(211, 81, 81) ;
     color: white;
 }
-.add_income_form button:nth-of-type(2),.add_expense_form button:nth-of-type(2){
+#back_button{
+    padding:10px  20px;
+    text-decoration: none;
+    border-radius: 5px;
     background-color:#4d8ab6 ;
     color: white;
 }

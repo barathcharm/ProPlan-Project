@@ -54,12 +54,12 @@
                     </div>
                     </div>
                     <div class="right_content">
-                        <p> Display name  <span>Tony</span>
+                        <p> Display name  <span class="name">Tony</span>
                         </p>
                         <p> First name  <span>Robert</span>
                         </p>
                         <p> Last name <span>Downey JR</span>
-                        <p> Email <span>Tony_robert@gmail.com</span>
+                        <p> Email <span id="email">Tony_robert@gmail.com</span>
                         </p>
                         <p> Phone Number <span>+91-9344292430</span>
                         </p>
@@ -83,7 +83,7 @@
                 <div class="profile">
                     <img src="../images/tony.jpg" alt="profile img">
                 </div>
-                <h2>Tony</h2>
+                <h2 class="name">Tony</h2>
                 <h5>Software Engineer</h5>
                 <div class="this_month">
                     <h5>This month</h5>
@@ -108,13 +108,22 @@
         let active_user=JSON.parse(localStorage.getItem("active_user"))
         console.log(active_user)
  
-      document.getElementById("name").innerHTML = active_user["name"]
-      document.getElementById("username").innerHTML = active_user["name"]
+       let user_name = document.querySelectorAll(".name")
+       console.log(user_name.length);
+
+      user_name[0].innerHTML = active_user["name"]
+      user_name[1].innerHTML = active_user["name"]
+
+
+      
+    //   user_name.forEach(
+    //     e=> user_name[e].innerHTML = active_user["name"]
+    //   )
 
   
     document.getElementById("email").innerHTML = active_user["email"]
  
-    document.getElementById("ph.no").innerHTML =active_user["number"]
+    // document.getElementById("ph.no").innerHTML =active_user["number"]
   
     
     </script>

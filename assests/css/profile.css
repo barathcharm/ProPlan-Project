@@ -13,12 +13,14 @@
     margin-left: 100px;
 }
 .left_content{
-    
+    border: 1px solid black;
     width: 45%;
     padding: 10px;
     border-radius: 10px;
+    height: 75%;
+
 }
-.left_content>h2{
+.left_content >h2{
    font-size: 30px;
    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -44,14 +46,15 @@ box-shadow: rgb(146, 146, 146) -15px 0px 15px -15px;
     border-radius: 5px;
     box-shadow: rgb(146, 146, 146) -15px 0px 15px -15px;
 }
-.right_content{
+.right_content,.right_content1{
     width: 55%;
-    height: 97%;
+    height: 75%;
     /* margin: auto 0px; */
     padding: 10px;
     position: relative;
+    margin-top: 50px;
 }
-.right_content p{
+.right_content p,.right_content1 p{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,15 +78,21 @@ box-shadow: rgb(146, 146, 146) -15px 0px 15px -15px;
     transition: .7s;
     cursor: pointer;
 }
+.right_content1{
+    display: none;
+}
 #edit img{
     width: 50px;
 }
-#edit {
+#save img{
+    width: 35px;
+}
+#edit, #save {
   position:absolute;
-  bottom: 15px ;
+  bottom: 60px ;
   right: 15px;
-   width: 80px;
-   height: 80px;
+   width: 70px;
+   height: 70px;
     border-radius: 50%;
     cursor: pointer;
   background:linear-gradient(to right,#513bd3,#7c6bf6);
@@ -93,17 +102,36 @@ box-shadow: rgb(146, 146, 146) -15px 0px 15px -15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    }
    
-#edit:hover {
+#edit:hover,#save:hover {
     transform: translateY(-10px);
     box-shadow: 0 7px 0 -2px #f85959,
      0 15px 0 -4px #39a2db,
      0 16px 10px -3px #39a2db;
    }
    
-#edit:active {
+#edit:active, #save:active {
     transition: all 0.2s;
     transform: translateY(-5px);
     box-shadow: 0 2px 0 -2px #f85959,
      0 8px 0 -4px #39a2db,
      0 12px 10px -3px #39a2db;
    }
+
+   /* ------------js--------- */
+
+.right_content1 p  input{
+    width: 63%;
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    background-color: rgb(247, 247, 247);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(38, 38, 38);
+}
+.not_view{
+    display: none;
+}
+.view{
+    display: block;
+}

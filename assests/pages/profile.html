@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/savings.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/profile.css">
     <title>Proplan</title>
-    <link rel="stylesheet" href="./assests/style.css">
 </head>
+
 <body>
     <!-- <h1 >Name = <span id="name"></span></h1>
     <h3>Email = <span id="email"></span></h3>
@@ -25,7 +25,8 @@
                 <input type="text" id="search" placeholder="Search">
                 <a href="">Contact us</a>
                 <h4>Jan 30, 2023</h4>
-                <a href="../../index.html" title="Log out"><img src="../images/icons/log_out.png" alt="icon" id="log_out"></a>
+                <a href="../../index.html" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
+                        id="log_out"></a>
 
             </div>
         </nav>
@@ -35,49 +36,45 @@
         <div class="left_side">
             <div class="tabs">
                 <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
-                <a href="expenses.html"><img src="../images/icons/statistics.png" alt=""> Expenses</a>
-                <a href="savings.html"><img src="../images/icons/savings.png" alt="icons"> Savings</a>
+                <a href="analytics.html"><img src="../images/icons/statistics.png" alt="">Analytics</a>
+                <a href="wallet.html"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
                 <a href="notes.html"><img src="../images/icons/notes.png" alt="icons">Notes</a>
-                <a href="profile.html" id="profile"><img src="../images/icons/profile.png" alt="icons" > Profile</a>
+                <a href="profile.html" id="profile"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
                 <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
             </div>
         </div>
-            <!----------------center content div----------------->
-            <div class="center_side">
-                
-                <div class="left_content">
-                    <h2>Profile Page</h2>
-                    <img src="../images/tony.jpg" alt="profile img">
-                    <div class="bio">
-                        <h3>BIO</h3>
-                        <p>20 | I am a software developer. I have Broad mindset to learn new things. | Wander Lust | <br> Don't be average,,,, Be Savage..!</p>
-                    </div>
-                    </div>
-                    <div class="right_content">
-                        <p> Display name  <span class="name">Tony</span>
-                        </p>
-                        <p> First name  <span>Robert</span>
-                        </p>
-                        <p> Last name <span>Downey JR</span>
-                        <p> Email <span id="email">Tony_robert@gmail.com</span>
-                        </p>
-                        <p> Phone Number <span>+91-9344292430</span>
-                        </p>
-                        <p> Occupation  <span>Software Developer</span>
-                        </p>
-                         <p> Mothly income<span>20,000</span>
-                        </p>
-                        <p> Address<span>414f, natraj street,<br> Phase-2, Coimbatore, <br>
-                            Tamil Nadu - 641105</span>
-                        </p>
-                        <button id="edit"><img src="../images/icons/edit.svg" alt="icons"></button>
+        <!----------------center content div----------------->
+        <div class="center_side">
 
-                    </div>
+            <div class="left_content">
+                <h2>Profile Page</h2>
+                <img src="../images/tony.jpg" alt="profile img">
+                <div class="bio">
+                    <h3>BIO</h3>
+                    <p>20 | I am a software developer. I have Broad mindset to learn new things. | Wander Lust | <br>
+                        Don't be average,,,, Be Savage..!</p>
                 </div>
-                
             </div>
+            <div class="right_content">
+                <p> Display name <span id="display_name"></span>
+                </p>
+                <p>Name<span class="name"></span>
+                </p>
+                <p> Email <span id="email"></span>
+                </p>
+                <p> Phone Number <span id="ph_no"></span>
+                </p>
+                <p> Profession <span id="profession"></span>
+                </p>
+                <button id="edit"><img src="../images/icons/edit.svg" alt="icons"></button>
 
-            <!----------------right div----------------->
+            </div>
+            <div class="right_content1"></div>
+        </div>
+
+        </div>
+
+        <!----------------right div----------------->
         <div class="right_side">
             <div class="right_side_1">
                 <div class="profile">
@@ -105,29 +102,98 @@
         </div>
     </main>
     <script>
-        let active_user=JSON.parse(localStorage.getItem("active_user"))
+        let active_user = JSON.parse(localStorage.getItem("active_user"))
         console.log(active_user)
+        console.log(document.getElementById("display_name"));
+
+       
+        let user_name = document.querySelectorAll(".name")
+
+        let div = document.querySelector(".right_content")
+        let div1 = document.querySelector(".right_content1")
+        
+
+     add_details();
+     function add_details(){
+         user_name[0].innerHTML = active_user["name"]
+        user_name[1].innerHTML = active_user["name"]
+        document.getElementById("display_name").innerHTML = active_user["display_name"]
+        document.getElementById("email").innerHTML = active_user["email"]
+        document.getElementById("ph_no").innerHTML = active_user["number"]
+        document.getElementById("profession").innerHTML = active_user["profession"]
+     }
+        let edit_button = document.querySelector("#edit")
+        edit_button.addEventListener("click", edit)
+        function edit() {
+
+            div.classList.add("not_view")
+            div1.classList.add("view")
+            console.log(active_user["display_name"]);
+            div1.innerHTML =
+                `<p>Display Name 
+            <input type="text" id="new_display_name" value="${active_user["display_name"]}">
+            </p> 
+            <p>Name 
+            <input type="text" id="new_name" value="${active_user["name"]}">
+            </p> 
+            <p>Email 
+            <input type="email" id="new_email" value="${active_user["email"]}"> 
+            </p> 
+            <p>Phone number
+            <input type="tel" id="new_ph_no" pattern=[0-9]{10} value="${active_user["number"]}"> 
+            </p> 
+            <p>Profession 
+            <input type="text" id="new_profession" value="${active_user["profession"]}"> 
+            </p> 
  
-       let user_name = document.querySelectorAll(".name")
-       console.log(user_name.length);
+            <button id="save"> 
+                <img src="../images/icons/save_icon.png" alt="icon"> 
+                </button> 
+        `
+            save_details();
+        }
+        function save_details() {
+            let save_button = document.querySelector("#save")
+            save_button.addEventListener("click", save)
+            function save(e) {
+                div.classList.remove("not_view")
+                div1.classList.remove("view")
 
-      user_name[0].innerHTML = active_user["name"]
-      user_name[1].innerHTML = active_user["name"]
+                e.preventDefault()
+                let new_display_name = document.getElementById("new_display_name").value
 
+                let new_name = document.getElementById("new_name").value
+                let new_email = document.getElementById("new_email").value
+                let new_ph_no = document.getElementById("new_ph_no").value
+                let new_profession = document.getElementById("new_profession").value
 
-      
-    //   user_name.forEach(
-    //     e=> user_name[e].innerHTML = active_user["name"]
-    //   )
+                active_user["display_name"] = new_display_name
+                active_user["name"] = new_name
+                active_user["email"] = new_email
+                active_user["number"] = new_ph_no
+                active_user["profession"] = new_profession
+                localStorage.setItem("active_user", JSON.stringify(active_user))
 
-  
-    document.getElementById("email").innerHTML = active_user["email"]
- 
-    // document.getElementById("ph.no").innerHTML =active_user["number"]
-  
-    
+                let users = JSON.parse(localStorage.getItem("json"))
+                users.forEach(e => {
+                    if (e["email"] == active_user["email"]) {
+
+                        e["display_name"] = new_display_name
+                        e["name"] = new_name
+                        e["email"] = new_email
+                        e["number"] = new_ph_no
+                        e["profession"] = new_profession
+                    }
+                }
+                )
+                console.log(active_user);
+                localStorage.setItem("json", JSON.stringify(users))
+                window.location.href ="./profile.html"
+            }
+        }
     </script>
 
-    
+
 </body>
+
 </html>

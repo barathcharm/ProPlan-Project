@@ -204,7 +204,7 @@ main {
     width: 23%;
     padding: 20px;
     border-radius: 5px;
-    height: 400px;
+    height: 420px;
     position: fixed;
     top: 23%;
     left: 35%;
@@ -218,11 +218,10 @@ main {
 .view {
     display: block;
     transition: 1s;
-
 }
 .add_income_form h2,.add_expense_form h2{
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 .add_income_form label,.add_expense_form label{
     color: rgb(68, 68, 68);
@@ -241,7 +240,7 @@ main {
     justify-content: space-between;
 }
 .button_div button{
-    padding:10px  20px;
+    padding:8px  20px;
     border: none;
     border-radius: 5px;
 }
@@ -257,7 +256,7 @@ main {
     color: white;
 }
 #back_button{
-    padding:10px  20px;
+    padding:8px  20px;
     text-decoration: none;
     border-radius: 5px;
     background-color:#4d8ab6 ;
@@ -278,6 +277,7 @@ main {
 
 .home_transactions table tr td {
     padding: 6px 0px;
+    font-weight: 500;
 }
 table tr td:nth-of-type(2){
     color: #454545;

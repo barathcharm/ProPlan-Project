@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/wallet.css">
     <title>Proplan</title>
 
@@ -33,19 +34,23 @@
             <div class="tabs">
                 <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
                 <a href="analytics.html"><img src="../images/icons/statistics.png" alt=""> Analytics</a>
-                <a href="wallet.html"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
+                <a href="wallet.html" id="walleticon"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
                 <a href="notes.html" id="notesicon"><img src="../images/icons/notes.png" alt="icons">Notes</a>
                 <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
                 <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
             </div>
         </div>
+        <!-- ---------------------------center_content------------- -->
 
         <div class="center_content">
             <div class="banner">
                 <div class="banner_left">
-                    <h1>E - Wallet</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus doloribus inventore possimus aliquam saepe ipsum nemo modi! Exercitationem vitae, voluptatibus amet assumenda fugit eum pariatur, ex, obcaecati dolor ipsam ad!</p>
-                    <button>Deposit</button>
+                    <h1>E - Wallet 
+                    </h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus doloribus inventore
+                        possimus aliquam saepe ipsum nemo modi! Exercitationem vitae, voluptatibus amet assumenda fugit 
+                        eum pariatur, ex, obcaecati dolor ipsam ad!</p>
+                    <button id="deposit_button">Deposit</button>
                     <button>Withdraw</button>
 
                 </div>
@@ -53,8 +58,189 @@
                     <img src="../images/saving.png" alt="img">
                 </div>
             </div>
+            <div class="content1">
+                <div class="transactions">
+                    <h2>Transactions <img src="../images/icons/down_arrow.png" alt="icon" id="transactions_view"></h2>
+                    <div class="balance">
+                        Wallet Balance - <span id="wallet_balance_amount"> 0/-</span>
+                    </div>
+                </div>
+                <table class="transactions_table not_view">
+
+                    <thead>
+                        <tr>
+                            <td>Sl.no</td>
+                            <td>Type</td>
+                            <td>Amount</td>
+                            <td>Date</td>
+                            <td>Balance</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>234</td>
+                            <td>23</td>
+                            <td>234</td>
+                            <td>sdf</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>234ew</td>
+                            <td>23wd</td>
+                            <td>23dw4</td>
+                            <td>sddf</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+                <!-- ===============    Deposit Form =========== -->
+            <form class="deposit_form">
+                <h2>Deposit Money <img src="../images/money.jpg" alt="img"> </h2>
+                <hr class="hr">
+                <div class="step1">
+                    <p><span>1</span>Enter the amount</p>
+                    <input type="number" id="deposit_amount" placeholder="0" required>
+                </div>
+                <div class="step2">
+                    <p><span>2</span>Select the payment method</p>
+                    <div class="step2_list">
+                        <!-- <div class="card">
+                            <img src="../images/card.png" alt="img">
+                            Card
+                        </div>
+                        <div class="netbanking">
+                            <img src="../images/netbanking.jpg" alt="img">
+                            Netbanking
+                        </div> -->
+                        <div class="gpay">
+                            <img src="../images/gpay.png" alt="img">
+                            Gpay
+                        </div>
+                        <div class="phonepe">
+                            <img src="../images/phonepe.png" alt="img">
+                            Phonepe
+                        </div>
+                        <div class="paytm">
+                            <img src="../images/paytm.jpg" alt="img">
+                            Paytm
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="step3">
+                    <p><span>3</span>Enter your Upi ID</p>
+                    <input type="email" placeholder="ex.barath@okhdfcbank" required id="upiid">  <span id="send_request">Send</span>
+                </div>
+
+
+                <div class="send_request not_view">
+                    <div class="sent">
+                        <h3>Request has been sent successfully!</h3>
+                        <img src="../images/icons/tick_icon.jpg" alt="img">
+                    </div>
+                </div>
+
+
+                <div class="step4">
+                    <p><span>4</span>Accept the payment request sent to the Upi Id</p>
+                </div>
+
+
+
+                <div class="buttons">
+                    <button type="submit" id="done">Done &#10003;</button>
+                    <a href="wallet.html" id="back">Back</a>
+                </div>
+
+            </form>
         </div>
     </main>
 </body>
+<script>
+
+    let deposit_button = document.getElementById("deposit_button")
+    let deposit_form = document.querySelector(".deposit_form")
+    let send_request =document.querySelector("#send_request")
+    let send_request_div =document.querySelector(".send_request")
+    let wallet_balance_amount = document.querySelector("#wallet_balance_amount")
+
+
+    // ---------------view deposit form
+    deposit_button.addEventListener("click", e => {
+        deposit_form.classList.add("view")
+        document.querySelector("header").style.filter = "blur(2.5px)"
+        document.querySelector(".left_side").style.filter = "blur(2.5px)"
+        document.querySelector(".banner").style.filter = "blur(2.5px)"
+        document.querySelector(".content1").style.filter = "blur(2.5px)"
+    })
+
+
+    // For selecting one payment method
+
+    let selected_payment_method = document.getElementsByClassName("step2_list")[0].querySelectorAll("div")
+    selected_payment_method.forEach(e => {
+        e.addEventListener("click", el => {
+            e.style.backgroundColor = "rgb(244, 244, 244)"
+        }
+        )
+    })
+
+// -------------transactions_view by clicking image
+
+
+let count=2
+    let transactions_view = document.getElementById("transactions_view")
+    let transactions_table = document.querySelector(".transactions_table")
+        transactions_view.addEventListener("click",e=>{
+            
+            count++
+            let deg =180*count
+            transactions_view.style.transform=`rotate(${deg}deg)`
+            transactions_table.classList.toggle("not_view")
+    })
+
+    //------------------completion of deposit from
+
+        send_request.addEventListener("click",e=>{
+        let deposit_amount = document.querySelector("#deposit_amount").value
+        let upiId = document.querySelector("#upiid").value
+
+        if(deposit_amount != "" && upiId != ""){
+            send_request_div.classList.remove("not_view")
+            console.log(deposit_amount);
+        }
+    }
+    )
+
+    // ------------------------   Getting deopsited value
+
+
+    let done_button =  document.querySelector("#done")
+    done_button.addEventListener("click",e=>{
+        e.preventDefault()
+        let deposit_amount = document.querySelector("#deposit_amount").value
+        let upiId = document.querySelector("#upiid").value
+
+        wallet_balance_amount.innerHTML= deposit_amount
+        // window.location.href="./wallet.html"
+        deposit_form.classList.remove("view")
+   
+        document.querySelector("header").style.filter = "blur(0px)"
+        document.querySelector(".left_side").style.filter = "blur(0px)"
+        document.querySelector(".banner").style.filter = "blur(0px)"
+        document.querySelector(".content1").style.filter = "blur(0px)"
+
+
+    })
+
+
+
+ 
+
+</script>
 
 </html>

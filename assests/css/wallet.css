@@ -1,3 +1,4 @@
+
 #walleticon{     
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: #f0f1f1;
@@ -8,6 +9,7 @@
     margin-top: 120px;
     padding: 20px;
     box-sizing: border-box;
+  
 }
 .banner{
     width: 100%;
@@ -61,6 +63,11 @@
     display: flex;
     justify-content: space-between;
 }
+.balance span{
+    font-size: 22px;
+    color:#42464a;
+    font-weight: 600;
+}
 .transactions h2 img{ 
     width: 25px;
     margin: 0px 10px;
@@ -70,19 +77,17 @@
     margin: 50px 0px;
     text-align: center;
 }
-/* .content1 table tbody tr,.content1 table thead tr{
-    width: 100%;
-} */
+
 .content1 table thead tr td {
     padding: 10px 15px;
     background-color: rgb(242, 242, 242);
 }
 /* -------Deposit Form-------- */
-.deposit_form{
+.deposit_form, .withdraw_form{
     width: 43%;
     /* height: 65vh; */
     position: fixed;
-    top: 150px;
+    top: 170px;
     left: 480px;
     background-color: white;
     border-radius: 10px;
@@ -90,27 +95,29 @@
     box-sizing: border-box;
     display: none;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-weight: 450;
+    font-size: 15px;
 }
 
-.deposit_form h2{
-
+.deposit_form h2,.withdraw_form h2{
+    font-weight: 550;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.deposit_form h2 img{
+.deposit_form h2 img,.withdraw_form h2 img{
     width: 50px;
     margin: 0px 10px;
 }
 .hr{
     margin: 15px 0px 20px 0px;
 }
-.deposit_form input{
+.deposit_form input,.withdraw_form input{
     border: solid grey;
     border-width:  0px 0px 1px 0px;
     margin: 20px 30px;
 }
-.deposit_form input:focus{
+.deposit_form input:focus,.withdraw_form input:focus{
     outline: none;
 }
 .step1,.step3{
@@ -119,11 +126,10 @@
     margin-bottom: 20px;
 }
 .deposit_form p{
-    font-size: 18px;
     font-weight: 500;
     color: #42464a;
 }
-.deposit_form p span{
+.deposit_form p span,.withdraw_form p span{
     padding: 7px 15px;
     font-weight: 800;
     background-color: #e7633c;
@@ -196,6 +202,23 @@ input::-webkit-inner-spin-button {
     width: 30px;
     height: 30px;
 }
+.send_request_otp{
+    font-weight: 500;
+    color: #42464a;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.send_request_otp input{
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.send_request_otp img{
+    width: 30px;
+    margin-right: 10px;
+}
 .buttons{
     margin: 25px 0px;
     display: flex;
@@ -213,10 +236,21 @@ input::-webkit-inner-spin-button {
 #back{
     background-color: #4d8ab6;
 }
-#done{
+#done,#withdraw_money{
     background-color:#2db644;
     display: flex;
     align-items: center;
+}
+.withdraw_form p:nth-of-type(1){
+    display: inline;
+
+}
+#withdraw_wallet_balance{
+    display: inline;
+    font-weight: 600;
+    font-size: 18px;
+    color: #42464a;
+
 }
 .view {
     display:block;

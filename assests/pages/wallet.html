@@ -20,7 +20,8 @@
             <img src="../images/icons/proplan_logo.png" alt="logo">
             <div class="nav_right">
                 <input type="text" id="search" placeholder="Search">
-                <a href="">Contact us</a>
+                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span
+                        id="nav_balance">0/-</span></a>
                 <h4>Jan 30, 2023</h4>
                 <a href="../../index.html" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
                         id="log_out"></a>
@@ -45,13 +46,13 @@
         <div class="center_content">
             <div class="banner">
                 <div class="banner_left">
-                    <h1>E - Wallet 
+                    <h1>E - Wallet
                     </h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus doloribus inventore
-                        possimus aliquam saepe ipsum nemo modi! Exercitationem vitae, voluptatibus amet assumenda fugit 
+                        possimus aliquam saepe ipsum nemo modi! Exercitationem vitae, voluptatibus amet assumenda fugit
                         eum pariatur, ex, obcaecati dolor ipsam ad!</p>
                     <button id="deposit_button">Deposit</button>
-                    <button>Withdraw</button>
+                    <button id="withdraw_button">Withdraw</button>
 
                 </div>
                 <div class="banner_right">
@@ -96,7 +97,7 @@
 
             </div>
 
-                <!-- ===============    Deposit Form =========== -->
+            <!-- ===============    Deposit Form =========== -->
             <form class="deposit_form">
                 <h2>Deposit Money <img src="../images/money.jpg" alt="img"> </h2>
                 <hr class="hr">
@@ -133,7 +134,8 @@
 
                 <div class="step3">
                     <p><span>3</span>Enter your Upi ID</p>
-                    <input type="email" placeholder="ex.barath@okhdfcbank" required id="upiid">  <span id="send_request">Send</span>
+                    <input type="email" placeholder="ex.barath@okhdfcbank" required id="upiid"> <span
+                        id="send_request">Send</span>
                 </div>
 
 
@@ -157,31 +159,108 @@
                 </div>
 
             </form>
+
+            <!--------------- Withdraw form ---------------->
+
+            <form class="withdraw_form">
+                <h2>Withdraw Money <img src="../images/money.jpg" alt="img"> </h2>
+                <hr class="hr">
+                <p>Wallet Balance - <p id="withdraw_wallet_balance">0/-</p> </p>
+                <div class="step1">
+                    <p><span>1</span>Enter the amount to withdraw</p>
+                    <input type="number" id="withdraw_amount" placeholder="0" required>
+                </div>
+                <div class="step2">
+                    <p><span>2</span>Select an option to withdraw</p>
+                    <div class="step2_list">
+                        <div class="gpay">
+                            <img src="../images/gpay.png" alt="img">
+                            Gpay
+                        </div>
+                        <div class="phonepe">
+                            <img src="../images/phonepe.png" alt="img">
+                            Phonepe
+                        </div>
+                        <div class="paytm">
+                            <img src="../images/paytm.jpg" alt="img">
+                            Paytm
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="step3">
+                    <p><span>3</span>Enter the Upi ID </p>
+                    <input type="email" placeholder="ex.barath@okhdfcbank" required id="withdraw_upiid"> <span
+                        id="send_otp_request">Send OTP</span>
+                </div>
+
+
+                <div class="send_request_otp not_view">
+                    <img src="../images/icons/tick_icon.jpg" alt="icon">
+                        <p>OTP has been sent successfully 
+                            to <br> your Registered Mobile Number</p>
+                            <input type="number" id="otp" placeholder="Enter the OTP...">
+                </div>
+
+<!-- 
+                <div class="step4">
+                    <p><span>4</span>Accept the payment request sent to the Upi Id</p>
+                </div> -->
+
+
+
+                <div class="buttons">
+                    <button type="submit" id="withdraw_money">Withdraw &#10003;</button>
+                    <a href="wallet.html" id="back">Back</a>
+                </div>
+
+            </form>
         </div>
     </main>
 </body>
+<script src="../js/common.js"></script>
+
 <script>
 
     let deposit_button = document.getElementById("deposit_button")
     let deposit_form = document.querySelector(".deposit_form")
-    let send_request =document.querySelector("#send_request")
-    let send_request_div =document.querySelector(".send_request")
+    let send_request = document.querySelector("#send_request")
+    let send_request_div = document.querySelector(".send_request")
+    let send_otp_request = document.getElementById("send_otp_request")
+    let send_request_otp =document.querySelector(".send_request_otp")
+    let done_button = document.querySelector("#done")
+
+
+    let withdraw_button = document.getElementById("withdraw_button")
+    let withdraw_form = document.querySelector(".withdraw_form")
+
     let wallet_balance_amount = document.querySelector("#wallet_balance_amount")
+    let  withdraw_wallet_balance = document.getElementById("withdraw_wallet_balance")
+    let wallet_balance
+
+    let withdraw_money = document.getElementById("withdraw_money")
+
+
+    function bg_blur() {
+        document.querySelector("header").style.filter = "blur(2.5px)"
+        document.querySelector(".left_side").style.filter = "blur(2.5px)"
+        document.querySelector(".banner").style.filter = "blur(2.5px)"
+        document.querySelector(".content1").style.filter = "blur(2.5px)"
+}
 
 
     // ---------------view deposit form
     deposit_button.addEventListener("click", e => {
         deposit_form.classList.add("view")
-        document.querySelector("header").style.filter = "blur(2.5px)"
-        document.querySelector(".left_side").style.filter = "blur(2.5px)"
-        document.querySelector(".banner").style.filter = "blur(2.5px)"
-        document.querySelector(".content1").style.filter = "blur(2.5px)"
+        
+        bg_blur();
     })
 
 
     // For selecting one payment method
 
-    let selected_payment_method = document.getElementsByClassName("step2_list")[0].querySelectorAll("div")
+    let selected_payment_method = document.getElementsByClassName("step2_list")[0,1].querySelectorAll("div")
     selected_payment_method.forEach(e => {
         e.addEventListener("click", el => {
             e.style.backgroundColor = "rgb(244, 244, 244)"
@@ -189,57 +268,105 @@
         )
     })
 
-// -------------transactions_view by clicking image
-
-
-let count=2
-    let transactions_view = document.getElementById("transactions_view")
-    let transactions_table = document.querySelector(".transactions_table")
-        transactions_view.addEventListener("click",e=>{
-            
-            count++
-            let deg =180*count
-            transactions_view.style.transform=`rotate(${deg}deg)`
-            transactions_table.classList.toggle("not_view")
-    })
-
+    
     //------------------completion of deposit from
 
-        send_request.addEventListener("click",e=>{
+    send_request.addEventListener("click", e => {
         let deposit_amount = document.querySelector("#deposit_amount").value
         let upiId = document.querySelector("#upiid").value
 
-        if(deposit_amount != "" && upiId != ""){
+        if (deposit_amount != "" && upiId != "") {
             send_request_div.classList.remove("not_view")
             console.log(deposit_amount);
         }
     }
     )
 
+    // sending otp request to withdraw amount-----------
+
+
+    send_otp_request.addEventListener("click", e => {
+        let withdraw_amount = document.querySelector("#withdraw_amount").value
+        let upiId = document.querySelector("#withdraw_upiid").value
+
+        if (withdraw_amount != "" && withdraw_upiid != "") {
+            send_request_otp.classList.remove("not_view")
+            console.log(withdraw_amount);
+        }
+    }
+    )
+    
     // ------------------------   Getting deopsited value
 
 
-    let done_button =  document.querySelector("#done")
-    done_button.addEventListener("click",e=>{
+    done_button.addEventListener("click", e => {
         e.preventDefault()
         let deposit_amount = document.querySelector("#deposit_amount").value
         let upiId = document.querySelector("#upiid").value
+        if (deposit_amount != "" && upiId != "") {
+            
+            wallet_bal = JSON.parse(localStorage.getItem("wallet_balance")) ?
+                wallet_balance = Number(wallet_bal)
+                : wallet_balance = 0
+            wallet_balance += Number(deposit_amount)
 
-        wallet_balance_amount.innerHTML= deposit_amount
-        // window.location.href="./wallet.html"
-        deposit_form.classList.remove("view")
-   
-        document.querySelector("header").style.filter = "blur(0px)"
-        document.querySelector(".left_side").style.filter = "blur(0px)"
-        document.querySelector(".banner").style.filter = "blur(0px)"
-        document.querySelector(".content1").style.filter = "blur(0px)"
+            localStorage.setItem("wallet_balance", JSON.stringify(wallet_balance))
+
+            window.location.href = "./wallet.html"
 
 
+        }
+
+    })
+    // ---------------------viewing Withdraw form----------    
+    
+    withdraw_button.addEventListener("click", e => {
+        withdraw_form.classList.add("view")
+
+        bg_blur();
+    })
+    withdraw_wallet_balance.innerHTML = wallet_bal+"/-"
+
+    
+    //  -----------Withdrawing money from deposit-------
+
+    withdraw_money.addEventListener("click",e=>{
+        e.preventDefault()
+        let withdraw_amount = document.querySelector("#withdraw_amount").value
+        let withdraw_upiid = document.querySelector("#withdraw_upiid").value
+        if (withdraw_amount != "" && withdraw_upiid != "") {
+            
+            wallet_bal = JSON.parse(localStorage.getItem("wallet_balance")) ?
+                wallet_balance = Number(wallet_bal)
+                : wallet_balance = 0
+            wallet_balance -= Number(withdraw_amount)
+
+            localStorage.setItem("wallet_balance", JSON.stringify(wallet_balance))
+
+            window.location.href = "./wallet.html"
+
+    }})
+
+    //-------------transactions_view by clicking image
+
+
+    let count = 2
+    let transactions_view = document.getElementById("transactions_view")
+    let transactions_table = document.querySelector(".transactions_table")
+    transactions_view.addEventListener("click", e => {
+
+        count++
+        let deg = 180 * count
+        transactions_view.style.transform = `rotate(${deg}deg)`
+        transactions_table.classList.toggle("not_view")
     })
 
 
 
- 
+
+    // let wallet_bal = JSON.parse(localStorage.getItem("wallet_balance"))
+
+    wallet_balance_amount.innerHTML = wallet_bal + "/-"
 
 </script>
 

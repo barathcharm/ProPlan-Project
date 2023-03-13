@@ -38,11 +38,21 @@ nav {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 nav a{
-    color: rgb(88, 88, 88);
-    font-size: 14px;
+    /* color: rgb(88, 88, 88); */
+    font-size: 15px;
+    display: flex;
+    align-items:center;
+}
+nav a img{
+    width: 35px;
+  
+}
+nav a span{
+    margin: 8px 0px 0px 8px;
+    color:#1d1d1d;
+    font-weight: 600;
 }
 nav >img {
-
     width: 160px;
 }
 
@@ -345,7 +355,7 @@ table tr td:nth-of-type(2){
 
 .right_side_1 h2 {
     margin-top: 50px;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .right_side_1 .this_month {
@@ -372,12 +382,12 @@ table tr td:nth-of-type(2){
 :is(.total_balance, .total_expense, .total_income) h1 {
     text-align: center;
     margin-top: 10px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 :is(.total_balance, .total_expense, .total_income) p {
     color: #306388;
-    font-weight: 800;
+    font-weight: 650;
 }
 
 .total_balance h1 {

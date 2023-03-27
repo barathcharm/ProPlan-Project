@@ -4,7 +4,7 @@
 }
 .savings{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around;   
     margin: 40px auto;
 }
 .savings1, .savings2{

@@ -1,4 +1,4 @@
-<h2> My Website - ProPlan</h2>
+<h1> My Website - ProPlan</h1>
 
 <p>       Money comes under the proior things for everyone. Those arn't aware of the savings and expenses will suffer in
     future. This website will make notes of every expense the user make and track it. It will be very user- friendly and
@@ -25,9 +25,9 @@ User Flow - https://drive.google.com/file/d/1eGPsJSsxU7TaIWSY7FHAOOujAd_xvHlS/vi
 
 ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
 
-<h2>Features</h2>
+<h1>Features</h1>
 
-<h3> Create an User account</h3>
+<h2> Create an User account</h2>
 <h4> Scenario 1: Successfully create an account </h4>
 <p>Steps:</p>
 <ol>
@@ -39,7 +39,7 @@ ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
 <h4> Expected Result: The user is redirected to the login page.</h4>
 
 
-<h3>User Login</h3>
+<h2>User Login</h2>
 <h4> Scenario 1: Successfully login in to account</h4>
 <p> Steps:</p>
 <ol>
@@ -50,7 +50,7 @@ ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
 
 <h4> Expected Result: The user is redirected to the home page.</h4>
 
-<h3>User Profile</h3>
+<h2>User Profile</h2>
 <h4>Update Profile</h4>
 <p> Steps:</p>
 <ol>
@@ -70,7 +70,7 @@ ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
 <h4>Expected Result: The profile is successfully deleted</h4>
 
 
-<h3>Income Module</h3>
+<h2>Income Module</h2>
 
 <h4>Add an income</h4>
 <p>Scenario 1: Successfully addded an income</p>
@@ -89,7 +89,7 @@ ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
 <p>Yet to start</p>
 
 
-<h3>Expense Module</h3>
+<h2>Expense Module</h2>
 
 <h4>Add an Expense</h4>
 <p>Scenario 1: Successfully addded an Expense</p>
@@ -108,7 +108,7 @@ ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
 <h4>Delete an Expense</h4>
 <p>Yet to start</p>
 
-<h3>Wallet Module</h3>
+<h2>Wallet Module</h2>
 
 <h4>Deposit Amount in wallet</h4>
 <p>Scenario 1: Successfully Deposited amount in wallet</p>

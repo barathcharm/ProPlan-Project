@@ -79,15 +79,16 @@ nav >img {
     align-items: center;
     width: 45%;
 }
-.nav_right a:nth-of-type(2){
-    padding: 10px;
+
+#log_out{
+    cursor: pointer;
+    padding: 10px 13px;
     border-radius: 50%;
 }
-.nav_right a:nth-of-type(2):hover{
-
+#log_out:hover{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-#log_out{
+#log_out img{
     width: 30px;
 }
 /* -----------Main Content Starts--------- */
@@ -225,10 +226,7 @@ main {
     z-index: 3;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-.view {
-    display: block;
-    transition: 1s;
-}
+
 .add_income_form h2,.add_expense_form h2{
     text-align: center;
     margin-bottom: 30px;
@@ -396,4 +394,39 @@ table tr td:nth-of-type(2){
 
 .total_expense h1 {
     color: #dd7a79;
+}
+
+/* --------Log out remember me---------- */
+
+.log_out_div{
+    position: fixed;
+    top: 65px;
+    right: 8px;
+    width: 130px;
+    height: 80px;
+    /* border: 1px solid black; */
+    font-size: 13px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: none;
+}
+.log_out_div button{
+    margin: 10px auto;
+    display: block;
+    background-color:#EE4B2B;
+    color: white;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+}
+.log_out_div input{
+    margin-right: 3px;
+}
+.view {
+    display: block;
 }

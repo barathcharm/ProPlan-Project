@@ -20,9 +20,13 @@
                 <input type="text" id="search" placeholder="Search">
                 <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span id="nav_balance">0/-</span></a>
                 <h4>Jan 30, 2023</h4>
-                <a href="../../index.html" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
-                        id="log_out"></a>
+                <span  id="log_out" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
+                       ></span>
 
+            </div>
+            <div class="log_out_div ">
+                <input type="checkbox" id="remember_me" ><label for="remember_me"> Remember me</label>
+                <button id="log_out_button"> Log Out</button>
             </div>
         </nav>
     </header>
@@ -75,8 +79,8 @@
             <div class="homestats">
                 <canvas id="homechart"></canvas>
                 <div class="add">
-                    <h4>Expenses - <span> 67.30%</span></h4>
-                    <h4>Balance - <span>32.69%</span></h4>
+                    <h4>Expenses - <span id="expense_percentage">0%</span></h4>
+                    <h4>Balance - <span id="balance_percentage">0%</span></h4>
                     <div><button id="add_income"><img src="../images/icons/add.png" alt="icon"></button>
                         <h3>ADD an Income</h3>
                     </div>
@@ -102,7 +106,7 @@
                         </tr>
                     </th>
                     <tbody id="home_table_body">
-                        <tr>
+                        <!-- <tr>
                             <td>1</td>
                             <td>Balance<br>
                                 <span>December's</span>
@@ -275,7 +279,7 @@
                             <td id="balance">8,500</td>
                             <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
                             <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -294,48 +298,21 @@
                 </div>
                 <div class="total_balance">
                     <p>Total Balance</p>
-                    <h1>&#x20B9; 8,000</h1>
+                    <h1>&#x20B9; <span id="total_balance">0</span> </h1>
                 </div>
                 <div class="total_income">
                     <p>Total Income</p>
-                    <h1>&#8377; 28,000</h1>
+                    <h1>&#8377;<span id="total_income">0</span></h1>
                 </div>
                 <div class="total_expense">
                     <p>Total Expense</p>
-                    <h1>&#8377; 20,000</h1>
+                    <h1>&#8377;<span id="total_expense">0</span></h1>
                 </div>
             </div>
         </div>
     </main>
     <script src="../js/script.js"></script>
     <script src="../js/common.js"></script>
-
-
-    <script>
-        var xValues = ["Expense", "Balance"];
-        var yValues = [17500, 8500];
-        var barColors = [
-            "#f68685",
-            "#ececec",
-        ];
-
-        new Chart("homechart", {
-            type: "doughnut",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: "Expenses in January 2023"
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>

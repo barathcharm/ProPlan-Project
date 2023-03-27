@@ -24,8 +24,14 @@
                 <input type="text" id="search" placeholder="Search">
                 <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span id="nav_balance">0/-</span></a>
                 <h4>Jan 30, 2023</h4>
-                <a href="../../index.html" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
-                        id="log_out"></a>
+                <span  id="log_out" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
+                    ></span>
+
+         </div>
+         <div class="log_out_div ">
+             <input type="checkbox" id="remember_me" ><label for="remember_me"> Remember me</label>
+             <button id="log_out_button"> Log Out</button>
+         </div>
 
             </div>
         </nav>
@@ -106,68 +112,21 @@
                 </div>
                 <div class="total_balance">
                     <p>Total Balance</p>
-                    <h1>&#8377; 8,000</h1>
+                    <h1>&#x20B9; <span id="total_balance">8,000</span> </h1>
                 </div>
                 <div class="total_income">
                     <p>Total Income</p>
-                    <h1>&#8377; 28,000</h1>
+                    <h1>&#8377;<span id="total_income">28,000</span></h1>
                 </div>
                 <div class="total_expense">
                     <p>Total Expense</p>
-                    <h1>&#8377; 20,000</h1>
+                    <h1>&#8377;<span id="total_expense">20,000</span></h1>
                 </div>
             </div>
         </div>
     </main>
     <script src="../js/common.js"></script>
-    <script>
-
-        var xValues =['01/01', '02/01', '03/01', '05/01', '06/01','06/01','08/01','12/01','15/01','17/01','19/01','22/01','24/01','26/01','27/01','28/01'];
-        var yValues = [4000,5000,5000,2500,2000,2000,500,1000,2000,1000,1000,2000,2000,1000,2000,0];
-        var barColors = [ "#f3d251", "#f3d251", "#f78787","#f78787","#f78787","#f78787","#f78787","#f78787","#f3d251","#f78787","#f78787","#f78787","#f3d251","#f78787","#f78787","#f78787"];
-
-        new Chart("myChart", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                    display: true,
-                    text: "Statistics on day to day Expenses - JAN 2023"
-                }
-            }
-        });
-
-        var xValues =["Bills","Personal","Shopping","Entertainment","Travel","Vehicle","Investment"];
-        var yValues = [8500,3000,3000,500,1000,2000,2000];
-        var barColors = ["#a179bf","#fe7676","#f4cf28","#5dbeaa","#6fa6df","#603cb5","#a2bfc6"];
-
-        new Chart("categorychart", {
-            type: "pie",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                    display: true,
-                    text: "Category wise expenses of JAN 2023"
-                }
-            }
-        });
-
-
-    </script>
+    <script src="../js/analytics.js"></script>
 </body>
 
 </html>

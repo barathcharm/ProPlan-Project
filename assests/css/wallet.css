@@ -74,13 +74,16 @@
 }
 .content1 table{
     width: 85%;
-    margin: 50px 0px;
+    margin: 50px auto;
     text-align: center;
 }
 
 .content1 table thead tr td {
     padding: 10px 15px;
     background-color: rgb(242, 242, 242);
+}
+#wallet_table_body tr{
+    padding: 20px 0px;
 }
 /* -------Deposit Form-------- */
 .deposit_form, .withdraw_form{

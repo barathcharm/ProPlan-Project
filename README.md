@@ -21,3 +21,9 @@ User Flow - https://drive.google.com/file/d/1eGPsJSsxU7TaIWSY7FHAOOujAd_xvHlS/vi
 
 ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
  
+<h2> Create an account</h2>
+ Scenario 1: Successfully create an account Steps: Click the login buttton if your are a new user sign up in registration page. Enter the required information such as name, email,phone number and password. If you want to join as a player click the checkbox and fill the required infromation Click the "Register" button. Expected Result: The user is redirected to the login page.
+Login Scenario 1: Successfully login in to account Steps: Navigate to the login page. Enter the required information such as email, and password. Click the "login" button. Expected Result: The user is redirected to the home page.
+Your Profile: Click My account There you can update your information except email:
+View grounds Scenario 1: Successfully view grounds Steps: Log in as a buyer. Navigate to the grounds listing page. View the list of available grounds Expected Result: The user can view the list of available grounds You can also search the grounds and you can search by filtered city
+View grounds details Scenario 1: Successfully View grounds details Steps: Log in as a buyer. Navigate to the ground listing page. Select a ground to view its details. Expected Result: The user can view the details of the selected ground

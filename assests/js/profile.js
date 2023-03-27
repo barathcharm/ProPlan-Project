@@ -9,6 +9,8 @@ let div = document.querySelector(".right_content")
 let div1 = document.querySelector(".right_content1")
 
 
+
+
 add_details();
 function add_details(){
  user_name[0].innerHTML = active_user["name"]

@@ -17,7 +17,6 @@
     display: flex;
     justify-content: space-between;
     background-color: #eafcfc;
-    /* background-color: #ffe1c9; */
 }
 .banner_right,.banner_left{
     width: 45%;
@@ -266,3 +265,36 @@ input::-webkit-inner-spin-button {
 .not_view{
     display: none;
 }
+/* 
+<label for="expense_category">Category
+<p>Category:</p>
+<div class="expense_category">
+    <label for="entertainment">
+        <input type="radio" id="entertainment" name="expense_category" value="Entertainment">Entertainment
+    </label>
+    <label for="stock_returns">
+        <input type="radio" id="stock_returns" name="expense_category" value="Stock returns">Travel
+    </label>
+
+    <label for="rent">
+        <input type="radio" id="rent" name="expense_category" value="Rent">Rent
+    </label>
+    <label for="utilities">
+        <input type="radio" id="utilities" name="expense_category" value="Utilities">Utilities
+    </label>
+    <label for="maintenance">
+        <input type="radio" id="maintenance" name="expense_category" value="Maintenance">Maintenance
+    </label>
+    <label for="goods">
+        <input type="radio" id="goods" name="expense_category" value="Goods">Goods / Products
+    </label>
+    <label for="insurance">
+        <input type="radio" id="insurance" name="expense_category" value="Insurance">Insurance
+    </label>
+    <label for="charges">
+        <input type="radio" id="charges" name="expense_category" value="Charges">Charges /  Fees
+    </label>
+    <label for="other">
+        <input type="radio" id="other" name="expense_category" value="Others">Others
+    </label>
+</div> */

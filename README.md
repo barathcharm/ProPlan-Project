@@ -31,10 +31,9 @@ ProPlan live website - https://barathcharm.github.io/ProPlan-Project/
 <h4> Scenario 1: Successfully create an account </h4>
 <p>Steps:</p>
 <ol>
-    <li> Click the login buttton if your are a new user sign up in registration page.</li>
+    <li> Navigate to the registration page.</li>
     <li> Enter the required information such as name, email,phone number and password. </li>
-    <li>If you want to join as a player click the checkbox and fill the required infromation Click the "Register"
-        button. </li>
+    <li> After entering the details,Click on the signup button</li>
 </ol>
 <h4> Expected Result: The user is redirected to the login page.</h4>
 

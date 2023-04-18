@@ -48,9 +48,29 @@
             <h2>Add an Income</h2>
             <label for="income_type">Title
             <input type="text" id="income_type" placeholder="Ex: Salary /  Stock returns..," required></label><br>
-            <label for="income_category">Category
+            <!-- <label for="income_category">Category
                 <input type="text" id="income_category" placeholder="Ex: Bills / Entertainment..," required >
-            </label>
+            </label> -->
+            <p>Category:</p>
+            <div class="income_category">
+                <label for="salary">
+                    <input type="radio" id="salary" name="income_category" value="Salary">Salary
+                </label>
+                <label for="stock_returns">
+                    <input type="radio" id="stock_returns" name="income_category" value="Stock returns">Stock returns
+                </label>
+
+                <label for="commission">
+                    <input type="radio" id="commission" name="income_category" value="Commission">Commission
+                </label>
+                <label for="lended_amount">
+                    <input type="radio" id="lended_amount" name="income_category" value="Lended money">Lended money
+                </label>
+                <label for="other">
+                    <input type="radio" id="other" name="income_category" value="Others">Others
+                </label>
+            </div>
+
             <label for="income_amount">Amount
             <input type="number" id="income_amount" placeholder="Ex: 1000/2000/3000...," required></label>
             <div class="button_div">
@@ -58,13 +78,42 @@
             <a href="./home.html" id="back_button"> Back</a>
             </div>
         </form>
+
         <form class="add_expense_form">
             <h2>Add an Expense</h2>
             <label for="expense_type">Title
             <input type="text" id="expense_type" placeholder="Ex: movie,accessories..," required></label><br>
-            <label for="expense_category">Category
-                <input type="text" id="expense_category" placeholder="Ex: Bills / Entertainment..," required >
-            </label>
+                <p>Category:</p>
+                <div class="expense_category">
+        
+                    <label for="utilities">
+                        <input type="radio" id="utilities" name="expense_category" value="Utilities">Utilities
+                    </label>
+                    <label for="travel">
+                        <input type="radio" id="travel" name="expense_category" value="Travel">Travel
+                    </label>
+                    <label for="insurance">
+                        <input type="radio" id="insurance" name="expense_category" value="Insurance">Insurance
+                    </label>
+                    <label for="rent">
+                        <input type="radio" id="rent" name="expense_category" value="Rent">Rent
+                    </label>
+                    <label for="maintenance">
+                        <input type="radio" id="maintenance" name="expense_category" value="Maintenance">Maintenance
+                    </label>
+                    <label for="goods">
+                        <input type="radio" id="goods" name="expense_category" value="Goods / Products">Goods / Products
+                    </label>
+                    <label for="entertainment">
+                        <input type="radio" id="entertainment" name="expense_category" value="Entertainment">Entertainment
+                    </label>
+                    <label for="charges">
+                        <input type="radio" id="charges" name="expense_category" value="Charges / Fees">Charges /  Fees
+                    </label>
+                    <label for="others">
+                        <input type="radio" id="others" name="expense_category" value="Others">Others
+                    </label>
+                </div>
             <label for="expense_amount">Amount
             <input type="number" id="expense_amount" placeholder="Ex: 1000/2000/3000...," required></label>
             <div class="button_div">
@@ -72,6 +121,7 @@
             <a href="./home.html" id="back_button"> Back</a>
             </div>
         </form>
+
          <!--------------- Center Content ------------------ -->
         <div class="center_side">
             <h3>Overview</h3>

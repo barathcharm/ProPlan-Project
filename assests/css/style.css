@@ -201,6 +201,7 @@ main {
     border-radius: 5px;
     border-width: 0px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .add img {
@@ -215,7 +216,7 @@ main {
     width: 23%;
     padding: 20px;
     border-radius: 5px;
-    height: 420px;
+    height: 440px;
     position: fixed;
     top: 23%;
     left: 35%;
@@ -226,7 +227,13 @@ main {
     z-index: 3;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-
+.add_expense_form{
+    top: 20%;
+    height: 510px;
+}
+.add_expense_form{
+    display: none;
+}
 .add_income_form h2,.add_expense_form h2{
     text-align: center;
     margin-bottom: 30px;
@@ -234,7 +241,7 @@ main {
 .add_income_form label,.add_expense_form label{
     color: rgb(68, 68, 68);
 }
-.add_income_form input,.add_expense_form input{
+#income_type,#income_amount,#expense_type,#expense_amount{
     padding: 10px 15px;
     width: 80%;
     border: solid black;
@@ -242,6 +249,7 @@ main {
     box-shadow: 0px 10px 10px -15px #111;    
     margin:10px 0px 30px 20px;
     font-weight: 400;
+
 }
 .button_div{
     display: flex;
@@ -270,6 +278,26 @@ main {
     background-color:#4d8ab6 ;
     color: white;
 }
+.income_category,.expense_category{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0px;
+}
+.income_category label,.expense_category label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0px 10px ;
+    margin-top: 15px;
+}
+.income_category input, .expense_category input{
+    border: 1px solid black;
+    margin-right: 5px;
+    
+}
+
 /* ------------------Home table------------------ */
 
 .home_transactions table {
@@ -427,6 +455,7 @@ table tr td:nth-of-type(2){
 .log_out_div input{
     margin-right: 3px;
 }
+
 .view {
     display: block;
 }

@@ -12,7 +12,7 @@ add_income.addEventListener("click", e => {
     document.querySelector(".center_side").style.filter = "blur(2.5px)"
 })
 
-//      Viewing Expense form
+// Viewing Expense form
 
 let add_expense = document.getElementById("add_expense")
 
@@ -29,11 +29,11 @@ add_expense.addEventListener("click", e => {
 
 let add_income_submit = document.getElementsByClassName("add_income_form")
 
-add_income_submit[0].addEventListener("submit", e => {
+add_income_submit[0].addEventListener("submit",e=> {
 
     let form1 = document.getElementsByClassName("add_income_form")
     let income_type = document.getElementById("income_type").value
-    let income_category = document.getElementById("income_category").value
+    let income_category = document.querySelector('input[name="income_category"]:checked').value;
     let income_amount = document.getElementById("income_amount").value
     let date = new Date().toLocaleDateString();
     let home_table_body = document.getElementById("home_table_body")
@@ -80,7 +80,7 @@ add_expense_submit[0].addEventListener("submit", e => {
 
     let form2 = document.getElementsByClassName("add_expense_form")
     let expense_type = document.getElementById("expense_type").value
-    let expense_category = document.getElementById("expense_category").value
+    let expense_category = document.querySelector('input[name="expense_category"]:checked').value;
     let expense_amount = document.getElementById("expense_amount").value
     let date = new Date().toLocaleDateString();
     let home_table_body = document.getElementById("home_table_body")
@@ -143,8 +143,6 @@ for (let i = 0; i < transaction_list.length; i++) {
 }
 
 
-
-
 // Viewing the Percentage statistics in home page---------
   total_income =active_user["total_income"]?? 0
    total_expense =active_user["total_expense"]?? 0
@@ -199,3 +197,6 @@ new Chart("homechart", {
         }
     }
 });
+
+
+

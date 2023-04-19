@@ -48,26 +48,23 @@
             <h2>Add an Income</h2>
             <label for="income_type">Title
             <input type="text" id="income_type" placeholder="Ex: Salary /  Stock returns..," required></label><br>
-            <!-- <label for="income_category">Category
-                <input type="text" id="income_category" placeholder="Ex: Bills / Entertainment..," required >
-            </label> -->
             <p>Category:</p>
             <div class="income_category">
                 <label for="salary">
-                    <input type="radio" id="salary" name="income_category" value="Salary">Salary
+                    <input type="radio" id="salary" name="income_category" value="Salary" required>Salary
                 </label>
                 <label for="stock_returns">
-                    <input type="radio" id="stock_returns" name="income_category" value="Stock returns">Stock returns
+                    <input type="radio" id="stock_returns" name="income_category" value="Stock returns" required>Stock returns
                 </label>
 
                 <label for="commission">
-                    <input type="radio" id="commission" name="income_category" value="Commission">Commission
+                    <input type="radio" id="commission" name="income_category" value="Commission" required>Commission
                 </label>
                 <label for="lended_amount">
-                    <input type="radio" id="lended_amount" name="income_category" value="Lended money">Lended money
+                    <input type="radio" id="lended_amount" name="income_category" value="Lended money" required>Lended money
                 </label>
                 <label for="other">
-                    <input type="radio" id="other" name="income_category" value="Others">Others
+                    <input type="radio" id="other" name="income_category" value="Others" required>Others
                 </label>
             </div>
 
@@ -87,7 +84,7 @@
                 <div class="expense_category">
         
                     <label for="utilities">
-                        <input type="radio" id="utilities" name="expense_category" value="Utilities">Utilities
+                        <input type="radio" id="utilities" name="expense_category" value="Utilities" required>Utilities
                     </label>
                     <label for="travel">
                         <input type="radio" id="travel" name="expense_category" value="Travel">Travel
@@ -151,185 +148,12 @@
                             <td>Amount</td>
                             <td>Date</td>
                             <td>Balance</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
+                            <!-- <td>Edit</td>
+                            <td>Delete</td> -->
                         </tr>
                     </th>
                     <tbody id="home_table_body">
-                        <!-- <tr>
-                            <td>1</td>
-                            <td>Balance<br>
-                                <span>December's</span>
-                            </td>
-                            <td id="income">4000</td>
-                            <td>01/01</td>
-                            <td id="balance">4000</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
 
-                        </tr>
-                        <tr>
-
-                            <td>2</td>
-                            <td>Salary <br>
-                                <span>income</span>
-                            </td>
-                            <td id="income">+20,000</td>
-                            <td>02/01</td>
-                            <td id="balance">24,000</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>House Rent <br>
-                                <span>Bills</span>
-                            </td>
-                            <td id="expense">-5,000</td>
-                            <td>03/01</td>
-                            <td id="balance">19,000</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Bike Insurance <br>
-                                <span>Bills</span>
-                            </td>
-                            <td id="expense">-2,500</td>
-                            <td>05/01</td>
-                            <td id="balance">16,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Debitted <br>
-                                <span>Personal expense</span>
-                            </td>
-                            <td id="expense">-2,000</td>
-                            <td>06/01</td>
-                            <td id="balance">14,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Dresses <br>
-                                <span>Shopping</span>
-                            </td>
-                            <td id="expense">-2000</td>
-                            <td>06/01</td>
-                            <td id="balance">12,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Movie <br>
-                                <span>Entertainment</span>
-                            </td>
-                            <td id="expense">-500</td>
-                            <td>08/01</td>
-                            <td id="balance">12,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Journey to hometown<br>
-                                <span>Travel</span>
-                            </td>
-                            <td id="expense">-1000</td>
-                            <td>12/01</td>
-                            <td id="balance">11,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Tradings <br>
-                                <span>Stocks</span>
-                            </td>
-                            <td id="income">+2000</td>
-                            <td>15/01</td>
-                            <td id="balance">13,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>OTT Subscription<br>
-                                <span>Bills</span>
-                            </td>
-                            <td id="expense">-1000</td>
-                            <td>17/01</td>
-                            <td id="balance">12,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Accessories<br>
-                                <span>Shopping</span>
-                            </td>
-                            <td id="expense">-1000</td>
-                            <td>19/01</td>
-                            <td id="balance">11,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td> Investment<br>
-                                <span>Stocks</span>
-                            </td>
-                            <td id="expense">-2000</td>
-                            <td>22/01</td>
-                            <td id="balance">9,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>lended amount <br>
-                                <span>Income</span>
-                            </td>
-                            <td id="income">+2000</td>
-                            <td>24/01</td>
-                            <td id="balance">11,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>General check up<br>
-                                <span>Health</span>
-                            </td>
-                            <td id="expense">-1000</td>
-                            <td>26/01</td>
-                            <td id="balance">10,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Bike Maintainance<br>
-                                <span>Vehicle</span>
-                            </td>
-                            <td id="expense">-2000</td>
-                            <td>27/01</td>
-                            <td id="balance">8,500</td>
-                            <td><span id="edit_icon"><img src="../images/icons/edit_icon.jpg" alt="icon"></span></td>
-                            <td><span id="delete_icon"><img src="../images/icons/delete_icon.jpg" alt="icon"></span></td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>

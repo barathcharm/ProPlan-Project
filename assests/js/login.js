@@ -19,8 +19,6 @@ form_check.addEventListener("submit",e=>{
         }
     })
     if (check == 1) {
- 
-   
         window.location.href = "./home.html"
         alert("Successfully logged in")
     }

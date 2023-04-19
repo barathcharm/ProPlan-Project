@@ -301,9 +301,10 @@ main {
 /* ------------------Home table------------------ */
 
 .home_transactions table {
-    width: 100%;
+    width: 90%;
     border-spacing: 0px 20px;
     text-align: center;
+    margin: 0px auto;
 
 }
 

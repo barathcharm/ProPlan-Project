@@ -46,7 +46,7 @@
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control input" id="Profession" 
-                            title="Enter the type of occupation" placeholder="Profession" required>
+                            title="Enter the type of occupation" placeholder="Profession" pattern="[A-Za-z]{0,32}" required>
                         <label for="Profession">Profession</label>
                     </div>
 
@@ -60,8 +60,8 @@
 
                     <div class="password">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control input" id="password" pattern="[A-Za-z0-9]{0,10}"
-                                title="Enter a password mixed of uppercase characters, lowercase characters and Numbers"
+                            <input type="password" class="form-control input" id="password" pattern="[A-Za-z0-9]{8,16}"
+                                title="Enter a password mixed of uppercase characters, lowercase characters and Numbers with min 8 characters"
                                 placeholder="Enter password" required>
                             <label for="password">Enter password</label>
                         </div>

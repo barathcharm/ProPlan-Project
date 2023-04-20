@@ -40,7 +40,7 @@ function edit() {
     <input type="tel" id="new_ph_no" pattern=[0-9]{10} value="${active_user["number"]}"> 
     </p> 
     <p>Profession 
-    <input type="text" id="new_profession" value="${active_user["profession"]}"> 
+    <input type="text" id="new_profession" value="${active_user["profession"]}" > 
     </p> 
 
     <button id="save"> 
@@ -58,30 +58,37 @@ function save_details() {
 
         e.preventDefault()
         let new_display_name = document.getElementById("new_display_name").value
-
         let new_name = document.getElementById("new_name").value
         let new_ph_no = document.getElementById("new_ph_no").value
         let new_profession = document.getElementById("new_profession").value
-
-        active_user["display_name"] = new_display_name
-        active_user["name"] = new_name
-        active_user["number"] = new_ph_no
-        active_user["profession"] = new_profession
-        localStorage.setItem("active_user", JSON.stringify(active_user))
-
-        let users = JSON.parse(localStorage.getItem("users"))
-        users.forEach(e => {
-            if (e["email"] == active_user["email"]) {
-
-                e["display_name"] = new_display_name
-                e["name"] = new_name
-                e["number"] = new_ph_no
-                e["profession"] = new_profession
-            }
+        let alpha ="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+        if(alpha.includes(new_profession)){
+            console.log()
+            // active_user["display_name"] = new_display_name
+            // active_user["name"] = new_name
+            // active_user["number"] = new_ph_no
+            // active_user["profession"] = new_profession
+            // localStorage.setItem("active_user", JSON.stringify(active_user))
+    
+            // let users = JSON.parse(localStorage.getItem("users"))
+            // users.forEach(e => {
+            //     if (e["email"] == active_user["email"]) {
+    
+            //         e["display_name"] = new_display_name
+            //         e["name"] = new_name
+            //         e["number"] = new_ph_no
+            //         e["profession"] = new_profession
+            //     }
+            // }
+            // )
+            // console.log(active_user);
+            // localStorage.setItem("users", JSON.stringify(users))
+            // window.location.href ="./profile.html"
         }
-        )
-        console.log(active_user);
-        localStorage.setItem("users", JSON.stringify(users))
-        window.location.href ="./profile.html"
+        else{
+            alert("1.The Name cannot be empty. 2.Phone number should consists of 10 Numbers. 3.The Profession shouldn't be numbers.")
+        }
+
+      
     }
 }

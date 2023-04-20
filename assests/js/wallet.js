@@ -72,7 +72,7 @@ send_otp_request.addEventListener("click", e => {
 }
 )
 
-// ------------------------   Getting deopsited value
+// ------------------------   Getting deposited value
 
 
 done_button.addEventListener("click", e => {
@@ -106,18 +106,28 @@ withdraw_wallet_balance.innerHTML = wallet_balance+"/-"
 //  -----------Withdrawing money from deposit-------
 
 withdraw_money.addEventListener("click",e=>{
+
     e.preventDefault()
     let withdraw_amount = document.querySelector("#withdraw_amount").value
+
     let withdraw_upiid = document.querySelector("#withdraw_upiid").value
-    if (withdraw_amount != "" && withdraw_upiid != "") {
+
+   
+    if (withdraw_amount != "" && withdraw_upiid != ""  ) {
+        if(wallet_balance>=withdraw_amount&& withdraw_amount>0){
+            wallet_balance = active_user["wallet_balance"]??0
+            wallet_balance -= Number(withdraw_amount)
+            active_user["wallet_balance"] =wallet_balance
+    
+            localStorage.setItem("active_user", JSON.stringify(active_user))
+    
+            window.location.href = "./wallet.html"
+        }
+        else{
+            alert("Entered withdraw amount overtakes Wallet balance..! or Enter amount greater than 0")
+        }
         
-        wallet_balance = active_user["wallet_balance"]??0
-        wallet_balance -= Number(withdraw_amount)
-        active_user["wallet_balance"] =wallet_balance
 
-        localStorage.setItem("active_user", JSON.stringify(active_user))
-
-        window.location.href = "./wallet.html"
 
 }})
 

@@ -1,4 +1,4 @@
-active_user = JSON.parse(localStorage.getItem("active_user"))
+active_user = JSON.parse(localStorage.getItem("active_user"))??[]
 
 
 // LOg out Div -------------
@@ -66,3 +66,44 @@ let    total_expense =active_user["total_expense"]?? 0
 
 let display_total_expense =document.getElementById("total_expense")??""
 display_total_expense.innerHTML = total_expense
+
+// Active user set data in the users array in the local storage..!
+
+function setDataInTheLocal(){
+    
+    let users = JSON.parse(localStorage.getItem("users"))
+    let active_user_ = JSON.parse(localStorage.getItem("active_user"))
+    users.forEach((e,index)=>{
+        if(active_user_["email"]==e["email"]){
+            users[index]=active_user_
+        }
+    })
+    localStorage.setItem("users",JSON.stringify(users))
+
+
+}
+
+// DATE IN THE NAV BAR========================
+
+let current_date = localStorage.getItem("current_date")??0
+let date_value = document.getElementById("date_value")
+date_value.innerHTML=current_date
+let date_edit = document.getElementById("date_edit")
+let date_div= document.getElementById("date")
+date_edit.addEventListener("click",e=>{
+    date.innerHTML=`
+    <input type="date" id="new_date">
+    <img src="../images/icons/save_img.png" alt="img" id="save_date">
+    `
+    document.getElementById("new_date").value= localStorage.getItem("current_date")
+    savedate()
+})
+function savedate(){
+    let save_date= document.getElementById("save_date")
+save_date.addEventListener("click",e=>{
+    let new_date=document.getElementById("new_date").value
+    console.log(new_date);
+    localStorage.setItem("current_date",new_date)
+    location.reload()
+})
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="../css/wallet_transaction.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- <link rel="stylesheet" href="../css/wallet.css"> -->
+    <title>Proplan</title>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="../images/icons/proplan_logo.png" alt="logo">
+            <div class="nav_right">
+                <input type="text" id="search" placeholder="Search">
+                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span
+                        id="nav_balance">0/-</span></a>
+                <div id="date"><span id="date_value"></span> <img src="../images/icons/edit_img.png" alt="img" id="date_edit"></div>
+                <span  id="log_out" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
+                    ></span>
+
+         </div>
+         <div class="log_out_div ">
+             <input type="checkbox" id="remember_me" ><label for="remember_me"> Remember me</label>
+             <button id="log_out_button"> Log Out</button>
+         </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- --------------left side div--------------- -->
+        <div class="left_side">
+            <div class="tabs">
+                <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
+                <a href="analytics.html"><img src="../images/icons/statistics.png" alt=""> Analytics</a>
+                <a href="wallet.html" id="walleticon"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
+                <a href="notes.html" id="notesicon"><img src="../images/icons/notes.png" alt="icons">Notes</a>
+                <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
+                <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
+            </div>
+        </div>
+
+        <!-- Center content--------------- -->
+        <div class="transaction">
+            <h2> <img src="../images/icons/left arrow.png" alt="icons" id="go_back_img"> Transations</h2>
+            <div class="transaction_list">
+                <a href="./wallet_transaction.html?page=history" class="underline" >All History</a>
+                <a href="./wallet_transaction.html?page=deposit" class="grey">Deposited</a>
+                <a href="./wallet_transaction.html?page=withdraw" class="grey">Withdrawed</a>
+            </div>
+            <hr>
+            <div class="all_transactions">
+                <!-- <div class="transaction_details">
+                <div class="transaction_data">
+                    <div class="transaction_type">
+                        <img src="../images/icons/arrow_down.png" alt="img" class="data_view_img">
+                        <p class="wallet_transaction_count">3,</p>
+                        <p class="wallet_transaction_deposited">Deposited </p>
+                        <p class="wallet_transaction_amount deposited">+5000</p>
+                    </div>
+                    <div class="transaction_date">
+                        <p>28/09/2023</p>
+                    </div>
+                </div>
+                <div class="extra_details">
+                    <p>Deposited Amount : <span class="d_amount">10000/-</span></p>
+                    <p>Interest Rate : <span class="interest_rate">10%</span></p>
+                    <p>Expected Return : <span class="expected_amount">11000</span></p>
+                    <p>Upiid : <span class="upiid">Barath@okhdfcbank</span></p>
+                    <p>Duration Period : <span class="d_period">6 months</span></p>
+                    <p>Date of Maturity: <span class="d_maturity">28/04/2023</span></p>
+                    <p>Transaction ID : <span class="t_id">10001</span></p>
+                    <p>Remaining Days : <span class="remaining_days"> 180 days</span> </p>
+                    <a href="#">Withdraw amount now &#x2794;</a>
+                </div>
+            </div>
+
+                <div class="transaction_data">
+                    <div class="transaction_type">
+                        <img src="../images/icons/arrow_down.png" alt="img" class="data_view_img">
+                        <p class="wallet_transaction_count">2,</p>
+                        <p class="wallet_transaction_deposited">Deposited </p>
+                        <p class="wallet_transaction_amount deposited">+5000</p>
+                    </div>
+                    <div class="transaction_date">
+                        <p>28/09/2023</p>
+                    </div>
+                </div>
+
+                <div class="transaction_data">
+                    <div class="transaction_type">
+                        <img src="../images/icons/arrow_down.png" alt="img" class="data_view_img">
+                        <p class="wallet_transaction_count">1,</p>
+                        <p class="wallet_transaction_deposited">Withdrawed </p>
+                        <p class="wallet_transaction_amount withdrawed">-5000</p>
+                    </div>
+                    <div class="transaction_date">
+                        <p>28/09/2023</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        </main>
+        </body>
+        <script>
+let go_back_img = document.getElementById("go_back_img")
+go_back_img.addEventListener("click",e=>{
+    window.location.href ="./wallet.html"
+})
+
+//  Showing all the transaction titles--------------
+
+
+let all_transactions = document.querySelector(".all_transactions")
+let transaction_data = JSON.parse(localStorage.getItem("active_user"))["proplan_wallet"]??[]
+console.log(transaction_data);
+// transaction_data.forEach((e,ind)=>{
+    for(let j=transaction_data.length-1;j>=0;j--){
+        let e=transaction_data[j]
+        let maturity_month =Number( e["date"].slice(5,7))+Number(e["maturity_period"].slice(0,1));
+    maturity_day =e["date"].slice(7,e["date"].length)
+    maturity_year=Number( e["date"].slice(0,4))
+    let maturity_period
+    if(maturity_month>12){
+        maturity_month= maturity_month-12
+        
+        maturity_year=Number( e["date"].slice(0,4)) +1
+         maturity_period= maturity_year+"-"+maturity_month+maturity_day
+    }
+    else{
+        maturity_month=maturity_month>10?maturity_month:"0"+maturity_month
+        console.log("0"+maturity_month+"jnh");
+        maturity_period= maturity_year+"-"+maturity_month+maturity_day
+    }
+    console.log(maturity_month);
+    
+
+
+    all_transactions.innerHTML+=`
+    
+  <div class="transaction_details">
+                <div class="transaction_data">
+                    <div class="transaction_type">
+                        <img src="../images/icons/arrow_down.png" alt="img" class="data_view_img">
+                        <p class="wallet_transaction_count"> ${j+1},</p>
+                        <p class="wallet_transaction_deposited"> ${e["type"]} </p>
+                        
+                        <p class="wallet_transaction_amount deposited"> ${e["amount"]}</p>
+                    </div>
+                    <div class="transaction_date">
+                        <p> ${e["date"]}</p>
+                    </div>
+                </div>
+                <div class="extra_details">
+                    <p>Deposited Amount : <span class="d_amount"> ${e["amount"]}/-</span></p>
+                    <p>Interest Rate : <span class="interest_rate"> ${e["interest"]}</span></p>
+                    <p>Expected Return : <span class="expected_amount">${e["expected_amount"]}/-</span></p>
+                    <p>Upiid : <span class="upiid"> ${e["upiId"]}/ ${e["selected_payment_method"]}</span></p>
+                    <p>Duration Period : <span class="d_period"> ${e["maturity_period"]}</span></p>
+                    <p>Date of Maturity: <span class="d_maturity"> ${maturity_period}</span></p>
+                    <p>Transaction ID : <span class="t_id">${e["transaction_id"]}</span></p>
+                    <p>Remaining Days : <span class="remaining_days"> 180 days</span> </p>
+                    <a href="#">Withdraw amount now &#x2794;</a>
+                </div>
+            </div>
+  `
+
+    }
+   
+// })
+// Showing detailed details of the particular div selected
+
+let transaction_data_div =document.querySelectorAll(".transaction_data")
+let extra_details = document.querySelectorAll(".extra_details")
+let data_view_img = document.querySelectorAll(".data_view_img")
+data_view_img.forEach((e,index) => {
+    let count=2
+    e.addEventListener("click",el=>{
+        extra_details[index].classList.toggle("flex")
+        transaction_data_div[index].classList.toggle("noborder")
+        count++
+    let deg = 180 * count
+    data_view_img[index].style.transform = `rotate(${deg}deg)`
+    })
+});
+// let ac= JSON.parse(localStorage.getItem("active_user"))
+// ac["proplan_wallet"]=[]
+// localStorage.setItem("active_user",JSON.stringify(ac))
+        </script>
+        <script src="../js/common.js"></script>
+        </html>
+        

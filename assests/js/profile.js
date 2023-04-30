@@ -61,29 +61,48 @@ function save_details() {
         let new_name = document.getElementById("new_name").value
         let new_ph_no = document.getElementById("new_ph_no").value
         let new_profession = document.getElementById("new_profession").value
-        let alpha ="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
-        if(alpha.includes(new_profession)){
-            console.log()
-            // active_user["display_name"] = new_display_name
-            // active_user["name"] = new_name
-            // active_user["number"] = new_ph_no
-            // active_user["profession"] = new_profession
-            // localStorage.setItem("active_user", JSON.stringify(active_user))
+        let alpha ="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "
+        let check=0
+        console.log(new_profession);
+        for(let k=0;k<new_profession.length;k++){
+        let check_sub=0
+
+            for(let j=0;j<alpha.length;j++){
+                if (new_profession[k]==alpha[j]) {
+                    check_sub =1
+                }
+
+            }
+            if (check_sub==0) {
+               console.log("final");
+
+                check=1
+               break
+            }
+          
+        }
+        if(new_ph_no.length==10&&new_name!=""&&check==0){
+            console.log("sdc")
+            active_user["display_name"] = new_display_name
+            active_user["name"] = new_name
+            active_user["number"] = new_ph_no
+            active_user["profession"] = new_profession
+            localStorage.setItem("active_user", JSON.stringify(active_user))
     
-            // let users = JSON.parse(localStorage.getItem("users"))
-            // users.forEach(e => {
-            //     if (e["email"] == active_user["email"]) {
+            let users = JSON.parse(localStorage.getItem("users"))
+            users.forEach(e => {
+                if (e["email"] == active_user["email"]) {
     
-            //         e["display_name"] = new_display_name
-            //         e["name"] = new_name
-            //         e["number"] = new_ph_no
-            //         e["profession"] = new_profession
-            //     }
-            // }
-            // )
-            // console.log(active_user);
-            // localStorage.setItem("users", JSON.stringify(users))
-            // window.location.href ="./profile.html"
+                    e["display_name"] = new_display_name
+                    e["name"] = new_name
+                    e["number"] = new_ph_no
+                    e["profession"] = new_profession
+                }
+            }
+            )
+            console.log(active_user);
+            localStorage.setItem("users", JSON.stringify(users))
+            window.location.href ="./profile.html"
         }
         else{
             alert("1.The Name cannot be empty. 2.Phone number should consists of 10 Numbers. 3.The Profession shouldn't be numbers.")

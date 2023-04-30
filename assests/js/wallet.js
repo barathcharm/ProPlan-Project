@@ -23,6 +23,7 @@ function bg_blur() {
     document.querySelector(".left_side").style.filter = "blur(2.5px)"
     document.querySelector(".banner").style.filter = "blur(2.5px)"
     document.querySelector(".content1").style.filter = "blur(2.5px)"
+    document.querySelector(".main2").style.filter = "blur(2.5px)"
 }
 
 
@@ -32,16 +33,43 @@ deposit_button.addEventListener("click", e => {
     
     bg_blur();
 })
+// Expected amount display----------
+let expected_amount;
+let expected_amount_para= document.getElementById("expected_amount")
+let three_month = document.getElementById("3_mon")
+three_month.addEventListener("click",e=>{
+    let deposit_amount = document.querySelector("#deposit_amount").value
+    expected_amount=((Number(deposit_amount)/100) * 5)+Number(deposit_amount)
+    expected_amount_para.innerHTML=`  ${deposit_amount} * 5% (Interest) = <p id="expected_amount_value"> ₹ ${expected_amount}/-</p>`
+
+
+})
+
+let six_month = document.getElementById("6_mon")
+six_month.addEventListener("click",e=>{
+    let deposit_amount = document.querySelector("#deposit_amount").value
+    expected_amount=((Number(deposit_amount)/100) * 10)+Number(deposit_amount)
+    expected_amount_para.innerHTML=`  ${deposit_amount} * 10% (Interest) = <p id="expected_amount_value"> ₹ ${expected_amount}/-</p>`
+    // console.log(expected_amount,"dc");
+
+})
 
 
 // For selecting one payment method
 
-let selected_payment_method = document.getElementsByClassName("step2_list")[0,1].querySelectorAll("div")
-selected_payment_method.forEach(e => {
-    e.addEventListener("click", el => {
-        e.style.backgroundColor = "rgb(244, 244, 244)"
-    }
-    )
+let payment_method_label= document.querySelectorAll(".payment_method>label")
+let payment_method_div = document.querySelectorAll(".payment_method")
+payment_method_label.forEach((e,index)=>{
+    e.addEventListener("click",el=>{
+            payment_method_div[index].style.backgroundColor = "rgb(244, 244, 244)"
+            
+            payment_method_div.forEach((er,ind)=>{
+                if(ind!=index){
+                    payment_method_div[ind].style.backgroundColor = "white"
+                }
+            })    
+    })
+
 })
 
 
@@ -54,6 +82,7 @@ send_request.addEventListener("click", e => {
     if (deposit_amount != "" && upiId != "") {
         send_request_div.classList.remove("not_view")
         console.log(deposit_amount);
+     
     }
 }
 )
@@ -67,29 +96,63 @@ send_otp_request.addEventListener("click", e => {
 
     if (withdraw_amount != "" && withdraw_upiid != "") {
         send_request_otp.classList.remove("not_view")
-        console.log(withdraw_amount);
+        // console.log(withdraw_amount);
+        // console.log(expected_amount,"dc");
     }
 }
 )
 
-// ------------------------   Getting deposited value
+// ------------------------   Getting deposited values and adding in the local storage
 
-
+// let transaction_id
+//  transaction_id =10000
 done_button.addEventListener("click", e => {
     e.preventDefault()
     let deposit_amount = document.querySelector("#deposit_amount").value
     let upiId = document.querySelector("#upiid").value
-    if (deposit_amount != "" && upiId != "") {
-        
+    let maturity_period = document.querySelector(".maturity_period:checked").value
+    let selected_payment_method= document.querySelector(".payment_method input:checked").value
+    console.log(selected_payment_method);
+    let date= localStorage.getItem("current_date")
+
+    // console.log(expected_amount,"ttt");
+    if (deposit_amount != "" && upiId != "" && maturity_period) {
+        console.log("sdfvc");
+        let interest = maturity_period=="6 Months"?
+        "10 %" : "5%"
+        console.log(interest);
         wallet_balance = active_user["wallet_balance"]??0
         wallet_balance += Number(deposit_amount)
         active_user["wallet_balance"] =wallet_balance
 
+        let proplan_wallet = active_user["proplan_wallet"]??[]
+        let transaction_id =active_user["proplan_wallet"][proplan_wallet.length-1]["transaction_id"]??1000
+        console.log(transaction_id,"bwh");
+        transaction_id+=1
+        console.log(transaction_id);
+        let wallet_transaction= {
+            type:"Deposited",
+            upiId,
+            amount:deposit_amount,
+            expected_amount,
+            maturity_period,
+            wallet_balance,
+            interest,
+            selected_payment_method,
+            date,
+            transaction_id
+        }
+        proplan_wallet.push(wallet_transaction)
+        active_user["proplan_wallet"]=proplan_wallet
+
         localStorage.setItem("active_user", JSON.stringify(active_user))
+        setDataInTheLocal()
+       location.reload()
 
-        window.location.href = "./wallet.html"
 
-
+    }
+    else{
+        alert("The input fields cannot be empty!")
     }
 
 })
@@ -112,6 +175,8 @@ withdraw_money.addEventListener("click",e=>{
 
     let withdraw_upiid = document.querySelector("#withdraw_upiid").value
 
+    let otp=document.getElementById("otp").value
+
    
     if (withdraw_amount != "" && withdraw_upiid != ""  ) {
         if(wallet_balance>=withdraw_amount&& withdraw_amount>0){
@@ -119,7 +184,19 @@ withdraw_money.addEventListener("click",e=>{
             wallet_balance -= Number(withdraw_amount)
             active_user["wallet_balance"] =wallet_balance
     
+            let proplan_wallet = active_user["proplan_wallet"]??[]
+            let wallet_transaction= {
+                type:"Withdrawed",
+                upiId:withdraw_upiid,
+                amount:withdraw_amount,
+                otp,
+                wallet_balance
+            }
+            proplan_wallet.push(wallet_transaction)
+            active_user["proplan_wallet"]=proplan_wallet
+    
             localStorage.setItem("active_user", JSON.stringify(active_user))
+            setDataInTheLocal()
     
             window.location.href = "./wallet.html"
         }
@@ -134,20 +211,45 @@ withdraw_money.addEventListener("click",e=>{
 //-------------transactions_view by clicking image
 
 
-let count = 2
-let transactions_view = document.getElementById("transactions_view")
-let transactions_table = document.querySelector(".transactions_table")
-transactions_view.addEventListener("click", e => {
+// let count = 2
+// let transactions_view = document.getElementById("transactions_view")
+// let transactions_table = document.querySelector(".transactions_table")
+// transactions_view.addEventListener("click", e => {
 
-    count++
-    let deg = 180 * count
-    transactions_view.style.transform = `rotate(${deg}deg)`
-    transactions_table.classList.toggle("not_view")
-})
+//     count++
+//     let deg = 180 * count
+//     transactions_view.style.transform = `rotate(${deg}deg)`
+//     transactions_table.classList.toggle("not_view")
+// })
 
 
 
 
 // let wallet_balance = JSON.parse(localStorage.getItem("wallet_balance"))
 
-wallet_balance_amount.innerHTML = wallet_balance + "/-"
+// wallet_balance_amount.innerHTML = wallet_balance + "/-"
+
+// //  values in the table./.
+
+
+// wallet_table_body= document.getElementById("wallet_table_body")
+// for(let i=active_user["proplan_wallet"].length-1;i>=0;i--){
+//     wallet_table_body.innerHTML+=
+//         `
+//         <tr>
+//         <td>${i+1}</td>
+//         <td id=${active_user["proplan_wallet"][i]["type"]}>${active_user["proplan_wallet"][i]["type"]}</td>
+//         <td>${active_user["proplan_wallet"][i]["amount"]}</td>
+//         <td>${active_user["proplan_wallet"][i]["upiId"]}</td>
+//         <td>22/04/2023</td>
+//         <td>${active_user["proplan_wallet"][i]["wallet_balance"]}</td>
+ 
+//     </tr>
+//         `
+// }
+
+// let actibe= JSON.parse(localStorage.getItem("active_user"))
+// console.log(actibe,"uy")
+// actibe["proplan_wallet"] =[]
+// localStorage.setItem("active_user",JSON.stringify(actibe))
+

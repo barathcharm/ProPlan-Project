@@ -1,0 +1,143 @@
+#date img{
+    width: 30px;
+    margin: 0px 3px;
+}
+#date{
+    display: flex;
+    align-items: center;
+}
+#walleticon{     
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #f0f1f1;
+
+}
+.transaction{
+    width: 83%;
+    margin: 150px 25px 0px 0px ;
+    overflow-y: hidden;
+    max-height: 740px;
+    overflow-y: scroll;
+    /* scrollbar-color: white; */
+}
+.transaction_list{
+    display: flex;
+    margin: 30px 0px 0px 0px;
+}
+.transaction_list a{
+    margin: 20px 20px 20px 10px;
+    color: rgb(27, 27, 27);
+    font-weight: 550;
+    font-size: 17px;
+}
+hr{
+    border: 1px solid rgb(213, 213, 213);
+}
+.transaction> h2{
+display: flex;
+align-items: center;
+}
+.transaction> h2 img{
+    width: 25px;
+    height: 23px;
+    margin: 0px 10px 0px 0px;
+    cursor: pointer;
+}
+.transaction_type{
+    display: flex;
+    align-items: center;
+}
+.transaction_data{
+    width: 95%;
+    margin: 0px auto;
+    height: 50px;
+    padding: 8px 15px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: solid grey;
+    border-width: 0px 0px .5px 0px;
+
+}
+.noborder{
+    border: none;
+}
+.transaction_type img{
+    width: 17px;
+    cursor: pointer;
+}
+.wallet_transaction_count{
+    margin: 0px 5px 0px 20px;
+    font-size: 18px;
+    color: rgb(52, 52, 52);
+}
+.wallet_transaction_amount{
+    margin: 0px 10px;
+}
+.wallet_transaction_deposited{
+font-weight: 550;
+color: rgb(59, 39, 14);
+}
+.transaction_date{
+font-size: 15px;
+    color: rgb(93, 93, 93);
+}
+.withdrawed{
+    color: #ef6c52;
+
+}
+.deposited{
+    color: #3dbe52;
+} 
+.grey{
+    color: rgb(97, 97, 97);
+}
+/* a.underline::after{
+    width: 100%;
+    height: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: #ef6c52;
+    display: block;
+     content: ""; 
+     transition: 1s; 
+} */
+.extra_details{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 95%;
+    padding: 0px 15px;
+    margin: 0px auto;
+    justify-content: space-between;
+    border: solid grey;
+    border-width: 0px 0px .5px 0px;
+    border-radius: 10px;
+    display: none;
+}
+.extra_details p{
+    display: flex;
+    align-items:center;
+    width: 300px;
+    /* border: 1px solid black; */
+    margin: 10px 20px;
+    font-size: 13px;
+    font-weight: 550;
+    color: rgb(89, 89, 89);
+}
+.extra_details p span{
+    font-size: 18px;
+    color: rgb(47, 27, 27);
+}
+.extra_details a{
+margin: 10px 20px;
+width: 300px;
+color: #ef6c52;
+font-weight: 550;
+}
+.transaction_details span{
+    margin: 0px 5px;
+}

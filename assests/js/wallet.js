@@ -8,15 +8,17 @@ let done_button = document.querySelector("#done")
 let active_user= JSON.parse(localStorage.getItem("active_user"))
 
 
-let withdraw_button = document.getElementById("withdraw_button")
 let withdraw_form = document.querySelector(".withdraw_form")
 
-let wallet_balance_amount = document.querySelector("#wallet_balance_amount")
 let  withdraw_wallet_balance = document.getElementById("withdraw_wallet_balance")
 // let wallet_balance
 
-let withdraw_money = document.getElementById("withdraw_money")
+let withdraw_button = document.getElementById("withdraw_button")
+let wallet_balance_amount_span = document.getElementById("wallet_balance_amount")
+let wallet_balance_amount = JSON.parse(localStorage.getItem("active_user"))["wallet_balance"]
+wallet_balance_amount_span.innerHTML = wallet_balance + "/-"
 
+let withdraw_money = document.getElementById("withdraw_money")
 
 function bg_blur() {
     document.querySelector("header").style.filter = "blur(2.5px)"
@@ -90,17 +92,17 @@ send_request.addEventListener("click", e => {
 // sending otp request to withdraw amount-----------
 
 
-send_otp_request.addEventListener("click", e => {
-    let withdraw_amount = document.querySelector("#withdraw_amount").value
-    let upiId = document.querySelector("#withdraw_upiid").value
+// send_otp_request.addEventListener("click", e => {
+//     let withdraw_amount = document.querySelector("#withdraw_amount").value
+//     let upiId = document.querySelector("#withdraw_upiid").value
 
-    if (withdraw_amount != "" && withdraw_upiid != "") {
-        send_request_otp.classList.remove("not_view")
-        // console.log(withdraw_amount);
-        // console.log(expected_amount,"dc");
-    }
-}
-)
+//     if (withdraw_amount != "" && withdraw_upiid != "") {
+//         send_request_otp.classList.remove("not_view")
+//         // console.log(withdraw_amount);
+//         // console.log(expected_amount,"dc");
+//     }
+// }
+// )
 
 // ------------------------   Getting deposited values and adding in the local storage
 
@@ -126,7 +128,7 @@ done_button.addEventListener("click", e => {
         active_user["wallet_balance"] =wallet_balance
 
         let proplan_wallet = active_user["proplan_wallet"]??[]
-        let transaction_id =active_user["proplan_wallet"][proplan_wallet.length-1]["transaction_id"]??1000
+        let transaction_id =active_user["proplan_wallet"]?active_user["proplan_wallet"][proplan_wallet.length-1]["transaction_id"]:1000
         console.log(transaction_id,"bwh");
         transaction_id+=1
         console.log(transaction_id);
@@ -140,7 +142,8 @@ done_button.addEventListener("click", e => {
             interest,
             selected_payment_method,
             date,
-            transaction_id
+            transaction_id,
+            plan_status:true
         }
         proplan_wallet.push(wallet_transaction)
         active_user["proplan_wallet"]=proplan_wallet
@@ -159,54 +162,54 @@ done_button.addEventListener("click", e => {
 // ---------------------viewing Withdraw form----------    
 
 withdraw_button.addEventListener("click", e => {
-    withdraw_form.classList.add("view")
+    // withdraw_form.classList.add("view")
 
-    bg_blur();
+    // bg_blur();
+    window.location.href ="./wallet_transaction.html?page=history"
 })
-withdraw_wallet_balance.innerHTML = wallet_balance+"/-"
-
+// withdraw_wallet_balance.innerHTML = wallet_balance+"/-"
 
 //  -----------Withdrawing money from deposit-------
 
-withdraw_money.addEventListener("click",e=>{
+// withdraw_money.addEventListener("click",e=>{
 
-    e.preventDefault()
-    let withdraw_amount = document.querySelector("#withdraw_amount").value
+//     e.preventDefault()
+//     let withdraw_amount = document.querySelector("#withdraw_amount").value
 
-    let withdraw_upiid = document.querySelector("#withdraw_upiid").value
+//     let withdraw_upiid = document.querySelector("#withdraw_upiid").value
 
-    let otp=document.getElementById("otp").value
+//     let otp=document.getElementById("otp").value
 
    
-    if (withdraw_amount != "" && withdraw_upiid != ""  ) {
-        if(wallet_balance>=withdraw_amount&& withdraw_amount>0){
-            wallet_balance = active_user["wallet_balance"]??0
-            wallet_balance -= Number(withdraw_amount)
-            active_user["wallet_balance"] =wallet_balance
+//     if (withdraw_amount != "" && withdraw_upiid != ""  ) {
+//         if(wallet_balance>=withdraw_amount&& withdraw_amount>0){
+//             wallet_balance = active_user["wallet_balance"]??0
+//             wallet_balance -= Number(withdraw_amount)
+//             active_user["wallet_balance"] =wallet_balance
     
-            let proplan_wallet = active_user["proplan_wallet"]??[]
-            let wallet_transaction= {
-                type:"Withdrawed",
-                upiId:withdraw_upiid,
-                amount:withdraw_amount,
-                otp,
-                wallet_balance
-            }
-            proplan_wallet.push(wallet_transaction)
-            active_user["proplan_wallet"]=proplan_wallet
+//             let proplan_wallet = active_user["proplan_wallet"]??[]
+//             let wallet_transaction= {
+//                 type:"Withdrawed",
+//                 upiId:withdraw_upiid,
+//                 amount:withdraw_amount,
+//                 otp,
+//                 wallet_balance
+//             }
+//             proplan_wallet.push(wallet_transaction)
+//             active_user["proplan_wallet"]=proplan_wallet
     
-            localStorage.setItem("active_user", JSON.stringify(active_user))
-            setDataInTheLocal()
+//             localStorage.setItem("active_user", JSON.stringify(active_user))
+//             setDataInTheLocal()
     
-            window.location.href = "./wallet.html"
-        }
-        else{
-            alert("Entered withdraw amount overtakes Wallet balance..! or Enter amount greater than 0")
-        }
+//             window.location.href = "./wallet.html"
+//         }
+//         else{
+//             alert("Entered withdraw amount overtakes Wallet balance..! or Enter amount greater than 0")
+//         }
         
 
 
-}})
+// }})
 
 //-------------transactions_view by clicking image
 
@@ -224,10 +227,6 @@ withdraw_money.addEventListener("click",e=>{
 
 
 
-
-// let wallet_balance = JSON.parse(localStorage.getItem("wallet_balance"))
-
-// wallet_balance_amount.innerHTML = wallet_balance + "/-"
 
 // //  values in the table./.
 

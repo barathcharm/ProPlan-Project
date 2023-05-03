@@ -54,7 +54,7 @@ box-shadow: rgb(146, 146, 146) -15px 0px 15px -15px;
     position: relative;
     margin-top: 50px;
 }
-.right_content p,.right_content1 p{
+.right_content> p,.right_content1> p{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -135,3 +135,35 @@ box-shadow: rgb(146, 146, 146) -15px 0px 15px -15px;
 .view{
     display: block;
 }
+/* budget input */
+datalist {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    /* writing-mode: vertical-lr; */
+    width: 90%;
+    font-weight: 600;
+    color: rgb(60, 60, 60);
+    font-size: 12px;
+
+  }
+  #budget{
+    display: flex;
+    justify-content: space-between;
+  }
+  #budget_input{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 63%;
+  }
+  #budget_input input,  #budget_input datalist{
+    width: 100%;
+
+  }
+  #budget p{
+    color: rgb(67, 67, 67);
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 1000;
+  }

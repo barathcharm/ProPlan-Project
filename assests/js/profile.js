@@ -18,6 +18,7 @@ document.getElementById("display_name").innerHTML = active_user["display_name"]
 document.getElementById("email").innerHTML = active_user["email"]
 document.getElementById("ph_no").innerHTML = active_user["number"]
 document.getElementById("profession").innerHTML = active_user["profession"]
+document.getElementById("budget_value").innerHTML = active_user["budget"]+"%"
 }
 let edit_button = document.querySelector("#edit")
 edit_button.addEventListener("click", edit)
@@ -42,6 +43,20 @@ function edit() {
     <p>Profession 
     <input type="text" id="new_profession" value="${active_user["profession"]}" > 
     </p> 
+    <div id="budget">
+    <p>Monthly budget</p>
+    <div id="budget_input">
+    <input type="range" id="budget_range"  min="10" max="90" step="5" list="budget_range_list" value=${active_user["budget"]} required>
+
+    <datalist id="budget_range_list">
+        <option value="10">10%</option>
+        <option value="30">30%</option>
+        <option value="50">50%</option>
+        <option value="70">70%</option>
+        <option value="90">90%</option>
+    </datalist>
+    </div>
+    </div>
 
     <button id="save"> 
         <img src="../images/icons/save_icon.png" alt="icon"> 
@@ -61,6 +76,7 @@ function save_details() {
         let new_name = document.getElementById("new_name").value
         let new_ph_no = document.getElementById("new_ph_no").value
         let new_profession = document.getElementById("new_profession").value
+        let new_budget =  document.getElementById("budget_range").value
         let alpha ="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "
         let check=0
         console.log(new_profession);
@@ -87,6 +103,7 @@ function save_details() {
             active_user["name"] = new_name
             active_user["number"] = new_ph_no
             active_user["profession"] = new_profession
+            active_user["budget"]=new_budget
             localStorage.setItem("active_user", JSON.stringify(active_user))
     
             let users = JSON.parse(localStorage.getItem("users"))
@@ -97,6 +114,7 @@ function save_details() {
                     e["name"] = new_name
                     e["number"] = new_ph_no
                     e["profession"] = new_profession
+                    e["budget"]=new_budget
                 }
             }
             )

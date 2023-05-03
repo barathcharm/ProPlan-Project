@@ -180,6 +180,7 @@ border: none;
     border-radius: 50%;
     color: white;
     margin:0px 15px 0px 15px ;
+    color: #dee1e5;
 }
 .step3 p span{
     padding: 7px 15px;
@@ -297,10 +298,6 @@ input::-webkit-inner-spin-button {
 
 }
 .view {
-    display:block;
-    
-    transition: 1s;
-}.view {
     display:block !important;
     transition: 1s;
 }

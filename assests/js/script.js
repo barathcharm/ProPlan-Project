@@ -1,3 +1,92 @@
+//      Setting budget------------------
+let ac_user=JSON.parse(localStorage.getItem("active_user"))
+// let current_date = localStorage.getItem("current_date")
+// delete ac_user['budget']
+// localStorage.setItem("active_user",JSON.stringify(ac_user))
+if(!ac_user["budget"]){
+    budgetform()
+
+}
+
+function budgetform(){
+    backgroundblur()
+    document.body.innerHTML+=`
+    <div class="budget_div">
+    <h3>You are almost there!</h3>
+    <hr>
+    <p>Set a Monthly Budget for your Expenses </p>
+    <input type="range" id="budget_range"  min="10" max="90" step="5" list="budget_range_list" value="80" required>
+    <datalist id="budget_range_list">
+        <option value="10">10%</option>
+        <option value="30">30%</option>
+        <option value="50">50%</option>
+        <option value="70">70%</option>
+        <option value="90">90%</option>
+    </datalist>
+    <p>Selected Budget =<span id="selected_budget"> 80% </span> </p>
+    <div class="budget_note">
+        <p><span>!NOTE:</span> If your expenses are about to reach your monthly budget, you will receive an email.</p>
+    </div>
+    <p id="done_budget">Done</p>
+</div>
+    `
+    let selected_budget= document.getElementById("selected_budget")
+    let budget_range= document.getElementById("budget_range")
+    budget_range.addEventListener("input", e=>{
+        selected_budget.innerHTML=budget_range.value+"%"
+    })
+    
+    let done_budget = document.getElementById("done_budget")
+    done_budget.addEventListener("click",e=>{
+       let budget_value= budget_range.value
+      
+       ac_user["budget"]=budget_value 
+       localStorage.setItem("active_user",JSON.stringify(ac_user))
+       location.reload()
+    
+    })
+} 
+//  Budget div in the home center page and sending mail=====
+
+let budget_percentage =document.getElementById("budget_percentage")
+
+let expenses_allowed =document.getElementById("expenses_allowed")
+
+
+budget_percentage.innerHTML=ac_user["budget"]+"%"
+
+expenses_allowed.innerHTML=(ac_user["total_income"]/100)*ac_user["budget"]
+let warning_budget = ac_user["budget"]-10
+//  Sending email if the expenses exceeds
+if(ac_user["total_expense"]>(ac_user["total_income"]/100)*warning_budget){
+
+    let to= ac_user["email"]
+    let subject = `Hello ${ac_user["name"]} Your expenses are nearly to reach your monthly budget !`
+    let body =`
+    Hello ${ac_user["name"]} <br> Your total income for this month untill ${current_date} is ${ac_user["total_income"]} <br> Your budget for this month is ${ac_user["budget"]} which is ${(ac_user["total_income"]/100)*ac_user["budget"]} <br>Your actual expenses for this month is ${ac_user["total_expense"]} <br><br> <h3>Its time to take a look at your expenses before it meets your budget for this month `
+
+    sendEmail(to,subject,body)
+    alert("Its time to take a look at your expenses before it meets your budget for this month")
+}
+if(ac_user["total_expense"]>(ac_user["total_income"]/100)*ac_user["budget"]){
+
+    let to= ac_user["email"]
+    let subject = `Hello ${ac_user["name"]} Your expenses had reached your monthly budget !`
+    let body =`
+    Hello ${ac_user["name"]} <br> Your total income for this month untill ${current_date} is ${ac_user["total_income"]} <br> Your budget for this month is ${ac_user["budget"]} which is ${(ac_user["total_income"]/100)*ac_user["budget"]} <br>Your actual expenses for this month is ${ac_user["total_expense"]} <br><br> <h3>The Expenses have overataked your monthly budget. Kindly ensure to control your expenses `
+
+    sendEmail(to,subject,body)
+    alert("The Expenses have overataked your monthly budget. Kindly ensure to control your expenses")
+}
+
+// Background blur function---------
+
+function backgroundblur(){
+    document.querySelector("header").style.filter = "blur(2.5px)"
+    document.querySelector(".left_side").style.filter = "blur(2.5px)"
+    document.querySelector(".right_side").style.filter = "blur(2.5px)"
+    document.querySelector(".center_side").style.filter = "blur(2.5px)"
+}
 
 //      Viewing Income form
 let add_income = document.getElementById("add_income")
@@ -6,10 +95,7 @@ add_income.addEventListener("click", e => {
 
     let form1 = document.getElementsByClassName("add_income_form");
     form1[0].classList.add("view")
-    document.querySelector("header").style.filter = "blur(2.5px)"
-    document.querySelector(".left_side").style.filter = "blur(2.5px)"
-    document.querySelector(".right_side").style.filter = "blur(2.5px)"
-    document.querySelector(".center_side").style.filter = "blur(2.5px)"
+backgroundblur()
 })
 
 // Viewing Expense form
@@ -19,10 +105,7 @@ let add_expense = document.getElementById("add_expense")
 add_expense.addEventListener("click", e => {
     let form1 = document.getElementsByClassName("add_expense_form");
     form1[0].classList.add("view")
-    document.querySelector("header").style.filter = "blur(2.5px)"
-    document.querySelector(".left_side").style.filter = "blur(2.5px)"
-    document.querySelector(".right_side").style.filter = "blur(2.5px)"
-    document.querySelector(".center_side").style.filter = "blur(2.5px)"
+backgroundblur()
 })
 
 //---------------Adding income lists-------------------
@@ -35,7 +118,7 @@ add_income_submit[0].addEventListener("submit",e=> {
         let income_type = document.getElementById("income_type").value
         let income_category = document.querySelector('input[name="income_category"]:checked').value;
         let income_amount = document.getElementById("income_amount").value
-        let date = new Date().toLocaleDateString();
+        let date = localStorage.getItem("current_date")
         let home_table_body = document.getElementById("home_table_body")
         let active_user =JSON.parse(localStorage.getItem("active_user"))
         let total_income = active_user["total_income"]?? 0
@@ -90,7 +173,7 @@ add_expense_submit[0].addEventListener("submit", e => {
         let expense_type = document.getElementById("expense_type").value
         let expense_category = document.querySelector('input[name="expense_category"]:checked').value;
     
-        let date = new Date().toLocaleDateString();
+        let date = localStorage.getItem("current_date")
         let home_table_body = document.getElementById("home_table_body")
       
         let total_expense = active_user["total_expense"]?? 0
@@ -145,7 +228,7 @@ for (let i = 0; i < transaction_list.length; i++) {
         <span >${transaction_list[i]["category"]}</span>
     </td>
     <td id="${transaction_list[i]["id"]}">${transaction_list[i]["amount"]}</td>
-    <td>27/01</td>
+    <td>${transaction_list[i]["date"]}</td>
     <td id="balance">${transaction_list[i]["total_balance"]}</td>
     
     </tr>`
@@ -191,11 +274,12 @@ let welcome_name = document.getElementById("name")
 welcome_name.innerHTML=JSON.parse(localStorage.getItem("active_user")).name+" !"
 // Doughnut chart in home page------------
 
-var xValues = ["Expense", "Balance"];
-var yValues = [total_expense, total_balance];
+var xValues = ["Expense","Remaining Budget amount", "Balance "];
+var yValues = [total_expense,((ac_user["total_income"]/100)*ac_user["budget"])-total_expense, total_balance];
 var barColors = [
-    "#f68685",
-    "#ececec",
+    "#f27674",
+    "#f7b1b0",
+"#dee1e5"
 ];
 
 new Chart("homechart", {

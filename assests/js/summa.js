@@ -73,74 +73,76 @@
 
 
 
-function processData(input) {
-  //Enter your code here
-  let value = {
-    0: ' ',
+// function processData(input) {
+//   //Enter your code here
+//   let value = {
+//     0: ' ',
 
-    1: '',
+//     1: '',
 
-    2: 'abc',
+//     2: 'abc',
 
-    3: 'def',
+//     3: 'def',
 
-    4: 'ghi',
+//     4: 'ghi',
 
-    5: 'jkl',
+//     5: 'jkl',
 
-    6: 'mno',
+//     6: 'mno',
 
-    7: 'pars',
+//     7: 'pars',
 
-    8: 'tuv',
+//     8: 'tuv',
 
-    9: 'wxyz',
-  }
-  let given = input
-  console.log(given[1]);
+//     9: 'wxyz',
+//   }
+//   let given = input
+//   console.log(given[1]);
 
 
-  let given1 = value[given[1]]
-  let given2 = String(value[given[2]])
-  console.log(value[0],"dec");
-  console.log(given2,"2");
-      console.log(given2[0],"29087");
+//   let given1 = value[given[1]]
+//   let given2 = String(value[given[2]])
+//   console.log(value[0],"dec");
+//   console.log(given2,"2");
+//       console.log(given2[0],"29087");
 
-  console.log(given[1], given[2], value[given[1]], given1, given1.length, String(value[given[2]]), given2, given2.length);
-  let output = ""
-  if (given1.length >= 1) {
-    console.log("if open");
-    for (let i = 0; i < given1.length; i++) {
-      if (given2.length >= 1) {
-        for (let j = 0; j < given2.length; j++) {
-          let values = ""
-          values += ' "' + given1[i] + given2[j] + '"' + ","
-          console.log(given2[j], "if")
-          output += values
-        }
-      }
-      else {
-        let values = ""
-        values += ' "' + given1[i] + '"' + ","
-        console.log(given2[j],"if")
-        output += values
-      }
-    }
-  }
-  else {
-    // console.log("else open");
-    for (let i = 0; i < 1; i++) {
-      for (let j = 0; j < given2.length; j++) {
-        let values = ""
-        values += ' "' + given2[j] + '"' + ","
-        console.log(given2[j], "else")
-        output += values
-      }
-    }
-  }
-  output = output.slice(0, (output.length - 1))
-  output += "]"
-  let temp = "["
-  output = temp + (output.slice(1, output.length))
-  console.log(output);
-}
+//   console.log(given[1], given[2], value[given[1]], given1, given1.length, String(value[given[2]]), given2, given2.length);
+//   let output = ""
+//   if (given1.length >= 1) {
+//     console.log("if open");
+//     for (let i = 0; i < given1.length; i++) {
+//       if (given2.length >= 1) {
+//         for (let j = 0; j < given2.length; j++) {
+//           let values = ""
+//           values += ' "' + given1[i] + given2[j] + '"' + ","
+//           console.log(given2[j], "if")
+//           output += values
+//         }
+//       }
+//       else {
+//         let values = ""
+//         values += ' "' + given1[i] + '"' + ","
+//         console.log(given2[j],"if")
+//         output += values
+//       }
+//     }
+//   }
+//   else {
+//     // console.log("else open");
+//     for (let i = 0; i < 1; i++) {
+//       for (let j = 0; j < given2.length; j++) {
+//         let values = ""
+//         values += ' "' + given2[j] + '"' + ","
+//         console.log(given2[j], "else")
+//         output += values
+//       }
+//     }
+//   }
+//   output = output.slice(0, (output.length - 1))
+//   output += "]"
+//   let temp = "["
+//   output = temp + (output.slice(1, output.length))
+//   console.log(output);
+// }
+
+

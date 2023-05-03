@@ -107,3 +107,27 @@ save_date.addEventListener("click",e=>{
     location.reload()
 })
 }
+// Mail sending function----------
+
+    function sendEmail(to,subject,body) {
+    Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "proplan2023@gmail.com",
+        Password: "9ED2566E1ADC31BAA6533970D825CD09C348",
+        To: to,
+        From: "proplan2023@gmail.com",
+        Subject: subject,
+        Body: body,
+        // Attachments: [
+        // {
+        //     name: "File_Name_with_Extension",
+        //     path: "Full Path of the file"
+        // }]
+    })
+        .then(function (message) {
+        alert("Mail has been sent successfully")
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }

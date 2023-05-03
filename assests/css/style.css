@@ -104,6 +104,7 @@ nav >img {
     font-weight: 600;
     color:rgb(50, 50, 50) ;
 }
+
 /* -----------Main Content Starts--------- */
 main {
     display: flex;
@@ -115,7 +116,7 @@ main {
 
 .left_side {
     width: 13%;
-    margin-top: 110px;
+    margin-top: 100px;
    
 }
 
@@ -187,21 +188,33 @@ main {
 }
 
 .add {
-    margin-right: 50px;
+    /* margin-right: 50px; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-.add h4 {
-    margin-top: 10px;
+.stats{
+    display: flex;
 }
+.stats h4, .stats p{
+    margin:0px 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.stats p span{
+color:#306388;
+}
+.stats span{
+    font-size: 15px;
+}
+
 .add h4:nth-of-type(1) span{
     color: #e76967;
 }
 .add h4:nth-of-type(2) span{
     color: rgb(91, 197, 91) ;
 }
+
 .add div {
     display: flex;
     align-items: center;
@@ -223,6 +236,96 @@ main {
 
 .home_transactions {
     margin-top: 40px;
+}
+/* Setting budget div----------------------- */
+.budget_div{
+    position: fixed;
+    top: 130px;
+    left: 500px;
+    width: 500px;
+    height: 280px;
+    padding: 20px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    z-index: 5;
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+}
+.budget_div hr{
+    margin-top: 7px;
+}
+.budget_div input{
+    width: 90%;
+    margin: 0px auto;
+}
+.budget_div >p:nth-of-type(1){
+font-size: 14px;
+font-weight: 600;
+color: #363232;
+margin: 10px 0px;
+}
+.budget_div >p:nth-of-type(2){
+    font-size: 14px;
+    font-weight: 600;
+    color: #363232;
+    margin: 10px 0px;
+ }
+ .budget_div >p:nth-of-type(3){
+   width: 20%;
+   margin: 10px auto;
+   font-size: 15px;
+   background-color: #0075ff;
+   color: white;
+   padding: 5px 0px;
+   text-align: center;
+   font-weight: 600;
+   border-radius: 5px;
+cursor: pointer;
+
+ }
+ #selected_budget{
+    font-size: 16px;
+    color: #0075ff;
+ }
+datalist {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    /* writing-mode: vertical-lr; */
+    width: 90%;
+    font-weight: 600;
+    color: rgb(60, 60, 60);
+    font-size: 12px;
+
+  }
+  .budget_note{
+   margin: 10px 0px;
+   color: red;
+   
+  }
+  .budget_note span{
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .budget_note p{
+    font-size: 12px;
+
+  }
+  /* Budget div in left side */
+
+.budget{
+    padding: 15px;
+    box-sizing: border-box;
+
+}
+.budget p{
+    font-size: 12px;
+}
+.budget p span{
+display: block;
+font-size: 15px;
+font-weight: 600;
 }
 /*---------------- Adding income form -------------*/
 .add_income_form, .add_expense_form{

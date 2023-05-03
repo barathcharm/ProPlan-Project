@@ -42,6 +42,7 @@
                 <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
             </div>
         </div>
+
        <!----------------Add income expense form--------------->
         
         <form class="add_income_form ">
@@ -75,7 +76,7 @@
             <a href="./home.html" id="back_button"> Back</a>
             </div>
         </form>
-
+<!-- Adding expense form--------------------- -->
         <form class="add_expense_form">
             <h2>Add an Expense</h2>
             <label for="expense_type">Title
@@ -126,8 +127,15 @@
             <div class="homestats">
                 <canvas id="homechart"></canvas>
                 <div class="add">
-                    <h4>Expenses - <span id="expense_percentage">0%</span></h4>
-                    <h4>Balance - <span id="balance_percentage">0%</span></h4>
+                    <div class="stats">
+                        <h4>Expenses - <span id="expense_percentage">0%</span></h4>
+                        <h4>Balance - <span id="balance_percentage">0%</span></h4>
+                    </div>
+                    <div class="stats">
+                        <p>Budget : <span id="budget_percentage"></span></p>
+                <p>Expenses allowed : <span id="expenses_allowed"></span></p>
+                    </div>
+                 
                     <div><button id="add_income"><img src="../images/icons/add.png" alt="icon"></button>
                         <h3>ADD an Income</h3>
                     </div>
@@ -185,8 +193,11 @@
             </div>
         </div>
     </main>
-    <script src="../js/script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="../js/common.js"></script>
+    <script src="../js/script.js"></script>
+    <!-- <script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script> -->
+    
 </body>
 
 </html>

@@ -89,7 +89,7 @@ box-shadow: rgb(146, 146, 146) -15px 0px 15px -15px;
 }
 #edit, #save {
   position:absolute;
-  bottom: 60px ;
+  bottom: 30px ;
   right: 15px;
    width: 70px;
    height: 70px;

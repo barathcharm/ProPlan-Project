@@ -1,7 +1,7 @@
 //      Setting budget------------------
 let ac_user=JSON.parse(localStorage.getItem("active_user"))
 // let current_date = localStorage.getItem("current_date")
-// delete ac_user['budget']
+// delete ac_user['category']
 // localStorage.setItem("active_user",JSON.stringify(ac_user))
 if(!ac_user["budget"]){
     budgetform()
@@ -84,8 +84,10 @@ if(ac_user["total_expense"]>(ac_user["total_income"]/100)*ac_user["budget"]){
 function backgroundblur(){
     document.querySelector("header").style.filter = "blur(2.5px)"
     document.querySelector(".left_side").style.filter = "blur(2.5px)"
+    document.querySelector(".left_side").style.background = "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)"
     document.querySelector(".right_side").style.filter = "blur(2.5px)"
     document.querySelector(".center_side").style.filter = "blur(2.5px)"
+    
 }
 
 //      Viewing Income form
@@ -113,6 +115,7 @@ backgroundblur()
 let add_income_submit = document.getElementsByClassName("add_income_form")
 
 add_income_submit[0].addEventListener("submit",e=> {
+    e.preventDefault()
     if (Math.abs(document.getElementById("income_amount").value>0)) {
         let form1 = document.getElementsByClassName("add_income_form")
         let income_type = document.getElementById("income_type").value
@@ -148,10 +151,32 @@ add_income_submit[0].addEventListener("submit",e=> {
         active_user["total_balance"] = total_balance
         active_user["transaction_list"] = transaction_list
         active_user["transaction_count"] = transaction_count
-    
+         
+        let category_details = active_user["category"]??{}
+        let income_category_details=category_details["income"]??{}
+        let  chosen_category_details={
+            "type": income_type,
+            "category": income_category,
+            "amount": income_amount,
+            }
+            let chosen_category_array
+        if(income_category_details[income_category]){
+             chosen_category_array =income_category_details[income_category]
+        }
+        else{
+             chosen_category_array=[]
+        }
+        chosen_category_array.push(chosen_category_details)
+        income_category_details[income_category]=chosen_category_array
+        category_details["income"]=income_category_details
+
+        active_user["category"]=category_details
+
         localStorage.setItem("active_user", JSON.stringify(active_user))
+        setDataInTheLocal()
+        location.reload()
     
-        form1[0].classList.remove("view")
+        // form1[0].classList.remove("view")
     }
     else{
         alert("Enter amount greater than 0")
@@ -166,6 +191,7 @@ add_income_submit[0].addEventListener("submit",e=> {
 let add_expense_submit = document.getElementsByClassName("add_expense_form")
 
 add_expense_submit[0].addEventListener("submit", e => {
+    e.preventDefault()
     let active_user =JSON.parse(localStorage.getItem("active_user"))
     let expense_amount = Math.abs(document.getElementById("expense_amount").value)
     if(expense_amount<=active_user["total_balance"]){
@@ -204,9 +230,31 @@ add_expense_submit[0].addEventListener("submit", e => {
         active_user["transaction_list"] = transaction_list
         active_user["transaction_count"] = transaction_count
     
+        let category_details = active_user["category"]??{}
+        let expense_category_details=category_details["expense"]??{}
+        let  chosen_category_details={
+            "type": expense_type,
+            "category": expense_category,
+            "amount": expense_amount,
+            }
+            let chosen_category_array
+        if(expense_category_details[expense_category]){
+             chosen_category_array =expense_category_details[expense_category]
+        }
+        else{
+             chosen_category_array=[]
+        }
+        chosen_category_array.push(chosen_category_details)
+        expense_category_details[expense_category]=chosen_category_array
+        category_details["expense"]=expense_category_details
+
+        active_user["category"]=category_details
+
         localStorage.setItem("active_user", JSON.stringify(active_user))
-    
-        form2[0].classList.remove("view")
+        setDataInTheLocal()
+        // form2[0].classList.remove("view")
+        location.reload()
+
     }
     else{
         alert("Expense overtakes balance amount")
@@ -265,39 +313,28 @@ users.forEach((e,index) => {
     }
 }
 )
-
+console.log(ac_user["total_income"],(ac_user["budget"]/100),"tfg");
 localStorage.setItem("users", JSON.stringify(users))
         
 // 
 
 let welcome_name = document.getElementById("name")
 welcome_name.innerHTML=JSON.parse(localStorage.getItem("active_user")).name+" !"
-// Doughnut chart in home page------------
 
-var xValues = ["Expense","Remaining Budget amount", "Balance "];
-var yValues = [total_expense,((ac_user["total_income"]/100)*ac_user["budget"])-total_expense, total_balance];
-var barColors = [
-    "#f27674",
-    "#f7b1b0",
-"#dee1e5"
-];
+// Chart in home page------------
 
-new Chart("homechart", {
-    type: "doughnut",
-    data: {
-        labels: xValues,
-        datasets: [{
-            backgroundColor: barColors,
-            data: yValues
-        }]
-    },
-    options: {
-        title: {
-            display: true,
-            text: "Expenses in January 2023"
-        }
-    }
-});
+let bar_charts =document.querySelectorAll(".chart_bars")
+let budget_value=JSON.parse(localStorage.getItem("active_user"))["budget"] 
+bar_charts[0].style.height =`${100*2}px`
 
+bar_charts[1].style.height =`${budget_value*2}px`
+
+bar_charts[2].style.height =`${expense_percentage*2}px`
+
+bar_charts.forEach(el=>{
+    el.addEventListener("mouseover",e=>{
+        
+    })
+})
 
 

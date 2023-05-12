@@ -37,23 +37,27 @@ nav {
     border-radius: 0px 0px 10px 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
-nav a{
+
+nav a {
     /* color: rgb(88, 88, 88); */
     font-size: 15px;
     display: flex;
 
-    align-items:center;
+    align-items: center;
 }
-nav a img{
+
+nav a img {
     width: 35px;
-  
+
 }
-nav a span{
+
+nav a span {
     margin: 8px 0px 0px 8px;
-    color:#1d1d1d;
+    color: #1d1d1d;
     font-weight: 600;
 }
-nav >img {
+
+nav>img {
     width: 160px;
 }
 
@@ -81,28 +85,31 @@ nav >img {
     width: 45%;
 }
 
-#log_out{
+#log_out {
     cursor: pointer;
     padding: 10px 13px;
     border-radius: 50%;
 }
-#log_out:hover{
+
+#log_out:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-#log_out img{
+
+#log_out img {
     width: 30px;
 }
 
 /* Date ------ */
-#date img{
+#date img {
     width: 25px;
     margin: 0px 3px;
 }
-#date{
+
+#date {
     display: flex;
     align-items: flex-end;
     font-weight: 600;
-    color:rgb(50, 50, 50) ;
+    color: rgb(50, 50, 50);
 }
 
 /* -----------Main Content Starts--------- */
@@ -117,7 +124,7 @@ main {
 .left_side {
     width: 13%;
     margin-top: 100px;
-   
+
 }
 
 .left_side .tabs {
@@ -131,6 +138,7 @@ main {
     background-color: #f0f1f1;
 
 }
+
 .tabs a {
     width: 90px;
     padding: 10px 25px;
@@ -147,10 +155,11 @@ main {
 
 .tabs a img {
     width: 35px;
-    margin:0px 10px 0px 5px ;
+    margin: 0px 10px 0px 5px;
 
 }
-#homeicon{
+
+#homeicon {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: #f0f1f1;
 }
@@ -187,32 +196,102 @@ main {
     border-radius: 5px;
 }
 
+#homechart {
+    display: flex;
+    border: solid GREY;
+    border-width: 0px 0px 2px 0px;
+    width: 45%;
+    height: 250px;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0px 40px;
+}
+
+#homechart p {
+    font-size: 11px;
+    margin-bottom: 3px;
+}
+
+.chart_bars {
+    width: 50px;
+    /* height: 200px; */
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    transition: 2s ease;
+}
+.div{
+    position: relative;
+}
+.hover_para{
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    left: 8px;
+    width:45px;
+    padding: 1px 2px;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#homechart .chart_div:nth-of-type(1) .chart_bars {
+    /* height: 150px; */
+    background-color: #0075ff;
+}
+
+#homechart .chart_div:nth-of-type(2) .chart_bars {
+    /* height: 150px; */
+    background-color: #f4d660;
+}
+
+#homechart .chart_div:nth-of-type(3) .chart_bars {
+    /* height: 150px; */
+    background-color: #e76967;
+}
+
+.chart_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 10px;
+    position: relative;
+    /* border: 1px solid black; */
+    /* height: 90%; */
+
+}
+
 .add {
     /* margin-right: 50px; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.stats{
+
+.stats {
     display: flex;
 }
-.stats h4, .stats p{
-    margin:0px 10px;
+
+.stats h4,
+.stats p {
+    margin: 0px 10px;
     font-weight: 600;
     font-size: 14px;
 }
-.stats p span{
-color:#306388;
+
+.stats p span {
+    color: #306388;
 }
-.stats span{
+
+.stats span {
     font-size: 15px;
 }
 
-.add h4:nth-of-type(1) span{
+.add h4:nth-of-type(1) span {
     color: #e76967;
 }
-.add h4:nth-of-type(2) span{
-    color: rgb(91, 197, 91) ;
+
+.add h4:nth-of-type(2) span {
+    color: rgb(91, 197, 91);
 }
 
 .add div {
@@ -237,8 +316,9 @@ color:#306388;
 .home_transactions {
     margin-top: 40px;
 }
+
 /* Setting budget div----------------------- */
-.budget_div{
+.budget_div {
     position: fixed;
     top: 130px;
     left: 500px;
@@ -252,42 +332,49 @@ color:#306388;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
 }
-.budget_div hr{
+
+.budget_div hr {
     margin-top: 7px;
 }
-.budget_div input{
+
+.budget_div input {
     width: 90%;
     margin: 0px auto;
 }
-.budget_div >p:nth-of-type(1){
-font-size: 14px;
-font-weight: 600;
-color: #363232;
-margin: 10px 0px;
-}
-.budget_div >p:nth-of-type(2){
+
+.budget_div>p:nth-of-type(1) {
     font-size: 14px;
     font-weight: 600;
     color: #363232;
     margin: 10px 0px;
- }
- .budget_div >p:nth-of-type(3){
-   width: 20%;
-   margin: 10px auto;
-   font-size: 15px;
-   background-color: #0075ff;
-   color: white;
-   padding: 5px 0px;
-   text-align: center;
-   font-weight: 600;
-   border-radius: 5px;
-cursor: pointer;
+}
 
- }
- #selected_budget{
+.budget_div>p:nth-of-type(2) {
+    font-size: 14px;
+    font-weight: 600;
+    color: #363232;
+    margin: 10px 0px;
+}
+
+.budget_div>p:nth-of-type(3) {
+    width: 20%;
+    margin: 10px auto;
+    font-size: 15px;
+    background-color: #0075ff;
+    color: white;
+    padding: 5px 0px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#selected_budget {
     font-size: 16px;
     color: #0075ff;
- }
+}
+
 datalist {
     display: flex;
     /* flex-direction: column; */
@@ -298,37 +385,42 @@ datalist {
     color: rgb(60, 60, 60);
     font-size: 12px;
 
-  }
-  .budget_note{
-   margin: 10px 0px;
-   color: red;
-   
-  }
-  .budget_note span{
+}
+
+.budget_note {
+    margin: 10px 0px;
+    color: red;
+
+}
+
+.budget_note span {
     font-size: 12px;
     font-weight: 600;
-  }
-  .budget_note p{
+}
+
+.budget_note p {
     font-size: 12px;
 
-  }
-  /* Budget div in left side */
+}
 
-.budget{
+/* Budget div in left side================== */
+
+.budget {
     padding: 15px;
     box-sizing: border-box;
-
 }
-.budget p{
+.budget p {
     font-size: 12px;
 }
-.budget p span{
-display: block;
-font-size: 15px;
-font-weight: 600;
+.budget p span {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
 }
+
 /*---------------- Adding income form -------------*/
-.add_income_form, .add_expense_form{
+.add_income_form,
+.add_expense_form {
     width: 23%;
     padding: 20px;
     border-radius: 5px;
@@ -343,75 +435,98 @@ font-weight: 600;
     z-index: 3;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-.add_expense_form{
+
+.add_expense_form {
     top: 20%;
     height: 510px;
 }
-.add_expense_form{
+
+.add_expense_form {
     display: none;
 }
-.add_income_form h2,.add_expense_form h2{
+
+.add_income_form h2,
+.add_expense_form h2 {
     text-align: center;
     margin-bottom: 30px;
 }
-.add_income_form label,.add_expense_form label{
+
+.add_income_form label,
+.add_expense_form label {
     color: rgb(68, 68, 68);
 }
-#income_type,#income_amount,#expense_type,#expense_amount{
+
+#income_type,
+#income_amount,
+#expense_type,
+#expense_amount {
     padding: 10px 15px;
     width: 80%;
     border: solid black;
     border-width: 0px 0px 0px 0px;
-    box-shadow: 0px 10px 10px -15px #111;    
-    margin:10px 0px 30px 20px;
+    box-shadow: 0px 10px 10px -15px #111;
+    margin: 10px 0px 30px 20px;
     font-weight: 400;
 
 }
-.button_div{
+
+.button_div {
     display: flex;
     justify-content: space-between;
 }
-.button_div button{
-    padding:8px  20px;
+
+.button_div button {
+    padding: 8px 20px;
     border: none;
     border-radius: 5px;
 }
-.add_income_form input:focus,.add_expense_form input:focus{
+
+.add_income_form input:focus,
+.add_expense_form input:focus {
     outline: none;
 }
-.add_income_form button:nth-of-type(1){
-    background-color:rgb(94, 211, 94) ;
+
+.add_income_form button:nth-of-type(1) {
+    background-color: rgb(94, 211, 94);
     color: white;
 }
-.add_expense_form button:nth-of-type(1){
-    background-color:rgb(211, 81, 81) ;
+
+.add_expense_form button:nth-of-type(1) {
+    background-color: rgb(211, 81, 81);
     color: white;
 }
-#back_button{
-    padding:8px  20px;
+
+#back_button {
+    padding: 8px 20px;
     text-decoration: none;
     border-radius: 5px;
-    background-color:#4d8ab6 ;
+    background-color: #4d8ab6;
     color: white;
 }
-.income_category,.expense_category{
+
+.income_category,
+.expense_category {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 15px 0px;
 }
-.income_category label,.expense_category label{
+
+.income_category label,
+.expense_category label {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    padding: 0px 10px ;
+    padding: 0px 10px;
     margin-top: 15px;
 }
-.income_category input, .expense_category input{
+
+.income_category input,
+.expense_category input {
     border: 1px solid black;
     margin-right: 5px;
-    
+
 }
 
 /* ------------------Home table------------------ */
@@ -432,7 +547,8 @@ font-weight: 600;
     padding: 6px 0px;
     font-weight: 500;
 }
-table tr td:nth-of-type(2){
+
+table tr td:nth-of-type(2) {
     color: #454545;
 }
 
@@ -452,10 +568,12 @@ table tr td:nth-of-type(2){
 #balance {
     color: #4d8ab6;
 }
-#edit_icon img{
+
+#edit_icon img {
     width: 33px;
 }
-#delete_icon img{
+
+#delete_icon img {
     width: 28px;
 }
 
@@ -505,7 +623,7 @@ table tr td:nth-of-type(2){
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding:10px  20px;
+    padding: 10px 20px;
     box-sizing: border-box;
 }
 
@@ -543,7 +661,7 @@ table tr td:nth-of-type(2){
 
 /* --------Log out remember me---------- */
 
-.log_out_div{
+.log_out_div {
     position: fixed;
     top: 65px;
     right: 8px;
@@ -558,10 +676,11 @@ table tr td:nth-of-type(2){
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: none;
 }
-.log_out_div button{
+
+.log_out_div button {
     margin: 10px auto;
     display: block;
-    background-color:#EE4B2B;
+    background-color: #EE4B2B;
     color: white;
     font-weight: 600;
     padding: 5px 15px;
@@ -569,13 +688,20 @@ table tr td:nth-of-type(2){
     border: none;
     font-size: 12px;
 }
-.log_out_div input{
+
+.log_out_div input {
     margin-right: 3px;
 }
 
 .view {
     display: block;
 }
-.flex{
+
+.flex {
     display: flex;
+}
+
+.r{
+   background-color: #a179bf", "#fe7676", "#f4cf28", "#5dbeaa", "#6fa6df", "#603cb5","#0075a4, #ed7226", "#c8a4b6", "#a0a0a0"
+   #1f7043","#72b037","#c1bb7f","#7e7e7c","#b9614c"
 }

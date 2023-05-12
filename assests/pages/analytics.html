@@ -10,7 +10,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/analytics.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <title>Proplan</title>
 
 
@@ -22,16 +23,17 @@
             <img src="../images/icons/proplan_logo.png" alt="logo">
             <div class="nav_right">
                 <input type="text" id="search" placeholder="Search">
-                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span id="nav_balance">0/-</span></a>
-                <div id="date"><span id="date_value"></span> <img src="../images/icons/edit_img.png" alt="img" id="date_edit"></div>
-                <span  id="log_out" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
-                    ></span>
+                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span
+                        id="nav_balance">0/-</span></a>
+                <div id="date"><span id="date_value"></span> <img src="../images/icons/edit_img.png" alt="img"
+                        id="date_edit"></div>
+                <span id="log_out" title="Log out"><img src="../images/icons/log_out.png" alt="icon"></span>
 
-         </div>
-         <div class="log_out_div ">
-             <input type="checkbox" id="remember_me" ><label for="remember_me"> Remember me</label>
-             <button id="log_out_button"> Log Out</button>
-         </div>
+            </div>
+            <div class="log_out_div ">
+                <input type="checkbox" id="remember_me"><label for="remember_me"> Remember me</label>
+                <button id="log_out_button"> Log Out</button>
+            </div>
 
             </div>
         </nav>
@@ -41,7 +43,8 @@
         <div class="left_side">
             <div class="tabs">
                 <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
-                <a href="analytics.html" id="expensesicon"><img src="../images/icons/statistics.png" alt=""> Analytics</a>
+                <a href="analytics.html" id="expensesicon"><img src="../images/icons/statistics.png" alt="">
+                    Analytics</a>
                 <a href="wallet.html"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
                 <a href="notes.html"><img src="../images/icons/notes.png" alt="icons">Notes</a>
                 <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
@@ -50,65 +53,150 @@
         </div>
 
         <!--------------------Center Side--------------->
-        <div class="center_side">
+        <div class="center_content">
             <h2>Statistics</h2>
+            <a href="budget.html">asdertyujkl,mjhngfd</a>
             <div class="month-scroll">
                 <img src="../images/icons/Arrow-left.svg" alt="ICON">
+                <div class="month">
+                    <h4>May</h4>
+                    <p>2022</p>
+                </div>
+                <div class="month">
+                    <h4>Jun</h4>
+                    <p>2022</p>
+                </div>
                 <div class="month ">
-                    <h3>Sept</h3>
-                    <h5>2022</h5>
+                    <h4>July</h4>
+                    <p>2023</p>
+                </div>
+                <div class="month ">
+                    <h4>Sept</h4>
+                    <p>2022</p>
                 </div>
                 <div class="month">
-                    <h3>OCT</h3>
-                    <h5>2022</h5>
+                    <h4>OCT</h4>
+                    <p>2022</p>
                 </div>
                 <div class="month">
-                    <h3>NOV</h3>
-                    <h5>2022</h5>
+                    <h4>NOV</h4>
+                    <p>2022</p>
                 </div>
                 <div class="month">
-                    <h3>DEC</h3>
-                    <h5>2022</h5>
+                    <h4>DEC</h4>
+                    <p>2022</p>
                 </div>
-                <div class="month jan">
-                    <h3>JAN</h3>
-                    <h5>2023</h5>
+                <div class="month active_month">
+                    <h4>JAN</h4>
+                    <p>2023</p>
                 </div>
                 <img src="../images/icons/arrow-right.svg" alt="ICON">
 
+
             </div>
-            <canvas id="myChart"></canvas>
-            <div class="bar">
-            <div class="bar_list"><div class="category_color color_8"></div><p>Expenses</p></div>
-            <div class="bar_list"><div class="category_color color_9"></div><p>Income</p></div>
+            <!-- Graphh------------- -->
+            <div class="total_graph_div">
+                <canvas id="total_graph"></canvas>
+                <div class="bar">
+                    <div class="bar_list">
+                        <div class="category_color color_8"></div>
+                        <p>Expenses</p>
+                    </div>
+                    <div class="bar_list">
+                        <div class="category_color color_9"></div>
+                        <p>Income</p>
+                    </div>
+                </div>
             </div>
 
 
-            <h2> Categories of Expense</h2>
-            <canvas id="categorychart"></canvas>
-            <div class="category">
-                <div class="category_list"><div class="category_color color_1"></div><p>Bills</p></div>
-                <div class="category_list"><div class="category_color color_2"></div><p>Personal</p></div>
-                <div class="category_list"><div class="category_color color_3"></div><p>Shopping</p></div>
-                <div class="category_list"><div class="category_color color_4"></div><p>Entertainment</p></div>
-                <div class="category_list"><div class="category_color color_5"></div><p>Travel</p></div>
-                <div class="category_list"><div class="category_color color_6"></div><p>Vehicle</p></div>
-                <div class="category_list"><div class="category_color color_7"></div><p>Investment</p></div>
+            <!-- Category lists------------------ -->
+
+            <!--  expense category-------------- -->
+            <h3>Expenses</h3>
+
+
+            <div class="expense_header">
+                <p>Total Expenses : <span class="total_expense_value"> 0/-</span></p>
+                <p id="create_expense_category">Create / Delete a Category</p>
+            </div>
+
+            <div class="expense_categories">
+                <!-- <div class="every_expense_category">
+                    <div class="expense_category_header">
+                        <p class="expense_category_name">Home</p>
+                        <div class="amount">
+                            <p class="expense_category_spending">2000/-</p>
+                            <img src="../images/icons/arrow_down.png" alt="icon">
+                        </div>
+                    </div>
+                    <div class="expense_category_details">
+                        <div class="each_expense_details">
+                            <p>Rent <span class="each_expense_value">0/-</span></p>
+                            <p>Rent <span class="each_expense_value">0/-</span></p>
+                            <p>Rent <span class="each_expense_value">0/-</span></p>
+                            <p>Rent <span class="each_expense_value">0/-</span></p>
+                            <p>Rent <span class="each_expense_value">0/-</span></p>
+                        </div>
+                        <div class="each_category_total_value">
+                            <p>Total <span class="each_expense_total">0/-</span></p>
+                        </div>
+                    </div>
+                </div> -->
+
 
             </div>
-            
+
+            <!--  pie chart for the expense category ----------- -->
+            <div class="expense_category_chart">
+                <canvas id="categorychart"></canvas>
+                <div class="cate_lists">
+                    <div class="category_lists">
+                    </div>
+                    <div class="expenses_total">Total Expenses : <span class="total_expense_value">0/-</span></div>
+                </div>
+
+            </div>
+            <!--  Income category-------------- -->
+            <h3>Inflows</h3>
+
+            <div class="income_header">
+                <p>Total Income : <span class="total_income_value">0/-</span></p>
+                <p id="create_income_category">Create / Delete a Category</p>
+            </div>
+            <div class="income_categories">
+
+            </div>
+
+            <!-- Piechart for the income category-------- -->
+
+            <div class="income_category_chart">
+                <canvas id="incomecategorychart"></canvas>
+                <div class="cate_lists">
+                <div class="category_lists">
+
+                    
+                </div>
+                <div class="income_total">Total Amount of Inflows : <span class="total_income_value">0/-</span>
+                </div>
+                </div>
+            </div>
+
+
         </div>
-            <!--------------- Right side--------------- -->
-        <div class="right_side">
+
+
+        <!--------------- Right side--------------- -->
+        <!-- <div class="right_side">
             <div class="right_side_1">
                 <div class="profile">
                     <img src="../images/tony.jpg" alt="profile img">
                 </div>
                 <h2 id="displayy_name">Tony</h2>
-                <h5 id="professionn">Software Engineer</h5>
+                <p id="professionn">Software Engineer</p>
                 <div class="this_month">
-                    <h5>This month</h5>
-                    <h5>January</h5>
+                    <p>This month</p>
+                    <p>January</p>
                 </div>
                 <div class="total_balance">
                     <p>Total Balance</p>
@@ -123,7 +211,7 @@
                     <h1>&#8377;<span id="total_expense">20,000</span></h1>
                 </div>
             </div>
-        </div>
+        </div> -->
     </main>
     <script src="../js/common.js"></script>
     <script src="../js/analytics.js"></script>

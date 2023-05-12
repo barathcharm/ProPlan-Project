@@ -125,7 +125,26 @@
             <h3>Overview</h3>
             <h1>Welcome Back <span id="name"> Tony</span></h1>
             <div class="homestats">
-                <canvas id="homechart"></canvas>
+                <div id="homechart">
+                    <div class="div">
+                    <!-- <p class="hover_para"> ₹ 20,000</p> -->
+                    <div class="chart_div">
+                        <p>Total Income</p>
+                        <div class="total_income_chart chart_bars">
+                        </div>
+                    </div>
+                </div>
+                    <div class="chart_div">
+                        <p>Budget</p>
+                        <div class="total_income_chart chart_bars">
+                        </div>
+                    </div>
+                    <div class="chart_div">
+                        <p>Total Expense</p>
+                        <div class="total_income_chart chart_bars">
+                        </div>
+                    </div>
+                </div>
                 <div class="add">
                     <div class="stats">
                         <h4>Expenses - <span id="expense_percentage">0%</span></h4>
@@ -137,10 +156,10 @@
                     </div>
                  
                     <div><button id="add_income"><img src="../images/icons/add.png" alt="icon"></button>
-                        <h3>ADD an Income</h3>
+                        <h3>ADD an Inflow</h3>
                     </div>
                     <div><button id="add_expense"><img src="../images/icons/add.png" alt="icon"></button>
-                        <h3>ADD an Expense</h3>
+                        <h3>ADD an Outflow</h3>
                     </div>
                 </div>
             </div>

@@ -22,15 +22,22 @@
             <img src="../images/icons/proplan_logo.png" alt="logo">
             <div class="nav_right">
                 <input type="text" id="search" placeholder="Search">
-                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span
+                <a href="./wallet.html">
+<img src="../images/icons/wallet_icon.png" alt="icon">
+ <span
                         id="nav_balance">0/-</span></a>
-                <div id="date"><span id="date_value"></span> <img src="../images/icons/edit_img.png" alt="img"
+                <div id="date">
+<span id="date_value"></span>
+ <img src="../images/icons/edit_img.png" alt="img"
                         id="date_edit"></div>
-                <span id="log_out" title="Log out"><img src="../images/icons/log_out.png" alt="icon"></span>
+                <span id="log_out" title="Log out">
+<img src="../images/icons/log_out.png" alt="icon">
+</span>
 
             </div>
             <div class="log_out_div ">
-                <input type="checkbox" id="remember_me"><label for="remember_me"> Remember me</label>
+                <input type="checkbox" id="remember_me">
+<label for="remember_me"> Remember me</label>
                 <button id="log_out_button"> Log Out</button>
             </div>
 
@@ -41,18 +48,32 @@
         <!-- --------------left side div--------------- -->
         <div class="left_side">
             <div class="tabs">
-                <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
-                <a href="analytics.html"><img src="../images/icons/statistics.png" alt=""> Analytics</a>
-                <a href="wallet.html" id="walleticon"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
-                <a href="notes.html" id="notesicon"><img src="../images/icons/notes.png" alt="icons">Notes</a>
-                <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
-                <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
+                <a href="home.html">
+<img src="../images/icons/home.png" alt="icons"> Home
+</a>
+                <a href="analytics.html">
+<img src="../images/icons/statistics.png" alt=""> Analytics
+</a>
+                <a href="wallet.html" id="walleticon">
+<img src="../images/icons/savings.png" alt="icons"> Wallet
+</a>
+                <a href="notes.html" id="notesicon">
+<img src="../images/icons/notes.png" alt="icons">Notes
+</a>
+                <a href="profile.html">
+<img src="../images/icons/profile.png" alt="icons"> Profile
+</a>
+                <a href="about.html">
+<img src="../images/icons/about.png" alt="icons"> About
+</a>
             </div>
         </div>
 
         <!-- Center content--------------- -->
         <div class="transaction">
-            <h2> <img src="../images/icons/left arrow.png" alt="icons" id="go_back_img"> Transations</h2>
+            <h2>
+ <img src="../images/icons/left arrow.png" alt="icons" id="go_back_img"> Transations
+</h2>
             <div class="transaction_list">
                 <a href="./wallet_transaction.html?page=history" class="underline">All History</a>
                 <a href="./wallet_transaction.html?page=active_plans" class="grey">Active Plans</a>
@@ -116,49 +137,62 @@
     <!-- withdraw form----------------- -->
 
     <form class="withdraw_form">
-        <h2>Withdraw Money <img src="../images/money.jpg" alt="img"> </h2>
+        <h2>
+Withdraw Money <img src="../images/money.jpg" alt="img"> 
+</h2>
         <hr class="hr">
         <p>Transaction id : </p>
             <span id="transaction_id">0</span>
         
         <div class="step1">
-            <p><span>1</span>Deposited amount - <output id="withdraw_deposited_amount">0/-</output> </p>
+            <p>
+<span>1</span>
+Deposited amount - <output id="withdraw_deposited_amount">0/-</output> 
+</p>
         </div>
         <div class="step2">
-            <p><span>2</span>Select an option to withdraw</p>
+            <p>
+<span>2</span>Select an option to withdraw
+</p>
             <div class="step2_list">
                 <div class="gpay payment_method">
-                    <input type="radio" name="payment_method" id="gpay" value="Gpay" >
+                    <input type="radio" name="payment_method" id="gpay" value="Gpay">
                     
                     <label for="gpay">
                         <img src="../images/icons/gpay.png" alt="img">
                         Gpay</label>
                 </div>
                 <div class="phonepe payment_method">
-                    <input type="radio" name="payment_method" id="phonepe" value="Phonepe" >
+                    <input type="radio" name="payment_method" id="phonepe" value="Phonepe">
                     <label for="phonepe">
-                        <img src="../images/phonepe.png" alt="img">Phonepe</label>
+                        <img src="../images/phonepe.png" alt="img">Phonepe
+</label>
 
                 </div>
                 <div class="paytm payment_method">
-                    <input type="radio" name="payment_method" id="paytm" value="Paytm" >
+                    <input type="radio" name="payment_method" id="paytm" value="Paytm">
                     
                     <label for="paytm">
-                        <img src="../images/paytm.jpg" alt="img">Paytm</label>
+                        <img src="../images/paytm.jpg" alt="img">Paytm
+</label>
                     
                 </div>
             </div>
         </div>
         <div class="step3">
-            <p><span>3</span>Enter the Upi ID </p>
-            <input type="email" placeholder="ex.barath@okhdfcbank" required id="withdraw_upiid"> <span
+            <p>
+<span>3</span>Enter the Upi ID 
+</p>
+            <input type="email" placeholder="ex.barath@okhdfcbank" required id="withdraw_upiid">
+ <span
                 id="send_otp_request">Send OTP</span>
         </div>
         
         <div class="send_request_otp not_view">
             <img src="../images/icons/tick_icon.jpg" alt="icon">
                 <p>OTP has been sent successfully 
-                    to <br> your Registered Mobile Number</p>
+                    to <br> your Registered Mobile Number
+</p>
                     <input type="number" id="otp" placeholder="Enter the OTP...">
         </div>
         <div class="buttons">
@@ -168,37 +202,36 @@
     </form>
 </body>
 <script>
-    let go_back_img = document.getElementById("go_back_img")
+    const go_back_img = document.getElementById("go_back_img")
     go_back_img.addEventListener("click", e => {
         window.location.href = "./wallet.html"
     })
 
     //  Showing all the transaction titles--------------
 
-
-    let all_transactions = document.querySelector(".all_transactions")
-    let transaction_data = JSON.parse(localStorage.getItem("active_user"))["proplan_wallet"] ?? []
+    const all_transactions = document.querySelector(".all_transactions")
+    const transaction_data = JSON.parse(localStorage.getItem("active_user")).proplan_wallet ?? []
     console.log(transaction_data);
     // transaction_data.forEach((e,ind)=>{
     for (let j = transaction_data.length - 1; j >= 0; j--) {
-        let e = transaction_data[j]
-        let maturity_month = Number(e["date"].slice(5, 7)) + Number(e["maturity_period"].slice(0, 1));
-            maturity_day = e["date"].slice(7, e["date"].length)
-            maturity_year = Number(e["date"].slice(0, 4))
+        const e = transaction_data[j]
+        let maturity_month = Number(e.date.slice(5, 7)) + Number(e.maturity_period.slice(0, 1));
+            maturity_day = e.date.slice(7, e.date.length)
+            maturity_year = Number(e.date.slice(0, 4))
             let maturity_period
             if (maturity_month > 12) {
-                maturity_month = maturity_month - 12
+                maturity_month -= 12
 
-                maturity_year = Number(e["date"].slice(0, 4)) + 1;
-                maturity_period = maturity_year + "-" + maturity_month + maturity_day
+                maturity_year = Number(e.date.slice(0, 4)) + 1;
+                maturity_period = `${maturity_year  }-${  maturity_month  }${maturity_day}`
             }
             else {
-                maturity_month = maturity_month > 10 ? maturity_month : "0" + maturity_month
-                console.log("0" + maturity_month + "jnh");
-                maturity_period = maturity_year + "-" + maturity_month + maturity_day
+                maturity_month = maturity_month > 10 ? maturity_month : `0${  maturity_month}`
+                console.log(`0${  maturity_month  }jnh`);
+                maturity_period = `${maturity_year  }-${  maturity_month  }${maturity_day}`
             }
             console.log(maturity_period);
-        if (e["plan_status"] == true) {
+        if (e.plan_status == true) {
            
             all_transactions.innerHTML += `
     
@@ -207,22 +240,22 @@
                     <div class="transaction_type">
                         <img src="../images/icons/arrow_down.png" alt="img" class="data_view_img">
                         <p class="wallet_transaction_count"> ${j + 1},</p>
-                        <p class="wallet_transaction_deposited"> ${e["type"]} </p>
+                        <p class="wallet_transaction_deposited"> ${e.type} </p>
                         
-                        <p class="wallet_transaction_amount deposited">+ ${e["amount"]}</p>
+                        <p class="wallet_transaction_amount deposited">+ ${e.amount}</p>
                     </div>
                     <div class="transaction_date">
-                        <p> ${e["date"]}</p>
+                        <p> ${e.date}</p>
                     </div>
                 </div>
                 <div class="extra_details">
-                    <p>Deposited Amount : <span class="d_amount"> ${e["amount"]}/-</span></p>
-                    <p>Interest Rate : <span class="interest_rate"> ${e["interest"]}</span></p>
-                    <p>Expected Return : <span class="expected_amount">${e["expected_amount"]}/-</span></p>
-                    <p>Upiid : <span class="upiid"> ${e["upiId"]}/ ${e["selected_payment_method"]}</span></p>
-                    <p>Duration Period : <span class="d_period"> ${e["maturity_period"]}</span></p>
+                    <p>Deposited Amount : <span class="d_amount"> ${e.amount}/-</span></p>
+                    <p>Interest Rate : <span class="interest_rate"> ${e.interest}</span></p>
+                    <p>Expected Return : <span class="expected_amount">${e.expected_amount}/-</span></p>
+                    <p>Upiid : <span class="upiid"> ${e.upiId}/ ${e.selected_payment_method}</span></p>
+                    <p>Duration Period : <span class="d_period"> ${e.maturity_period}</span></p>
                     <p>Date of Maturity: <span class="d_maturity"> ${maturity_period}</span></p>
-                    <p>Transaction ID : <span class="t_id">${e["transaction_id"]}</span></p>
+                    <p>Transaction ID : <span class="t_id">${e.transaction_id}</span></p>
                     <p>Plan status : <span class="plan_status"> Active</span> </p>
                     <a href="" class="withdraw_amount">Withdraw amount now &#x2794;</a>
                 </div>
@@ -241,42 +274,41 @@
                 <p class="wallet_transaction_count"> ${j + 1},</p>
                 <p class="wallet_transaction_deposited"> Withdrawed </p>
                 
-                <p class="wallet_transaction_amount withdrawed">- ${e["withdrawed_amount"]}</p>
+                <p class="wallet_transaction_amount withdrawed">- ${e.withdrawed_amount}</p>
             </div>
             <div class="transaction_date">
-                <p> ${e["withdrawed_date"]}</p>
+                <p> ${e.withdrawed_date}</p>
             </div>
         </div>
         <div class="extra_details">
-            <p>Deposited Amount : <span class="d_amount"> ${e["amount"]}/-</span></p>
-            <p>Interest Rate : <span class="interest_rate"> ${e["interest"]}</span></p>
-            <p>Expected Return : <span class="expected_amount">${e["expected_amount"]}/-</span></p>
-            <p>Upiid : <span class="upiid">${e["withdraw_upiid"]}/${e["selected_withdraw_method"]}</span></p>
-            <p>Maturity period: <span class="d_maturity"> ${maturity_period} /<br> ${e["maturity_period"]}</span></p>
-            <p>Transaction ID : <span class="t_id">${e["transaction_id"]}</span></p>
+            <p>Deposited Amount : <span class="d_amount"> ${e.amount}/-</span></p>
+            <p>Interest Rate : <span class="interest_rate"> ${e.interest}</span></p>
+            <p>Expected Return : <span class="expected_amount">${e.expected_amount}/-</span></p>
+            <p>Upiid : <span class="upiid">${e.withdraw_upiid}/${e.selected_withdraw_method}</span></p>
+            <p>Maturity period: <span class="d_maturity"> ${maturity_period} /<br> ${e.maturity_period}</span></p>
+            <p>Transaction ID : <span class="t_id">${e.transaction_id}</span></p>
             <p>Plan status : <span class="withdrawed"> Cancelled</span> </p>
-            <p>Withdrawed Amount : <span class="withdrawed withdraw_amount"> ${e["withdrawed_amount"]}</span> </p>
-            <p>Withdrawed Date: <span class="withdrawed">${e["withdrawed_date"]}</span> </p>
+            <p>Withdrawed Amount : <span class="withdrawed withdraw_amount"> ${e.withdrawed_amount}</span> </p>
+            <p>Withdrawed Date: <span class="withdrawed">${e.withdrawed_date}</span> </p>
         </div>
     </div>
 `
         }
 
     }
-
     
     // Showing detailed details of the particular div selected
 
-    let transaction_data_div = document.querySelectorAll(".transaction_data")
-    let extra_details = document.querySelectorAll(".extra_details")
-    let data_view_img = document.querySelectorAll(".data_view_img")
+    const transaction_data_div = document.querySelectorAll(".transaction_data")
+    const extra_details = document.querySelectorAll(".extra_details")
+    const data_view_img = document.querySelectorAll(".data_view_img")
     data_view_img.forEach((e, index) => {
         let count = 2
         e.addEventListener("click", el => {
             extra_details[index].classList.toggle("flex")
             transaction_data_div[index].classList.toggle("noborder")
             count++
-            let deg = 180 * count
+            const deg = 180 * count
             data_view_img[index].style.transform = `rotate(${deg}deg)`
         })
     });
@@ -286,17 +318,16 @@
 
 //  withdrawing amount-----------------
 
-
-let withdraw_amount = document.querySelectorAll(".withdraw_amount")
-let transaction_details = document.querySelectorAll(".transaction_details")
-let withdraw_form =document.querySelector(".withdraw_form")
-let withdraw_deposited_amount = document.getElementById("withdraw_deposited_amount")
-let transaction_id = document.getElementById("transaction_id")
+const withdraw_amount = document.querySelectorAll(".withdraw_amount")
+const transaction_details = document.querySelectorAll(".transaction_details")
+const withdraw_form =document.querySelector(".withdraw_form")
+const withdraw_deposited_amount = document.getElementById("withdraw_deposited_amount")
+const transaction_id = document.getElementById("transaction_id")
 // withdraw_amount.forEach((e,inde)=>{
 let i=0
 for(let k =withdraw_amount.length-1;k>=0;k--){
 
-    console.log(k,withdraw_amount[k],"amount",transaction_data[k]["amount"]);
+    console.log(k,withdraw_amount[k],"amount",transaction_data[k].amount);
 
     withdraw_amount[i].addEventListener("click",el=>{
 
@@ -307,8 +338,8 @@ for(let k =withdraw_amount.length-1;k>=0;k--){
        document.querySelector("header").style.filter = "blur(2.5px)"
     document.querySelector(".left_side").style.filter = "blur(2.5px)"
     document.querySelector(".transaction").style.filter = "blur(2.5px)"
-       withdraw_deposited_amount.innerHTML=transaction_data[k]["amount"]
-       transaction_id.innerHTML=transaction_data[k]["transaction_id"]
+       withdraw_deposited_amount.innerHTML=transaction_data[k].amount
+       transaction_id.innerHTML=transaction_data[k].transaction_id
     })
     i++
 }
@@ -316,9 +347,8 @@ for(let k =withdraw_amount.length-1;k>=0;k--){
 // })
 // For selecting one payment method----------
 
-
-let payment_method_label= document.querySelectorAll(".payment_method>label")
-let payment_method_div = document.querySelectorAll(".payment_method")
+const payment_method_label= document.querySelectorAll(".payment_method>label")
+const payment_method_div = document.querySelectorAll(".payment_method")
 payment_method_label.forEach((e,index)=>{
     e.addEventListener("click",el=>{
             payment_method_div[index].style.backgroundColor = "rgb(244, 244, 244)"
@@ -333,9 +363,9 @@ payment_method_label.forEach((e,index)=>{
 })
 //------------------completion of withdraw from
 // send otp request-----------------
-let send_otp_request = document.getElementById("send_otp_request")
+const send_otp_request = document.getElementById("send_otp_request")
 send_otp_request.addEventListener("click",e=>{
-    let withdraw_upiid=document.querySelector("#withdraw_upiid").value
+    const withdraw_upiid=document.querySelector("#withdraw_upiid").value
 if(withdraw_upiid!=""){
     document.querySelector(".send_request_otp").classList.remove("not_view")
 }
@@ -343,29 +373,29 @@ if(withdraw_upiid!=""){
 
 //  submit button in the withdraw form--------------
 // let withdraw_amount_button =document.getElementById("withdraw_amount")
-let withdraw_amount_form = document.querySelector(".withdraw_form") 
+const withdraw_amount_form = document.querySelector(".withdraw_form") 
 withdraw_amount_form.addEventListener("submit",e=>{
     e.preventDefault()
-    let selected_withdraw_method= document.querySelector(".payment_method input:checked").value
-    let withdraw_upiid=document.querySelector("#withdraw_upiid").value
-    let transaction_id = document.getElementById("transaction_id").innerHTML
-    let withdraw_deposited_amount = document.getElementById("withdraw_deposited_amount").innerHTML
-    let current_date=localStorage.getItem("current_date")
-    let transaction_data = JSON.parse(localStorage.getItem("active_user"))["proplan_wallet"] 
+    const selected_withdraw_method= document.querySelector(".payment_method input:checked").value
+    const withdraw_upiid=document.querySelector("#withdraw_upiid").value
+    const transaction_id = document.getElementById("transaction_id").innerHTML
+    const withdraw_deposited_amount = document.getElementById("withdraw_deposited_amount").innerHTML
+    const current_date=localStorage.getItem("current_date")
+    const transaction_data = JSON.parse(localStorage.getItem("active_user")).proplan_wallet 
 
     transaction_data.forEach((e,ind)=>{
-        if(transaction_id==e["transaction_id"]){
-            e["selected_withdraw_method"]=selected_withdraw_method
-            e["plan_status"]=false
-            e["withdrawed_amount"]=withdraw_deposited_amount
-            e["withdrawed_date"]=current_date
-            e["type"]="withdrawed"
-            e["withdraw_upiid"]=withdraw_upiid
+        if(transaction_id==e.transaction_id){
+            e.selected_withdraw_method=selected_withdraw_method
+            e.plan_status=false
+            e.withdrawed_amount=withdraw_deposited_amount
+            e.withdrawed_date=current_date
+            e.type="withdrawed"
+            e.withdraw_upiid=withdraw_upiid
         }
     })
 
-    let ac_user = JSON.parse(localStorage.getItem("active_user"))
-    ac_user["proplan_wallet"]=transaction_data
+    const ac_user = JSON.parse(localStorage.getItem("active_user"))
+    ac_user.proplan_wallet=transaction_data
     localStorage.setItem("active_user",JSON.stringify(ac_user))
 location.reload()
     // console.log(withdraw_details);
@@ -374,24 +404,19 @@ location.reload()
 //  adding value in the wallet----------------------
 
 function wallet_balance_set(){
-    let ac_user = JSON.parse(localStorage.getItem("active_user")) 
+    const ac_user = JSON.parse(localStorage.getItem("active_user")) 
     let wallet_bal =0
-    ac_user["proplan_wallet"].forEach((e,index)=>{
-        if(e["plan_status"]==true){
-            wallet_bal+=Number(e["amount"]) 
+    ac_user.proplan_wallet.forEach((e,index)=>{
+        if(e.plan_status==true){
+            wallet_bal+=Number(e.amount) 
         }
 
     })
-    ac_user["wallet_balance"]=wallet_bal
+    ac_user.wallet_balance=wallet_bal
     localStorage.setItem("active_user",JSON.stringify(ac_user))
 }
 
 wallet_balance_set()
-
-
-
-
-
 </script>
 <script src="../js/common.js"></script>
 

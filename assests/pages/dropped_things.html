@@ -95,7 +95,7 @@ color: #42464a;
         //     path: "Full Path of the file"
         // }]
     })
-        .then(function (message) {
+        .then((message) => {
         alert("Mail has been sent successfully")
         })
         .catch((error)=>{
@@ -107,7 +107,7 @@ color: #42464a;
 <body>
 <form method="post">
     <button type="button" value="Send Mail"
-        onclick="sendEmail()" >send</button>
+        onclick="sendEmail()">send</button>
 </form>
 </body>
 </html>

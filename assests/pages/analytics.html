@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/analytics.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <title>Proplan</title>
-
 
 </head>
 
@@ -23,15 +22,22 @@
             <img src="../images/icons/proplan_logo.png" alt="logo">
             <div class="nav_right">
                 <input type="text" id="search" placeholder="Search">
-                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span
+                <a href="./wallet.html">
+<img src="../images/icons/wallet_icon.png" alt="icon">
+ <span
                         id="nav_balance">0/-</span></a>
-                <div id="date"><span id="date_value"></span> <img src="../images/icons/edit_img.png" alt="img"
+                <div id="date">
+<span id="date_value"></span>
+ <img src="../images/icons/edit_img.png" alt="img"
                         id="date_edit"></div>
-                <span id="log_out" title="Log out"><img src="../images/icons/log_out.png" alt="icon"></span>
+                <span id="log_out" title="Log out">
+<img src="../images/icons/log_out.png" alt="icon">
+</span>
 
             </div>
             <div class="log_out_div ">
-                <input type="checkbox" id="remember_me"><label for="remember_me"> Remember me</label>
+                <input type="checkbox" id="remember_me">
+<label for="remember_me"> Remember me</label>
                 <button id="log_out_button"> Log Out</button>
             </div>
 
@@ -42,13 +48,24 @@
         <!-- --------------left side div--------------- -->
         <div class="left_side">
             <div class="tabs">
-                <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
-                <a href="analytics.html" id="expensesicon"><img src="../images/icons/statistics.png" alt="">
+                <a href="home.html">
+<img src="../images/icons/home.png" alt="icons"> Home
+</a>
+                <a href="analytics.html" id="expensesicon">
+<img src="../images/icons/statistics.png" alt="">
                     Analytics</a>
-                <a href="wallet.html"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
-                <a href="notes.html"><img src="../images/icons/notes.png" alt="icons">Notes</a>
-                <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
-                <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
+                <a href="wallet.html">
+<img src="../images/icons/savings.png" alt="icons"> Wallet
+</a>
+                <a href="notes.html">
+<img src="../images/icons/notes.png" alt="icons">Notes
+</a>
+                <a href="profile.html">
+<img src="../images/icons/profile.png" alt="icons"> Profile
+</a>
+                <a href="about.html">
+<img src="../images/icons/about.png" alt="icons"> About
+</a>
             </div>
         </div>
 
@@ -92,7 +109,6 @@
                 </div>
                 <img src="../images/icons/arrow-right.svg" alt="ICON">
 
-
             </div>
             <!-- Graphh------------- -->
             <div class="total_graph_div">
@@ -109,15 +125,15 @@
                 </div>
             </div>
 
-
             <!-- Category lists------------------ -->
 
             <!--  expense category-------------- -->
             <h3>Expenses</h3>
 
-
             <div class="expense_header">
-                <p>Total Expenses : <span class="total_expense_value"> 0/-</span></p>
+                <p>
+Total Expenses : <span class="total_expense_value"> 0/-</span>
+</p>
                 <p id="create_expense_category">Create / Delete a Category</p>
             </div>
 
@@ -144,7 +160,6 @@
                     </div>
                 </div> -->
 
-
             </div>
 
             <!--  pie chart for the expense category ----------- -->
@@ -153,7 +168,9 @@
                 <div class="cate_lists">
                     <div class="category_lists">
                     </div>
-                    <div class="expenses_total">Total Expenses : <span class="total_expense_value">0/-</span></div>
+                    <div class="expenses_total">
+Total Expenses : <span class="total_expense_value">0/-</span>
+</div>
                 </div>
 
             </div>
@@ -161,7 +178,9 @@
             <h3>Inflows</h3>
 
             <div class="income_header">
-                <p>Total Income : <span class="total_income_value">0/-</span></p>
+                <p>
+Total Income : <span class="total_income_value">0/-</span>
+</p>
                 <p id="create_income_category">Create / Delete a Category</p>
             </div>
             <div class="income_categories">
@@ -174,17 +193,15 @@
                 <canvas id="incomecategorychart"></canvas>
                 <div class="cate_lists">
                 <div class="category_lists">
-
                     
                 </div>
-                <div class="income_total">Total Amount of Inflows : <span class="total_income_value">0/-</span>
+                <div class="income_total">
+Total Amount of Inflows : <span class="total_income_value">0/-</span>
                 </div>
                 </div>
             </div>
 
-
         </div>
-
 
         <!--------------- Right side--------------- -->
         <!-- <div class="right_side">

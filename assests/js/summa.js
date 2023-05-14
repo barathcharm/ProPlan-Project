@@ -1,9 +1,6 @@
 // // let fname = ["c","a","t"]
 
-
 // // let temp
-
-
 
 // // for(let i = 0;i<fname.length/2;i++){
 // //     temp =fname[i]
@@ -32,9 +29,8 @@
 // //         num.splice(check,1)
 // //         num.push(max)
 // //     }
-// // }) 
+// // })
 // // console.log(num);
-
 
 // let a ="Give respect take respect"
 // let st
@@ -47,7 +43,7 @@
 //     for (let j = 0; j < a.length; j++) {
 //       if(st==a[j]){
 //         count++
-//       }  
+//       }
 //     }
 //     output[st] = count
 // }
@@ -66,12 +62,9 @@
 // //     }
 // //     console.log(a);
 
-
 // //     a.unshift(st)
 // // }
 // // console.log(a);
-
-
 
 // function processData(input) {
 //   //Enter your code here
@@ -98,7 +91,6 @@
 //   }
 //   let given = input
 //   console.log(given[1]);
-
 
 //   let given1 = value[given[1]]
 //   let given2 = String(value[given[2]])
@@ -144,5 +136,3 @@
 //   output = temp + (output.slice(1, output.length))
 //   console.log(output);
 // }
-
-

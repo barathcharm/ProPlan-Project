@@ -17,7 +17,14 @@
 a {
     text-decoration: none;
 }
-
+ input{
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 3px;
+    padding: 5px 10px;
+  }
+ input:focus{
+     outline: 1px solid grey;
+  }
 /* ----------Header nav---------- */
 header {
     position: fixed;
@@ -403,28 +410,13 @@ datalist {
 
 }
 
-/* Budget div in left side================== */
-
-.budget {
-    padding: 15px;
-    box-sizing: border-box;
-}
-.budget p {
-    font-size: 12px;
-}
-.budget p span {
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-}
-
 /*---------------- Adding income form -------------*/
 .add_income_form,
 .add_expense_form {
     width: 23%;
     padding: 20px;
     border-radius: 5px;
-    height: 440px;
+    max-height: 440px;
     position: fixed;
     top: 23%;
     left: 35%;

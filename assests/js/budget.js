@@ -241,8 +241,8 @@ save_category_details.addEventListener("click",e=>{
                 "id": "income",
                 "total_balance": income
             }
-            localStorage.setItem("total_balance",income)
-            localStorage.setItem("total_income",income)
+            active_user["total_balance"]=income
+            active_user["total_income"]=income
 
 active_user["transaction_list"].push(salary_transaction)
         

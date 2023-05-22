@@ -14,12 +14,12 @@ log_out_button.addEventListener("click", (e) => {
   if (remember_me.checked == false) {
     const users = JSON.parse(localStorage.getItem("users"));
     const active_user = JSON.parse(localStorage.getItem("active_user"));
-    console.log(users);
+
 
     users.forEach((e, index) => {
       if (e.email == active_user.email) {
         users.splice(index, 1);
-        console.log(users);
+
       }
     });
     localStorage.setItem("users", JSON.stringify(users));
@@ -96,7 +96,7 @@ function savedate() {
   const save_date = document.getElementById("save_date");
   save_date.addEventListener("click", (e) => {
     const new_date = document.getElementById("new_date").value;
-    console.log(new_date);
+
     localStorage.setItem("current_date", new_date);
     location.reload();
   });
@@ -124,4 +124,53 @@ function sendEmail(to, subject, body) {
     .catch((error) => {
       console.log(error);
     });
+}
+// Budget progress update
+
+let budget_progress= []
+
+if(active_user["budget_plan"]){
+
+    let expense_category_details = active_user["budget_plan"]["expense_categories"]
+
+
+    for(let r=0;r<expense_category_details.length;r++){
+        let category_name=expense_category_details[r]["category_name"]
+        let each_expense_details={
+            category_name,
+            category_budget:Number(expense_category_details[r]["category_budget"]),
+        }
+    
+    let expense_category_values = active_user["category"]["expense"][category_name]
+
+    let amount_spent=0
+    for(let y=0;y<expense_category_values.length;y++){
+        amount_spent+=expense_category_values[y]["amount"]
+    }
+    
+    each_expense_details["amount_spent"]=amount_spent
+    
+    budget_progress.push(each_expense_details)
+    }
+    
+
+    
+    active_user["budget_progress"]=budget_progress
+    localStorage.setItem("active_user",JSON.stringify(active_user))
+    
+    
+}
+
+
+//  ====================  Sweet alert functions ======================
+
+
+//  Success msg-----------
+function function3(content) { 
+	swal("Success!", content, "success");
+}
+//  Sorry msg -------------
+
+function function4(content) { 
+  swal("Sorry!", content,"error");
 }

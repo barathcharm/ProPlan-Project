@@ -74,24 +74,18 @@ new Chart("total_graph", {
 
 //  Category wise expense pie chart---------------
 
-var xValues = [
-  "Bills",
-  "Personal",
-  "Shopping",
-  "Entertainment",
-  "Travel",
-  "Vehicle",
-  "Investment",
-];
-var yValues = [8500, 3000, 3000, 500, 1000, 2000, 2000];
-var barColors = [
+let categorynames = []
+let categorybarColors = []
+let categoryvalues=[]
+const chartcolors = [
   "#a179bf",
   "#fe7676",
   "#f4cf28",
   "#5dbeaa",
   "#6fa6df",
   "#603cb5",
-  "#0075a4, #ed7226",
+  "#0075a4",
+  "#ed7226",
   "#c8a4b6",
   "#a0a0a0",
   "#1f7043",
@@ -101,14 +95,21 @@ var barColors = [
   "#b9614c",
 ];
 
+for(let y=0;y<act_user["budget_progress"].length;y++){
+  categorynames.push(act_user["budget_progress"][y]["category_name"])
+  categoryvalues.push(act_user["budget_progress"][y]["amount_spent"])
+categorybarColors.push(chartcolors[y])
+}
+
+console.log(categoryvalues,categorybarColors,categorynames,"ppp");
 new Chart("categorychart", {
   type: "pie",
   data: {
-    labels: xValues,
+    labels: categorynames,
     datasets: [
       {
-        backgroundColor: barColors,
-        data: yValues,
+        backgroundColor: categorybarColors,
+        data: categoryvalues,
       },
     ],
   },
@@ -123,41 +124,62 @@ new Chart("categorychart", {
 
 //  Income wise expense pie chart----------------
 
-var xValues = [
-  "Bills",
-  "Personal",
-  "Shopping",
-  "Entertainment",
-  "Travel",
-  "Vehicle",
-  "Investment",
-];
-var yValues = [8500, 3000, 3000, 500, 1000, 2000, 2000];
-var barColors = [
-  "#a179bf",
-  "#fe7676",
-  "#f4cf28",
-  "#5dbeaa",
-  "#6fa6df",
-  "#603cb5",
-  "#0075a4, #ed7226",
-  "#c8a4b6",
-  "#a0a0a0",
-  "#1f7043",
-  "#72b037",
-  "#c1bb7f",
-  "#7e7e7c",
-  "#b9614c",
-];
+// var xValues = [
+//   "Bills",
+//   "Personal",
+//   "Shopping",
+//   "Entertainment",
+//   "Travel",
+//   "Vehicle",
+//   "Investment",
+// ];
+// var yValues = [8500, 3000, 3000, 500, 1000, 2000, 2000];
+// var barColors = [
+//   "#a179bf",
+//   "#fe7676",
+//   "#f4cf28",
+//   "#5dbeaa",
+//   "#6fa6df",
+//   "#603cb5",
+//   "#0075a4, #ed7226",
+//   "#c8a4b6",
+//   "#a0a0a0",
+//   "#1f7043",
+//   "#72b037",
+//   "#c1bb7f",
+//   "#7e7e7c",
+//   "#b9614c",
+// ];
+
+
+
+let in_cat_values=[]
+let in_cat_color=[]
+let income_cat =JSON.parse(localStorage.getItem("active_user")).category.income
+let in_cat_names = Object.keys(income_cat);
+console.log(in_cat_names);
+
+in_cat_names.forEach((e, i) => {
+  let total_category_amount = 0;
+
+  for (let n = 0; n < income_cat[e].length; n++) {
+    total_category_amount += Number(income_cat[e][n].amount);
+
+  }
+  in_cat_values.push(total_category_amount)
+  in_cat_color.push(chartcolors[i])
+})
+
+
 
 new Chart("incomecategorychart", {
   type: "pie",
   data: {
-    labels: xValues,
+    labels: in_cat_names,
     datasets: [
       {
-        backgroundColor: barColors,
-        data: yValues,
+        backgroundColor: in_cat_color,
+        data: in_cat_values,
       },
     ],
   },
@@ -177,7 +199,6 @@ const category_list = JSON.parse(localStorage.getItem("active_user")).category;
 const expense_categories = document.querySelector(".expense_categories");
 const expense_category = category_list.expense;
 const expense_category_names = Object.keys(category_list.expense);
-console.log(expense_category);
 expense_category_names.forEach((e, i) => {
   let total_category_amount = 0;
   let each_category_titles = "";
@@ -252,11 +273,10 @@ const expense_details_div = document.querySelectorAll(
 const expense_category_header = document.querySelectorAll(
   ".expense_category_header"
 );
-console.log(expense_category_header);
+
 expense_category_header.forEach((e, i) => {
-  console.log("iugc");
+
   e.addEventListener("click", (el) => {
-    console.log(expense_details_div[i]);
     expense_details_div[i].classList.toggle("view");
   });
 });
@@ -267,11 +287,11 @@ const income_details_div = document.querySelectorAll(
 const income_category_header = document.querySelectorAll(
   ".income_category_header"
 );
-console.log(income_category_header);
+
 income_category_header.forEach((e, i) => {
-  console.log("iugc");
+
   e.addEventListener("click", (el) => {
-    console.log(income_details_div[i]);
+   
     income_details_div[i].classList.toggle("view");
   });
 });
@@ -290,34 +310,18 @@ total_expense_value.forEach((e) => {
 
 //  category list details  with different colors expense and income----------=================
 
-const chartcolors = [
-  "#a179bf",
-  "#fe7676",
-  "#f4cf28",
-  "#5dbeaa",
-  "#6fa6df",
-  "#603cb5",
-  "#0075a4, #ed7226",
-  "#c8a4b6",
-  "#a0a0a0",
-  "#1f7043",
-  "#72b037",
-  "#c1bb7f",
-  "#7e7e7c",
-  "#b9614c",
-];
 
 const expense_category_details = document.querySelector(
   ".expense_category_chart .category_lists"
 );
-console.log(expense_category_names);
+
 expense_category_names.forEach((e, i) => {
-  console.log(e);
+
   let total_amount = 0;
   for (let u = 0; u < expense_category[e].length; u++) {
     total_amount += Number(expense_category[e][u].amount);
   }
-  console.log(total_amount);
+
   expense_category_details.innerHTML += `
     <div class="category_list">
            <div class="category_color color_1" style="background-color:${chartcolors[i]};"></div>
@@ -329,14 +333,14 @@ expense_category_names.forEach((e, i) => {
 const income_category_details = document.querySelector(
   ".income_category_chart .category_lists"
 );
-console.log(expense_category_names);
+
 income_category_names.forEach((e, i) => {
-  console.log(e);
+
   let total_amount = 0;
   for (let u = 0; u < income_category[e].length; u++) {
     total_amount += Number(income_category[e][u].amount);
   }
-  console.log(total_amount);
+
   income_category_details.innerHTML += `
     <div class="category_list">
            <div class="category_color color_1" style="background-color:${chartcolors[i]};"></div>
@@ -344,3 +348,5 @@ income_category_names.forEach((e, i) => {
     </div>
     `;
 });
+
+setDataInTheLocal()

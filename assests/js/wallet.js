@@ -240,3 +240,5 @@ withdraw_button.addEventListener("click", (e) => {
 // console.log(actibe,"uy")
 // actibe["proplan_wallet"] =[]
 // localStorage.setItem("active_user",JSON.stringify(actibe))
+
+setDataInTheLocal()

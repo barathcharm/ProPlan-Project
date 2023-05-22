@@ -2,8 +2,8 @@
     padding: 0px;
 }
 #about_icon{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #f0f1f1;
+    background-color: rgb(71, 71, 71);
+    color: white;
 }
 .about_content{
     width: 100%;

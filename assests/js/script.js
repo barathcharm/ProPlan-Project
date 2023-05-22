@@ -3,9 +3,9 @@ const ac_user = JSON.parse(localStorage.getItem("active_user"));
 // let current_date = localStorage.getItem("current_date")
 // delete ac_user['category']
 // localStorage.setItem("active_user",JSON.stringify(ac_user))
-if (!ac_user.budget) {
-  budgetform();
-}
+// if (!ac_user.budget) {
+//   budgetform();
+// }
 
 function budgetform() {
   backgroundblur();
@@ -50,49 +50,49 @@ const budget_percentage = document.getElementById("budget_percentage");
 
 const expenses_allowed = document.getElementById("expenses_allowed");
 
-budget_percentage.innerHTML = `${ac_user.budget}%`;
+budget_percentage.innerHTML = `${ac_user.budget_plan.expenses_allowed_percentage}%`;
 
-expenses_allowed.innerHTML = (ac_user.total_income / 100) * ac_user.budget;
+expenses_allowed.innerHTML = `${ac_user.budget_plan.total_expense_allowed}/-`;
 const warning_budget = ac_user.budget - 10;
 //  Sending email if the expenses exceeds
-if (ac_user.total_expense > (ac_user.total_income / 100) * warning_budget) {
-  const to = ac_user.email;
-  const subject = `Hello ${ac_user.name} Your expenses are nearly to reach your monthly budget !`;
-  const body = `
-    Hello ${
-      ac_user.name
-    } <br> Your total income for this month untill ${current_date} is ${
-    ac_user.total_income
-  } <br> Your budget for this month is ${ac_user.budget} which is ${
-    (ac_user.total_income / 100) * ac_user.budget
-  } <br>Your actual expenses for this month is ${
-    ac_user.total_expense
-  } <br><br> <h3>Its time to take a look at your expenses before it meets your budget for this month `;
+// if (ac_user.total_expense > (ac_user.total_income / 100) * warning_budget) {
+//   const to = ac_user.email;
+//   const subject = `Hello ${ac_user.name} Your expenses are nearly to reach your monthly budget !`;
+//   const body = `
+//     Hello ${
+//       ac_user.name
+//     } <br> Your total income for this month untill ${current_date} is ${
+//     ac_user.total_income
+//   } <br> Your budget for this month is ${ac_user.budget} which is ${
+//     (ac_user.total_income / 100) * ac_user.budget
+//   } <br>Your actual expenses for this month is ${
+//     ac_user.total_expense
+//   } <br><br> <h3>Its time to take a look at your expenses before it meets your budget for this month `;
 
-  sendEmail(to, subject, body);
-  alert(
-    "Its time to take a look at your expenses before it meets your budget for this month"
-  );
-}
-if (ac_user.total_expense > (ac_user.total_income / 100) * ac_user.budget) {
-  const to = ac_user.email;
-  const subject = `Hello ${ac_user.name} Your expenses had reached your monthly budget !`;
-  const body = `
-    Hello ${
-      ac_user.name
-    } <br> Your total income for this month untill ${current_date} is ${
-    ac_user.total_income
-  } <br> Your budget for this month is ${ac_user.budget} which is ${
-    (ac_user.total_income / 100) * ac_user.budget
-  } <br>Your actual expenses for this month is ${
-    ac_user.total_expense
-  } <br><br> <h3>The Expenses have overataked your monthly budget. Kindly ensure to control your expenses `;
+//   sendEmail(to, subject, body);
+//   alert(
+//     "Its time to take a look at your expenses before it meets your budget for this month"
+//   );
+// }
+// if (ac_user.total_expense > (ac_user.total_income / 100) * ac_user.budget) {
+//   const to = ac_user.email;
+//   const subject = `Hello ${ac_user.name} Your expenses had reached your monthly budget !`;
+//   const body = `
+//     Hello ${
+//       ac_user.name
+//     } <br> Your total income for this month untill ${current_date} is ${
+//     ac_user.total_income
+//   } <br> Your budget for this month is ${ac_user.budget} which is ${
+//     (ac_user.total_income / 100) * ac_user.budget
+//   } <br>Your actual expenses for this month is ${
+//     ac_user.total_expense
+//   } <br><br> <h3>The Expenses have overataked your monthly budget. Kindly ensure to control your expenses `;
 
-  sendEmail(to, subject, body);
-  alert(
-    "The Expenses have overataked your monthly budget. Kindly ensure to control your expenses"
-  );
-}
+//   sendEmail(to, subject, body);
+//   alert(
+//     "The Expenses have overataked your monthly budget. Kindly ensure to control your expenses"
+//   );
+// }
 
 // Background blur function---------
 
@@ -128,7 +128,7 @@ let budget_expense_category=ac_user["budget_plan"]["expense_categories"]
 console.log(budget_expense_category,budget_expense_category[1]);
 for(let q=0;q<budget_expense_category.length;q++){
   expense_category_labels.innerHTML+=`
-  <label for="utilities">
+  <label for=${budget_expense_category[q]["category_name"]}>
                     <input type="radio" id=${budget_expense_category[q]["category_name"]} name="expense_category" value="${budget_expense_category[q]["category_name"]}" required>${budget_expense_category[q]["category_name"]}
                 </label>
   `
@@ -346,7 +346,7 @@ welcome_name.innerHTML = `${
 // Chart in home page------------
 
 const bar_charts = document.querySelectorAll(".chart_bars");
-const budget_value = JSON.parse(localStorage.getItem("active_user")).budget;
+const budget_value = JSON.parse(localStorage.getItem("active_user"))["budget_plan"]["expenses_allowed_percentage"];
 bar_charts[0].style.height = `${100 * 2}px`;
 
 bar_charts[1].style.height = `${budget_value * 2}px`;
@@ -356,3 +356,15 @@ bar_charts[2].style.height = `${expense_percentage * 2}px`;
 bar_charts.forEach((el) => {
   el.addEventListener("mouseover", (e) => {});
 });
+
+
+// -------------------  Nothing to show ----------------
+
+
+if( ac_user.transaction_list ){
+  console.log("uuuu");
+  let nothing_to_show=document.querySelector(".nothing_to_show")
+  nothing_to_show.style.display ="none"
+}
+
+setDataInTheLocal()

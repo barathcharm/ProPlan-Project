@@ -118,3 +118,5 @@ function save_details() {
     }
   }
 }
+
+setDataInTheLocal()

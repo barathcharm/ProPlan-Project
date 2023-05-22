@@ -40,9 +40,12 @@ nav {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: #f2f4f7;
+    /* background-color: #f2f4f7; */
+    background-color: white;
+    background-color: #f0f1f1;
+
     border-radius: 0px 0px 10px 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
 }
 
 nav a {
@@ -65,7 +68,8 @@ nav a span {
 }
 
 nav>img {
-    width: 160px;
+    width: 145px;
+    margin-left: 10px;
 }
 
 #search {
@@ -77,7 +81,10 @@ nav>img {
     width: 30%;
     border-width: 0px 0px 1.5px 0px;
     margin-right: 30px;
-    background-color: #f2f4f7;
+    /* background-color: #f2f4f7; */
+    background-color: #f0f1f1;
+
+    
 
 }
 
@@ -129,46 +136,52 @@ main {
 }
 
 .left_side {
-    width: 13%;
-    margin-top: 100px;
+    width: 12%;
+    margin-top: 40px;
+    height: 750px;
 
 }
 
 .left_side .tabs {
-    padding-top: 30px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-    margin-top: 40px;
+    padding-top: 20px ;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px; */
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 0px 20px 20px 0px;
+    /* justify-content: center; */
+    /* border-radius: 0px 20px 20px 0px; */
     background-color: #f0f1f1;
-
+    height: 100%;
+box-sizing: border-box;
 }
 
 .tabs a {
-    width: 90px;
+    /* width: 100px; */
+    width: 130px;
     padding: 10px 25px;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
+    justify-content:center;
+    /* border-radius: 20px; */
     margin-bottom: 30px;
     color: black;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .tabs a img {
-    width: 35px;
-    margin: 0px 10px 0px 5px;
+    width: 30px;
+    margin:0px 10px  0px 5px;
 
 }
 
 #homeicon {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #f0f1f1;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #f0f1f1; */
+    background-color: rgb(70, 71, 72);
+    color: white;
 }
 
 /* -----------Center Content div------------ */
@@ -411,12 +424,17 @@ datalist {
 }
 
 /*---------------- Adding income form -------------*/
+/* .add_expense_form {
+    top: 20%;
+    height: 510px;
+} */
 .add_income_form,
 .add_expense_form {
     width: 23%;
     padding: 20px;
     border-radius: 5px;
-    max-height: 440px;
+    height: 470px;
+    max-height: 750px;
     position: fixed;
     top: 23%;
     left: 35%;
@@ -428,10 +446,7 @@ datalist {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-.add_expense_form {
-    top: 20%;
-    height: 510px;
-}
+
 
 .add_expense_form {
     display: none;
@@ -693,7 +708,22 @@ table tr td:nth-of-type(2) {
     display: flex;
 }
 
-.r{
-   background-color: #a179bf", "#fe7676", "#f4cf28", "#5dbeaa", "#6fa6df", "#603cb5","#0075a4, #ed7226", "#c8a4b6", "#a0a0a0"
-   #1f7043","#72b037","#c1bb7f","#7e7e7c","#b9614c"
+/*  Nothing to show cssssssssss */
+.nothing_to_show{
+    text-align: center;
+    color: grey;
+    font-weight: 700;
+    letter-spacing: 3px;
+    width: 80%;
+    opacity: .9;
+    padding: 30px;
+    margin: 50px auto;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+
 }
+.nothing_to_show img{
+    width: 150px;
+    margin: 20px 0px;
+}
+

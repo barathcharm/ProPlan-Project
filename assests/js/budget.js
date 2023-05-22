@@ -233,14 +233,16 @@ save_category_details.addEventListener("click",e=>{
         active_user["transaction_list"]=[]
         let date = localStorage.getItem("current_date")
           let salary_transaction=  {
-                "count": 1,
+                "count": 0,
                 "type": "salary",
                 "category": "Salary",
-                "amount": income,
+                "amount": `+ ${income}`,
                  date,
                 "id": "income",
                 "total_balance": income
             }
+            localStorage.setItem("total_balance",income)
+            localStorage.setItem("total_income",income)
 
 active_user["transaction_list"].push(salary_transaction)
         

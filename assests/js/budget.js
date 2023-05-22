@@ -112,15 +112,13 @@ let budget_range =document.getElementById("budget_range").value
     ${sav_percentage}% / ${sav_value} /-
     `
 })
+let remaining_amount = document.getElementById("remaining_amount")
 
 next_step[1].addEventListener("click",e=>{
     budget_range_input.disabled=true
     category_create_sec.classList.add("view")
     next_step[1].classList.add("not_view")
-    console.log(`
-    ${ex_percentage}% / ${pre_value} /-
-    `);
-
+    remaining_amount.innerHTML=`${pre_value} /-`
 })
 
 let add_category_button = document.getElementById("add_category")
@@ -136,6 +134,7 @@ if(total_expense_value>pre_value||total_expense_value==pre_value){
 alert("The categorised amount reached the allowed expense amount")
 }
 else{
+    remaining_amount.innerHTML=`${pre_value-total_expense_value} /-`
     let div=`
     <div class="create_category_feild">
                     <input type="text" class="budget_category" placeholder="ex,Shopping..">
@@ -233,7 +232,7 @@ save_category_details.addEventListener("click",e=>{
         active_user["transaction_list"]=[]
         let date = localStorage.getItem("current_date")
           let salary_transaction=  {
-                "count": 0,
+                "count": 1,
                 "type": "salary",
                 "category": "Salary",
                 "amount": `+ ${income}`,
@@ -243,6 +242,7 @@ save_category_details.addEventListener("click",e=>{
             }
             active_user["total_balance"]=income
             active_user["total_income"]=income
+            active_user["transaction_count"]=1
 
 active_user["transaction_list"].push(salary_transaction)
         
@@ -394,12 +394,14 @@ let updated_expense_allowed
 let updated_expense_allowed_percen
 let updated_savings
 let updated_savings_percen
+let updated_remaining_amount = document.getElementById("updated_remaining_amount")
 
 updated_next_step[1].addEventListener("click",e=>{
     console.log(pre_value,ex_percentage,sav_percentage,sav_value);
     updated_budget_range.disabled=true
     let category_values =document.querySelector(".updated_category_values")
     category_values.classList.remove("not_view")
+    updated_remaining_amount.innerHTML=`${pre_value} /-`
 
 })
 let add_category_button = document.getElementById("updated_add_category")
@@ -415,6 +417,7 @@ if(total_expense_value>pre_value||total_expense_value==pre_value){
 alert("The categorised amount reached the allowed expense amount")
 }
 else{
+    updated_remaining_amount.innerHTML=`${pre_value-total_expense_value} /-`
     let div=`
     <div class="create_category_feild">
                     <input type="text" class="updated_budget_category" placeholder="ex,Shopping..">

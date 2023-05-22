@@ -288,7 +288,16 @@ cursor: pointer;
 .create_category_feild input:nth-of-type(2){
     width: 100px;
 }
-
+.category_create_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px ;
+    box-sizing: border-box;
+}
+#remaining_amount{
+    font-weight: 600;
+    color: rgb(57, 57, 57);
+}
 .budget_set,.category_create_sec{
     display: none;
 }

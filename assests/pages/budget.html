@@ -240,7 +240,11 @@
 
            
             <div class="category_create">
-                <p>Categorize Your Expense </p>
+                <div class="category_create_header">
+                    <p>Categorize Your Expense </p>
+                    <p>Remaining: <span id="remaining_amount"></span></p>
+                </div>
+               
                 <div class="create_category_feild">
                     <input type="text" class="budget_category" placeholder="ex,Shopping..">
                     <input type="number" class="budget_value" placeholder="ex,4000/-...">
@@ -299,6 +303,7 @@
             <div class="updated_category_values not_view">
                 <div class="category_values ">
                     <p>Your Categorized Expenses </p>
+                    <p>Remaining Amount : <span id="updated_remaining_amount"></span></p>
                     <!--  content comes from js -->
                 </div>
                 <p id="updated_add_category">Add a category</p>

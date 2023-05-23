@@ -164,18 +164,18 @@ save_category_details.addEventListener("click",e=>{
     let check=0
     let check1=0
     let check2=0
+    let total_category_value=0
+    category_budget.forEach(e=>{
+        total_category_value+=Number(e.value)
+    })
 
+    if(total_category_value<total_expense_allowed||total_category_value==total_expense_allowed){
     for(let i =0;i<category_fields.length;i++){
         let category_name
         let category_budget_value
 
         if(category_fields[i].value!=""&&category_budget[i].value!=""){
-            let total_category_value=0
-            category_budget.forEach(e=>{
-                total_category_value+=Number(e.value)
-            })
-            if(total_category_value<total_expense_allowed||total_category_value==total_expense_allowed){
-                
+           
                 category_name=category_fields[i].value.trim()
                 category_budget_value = category_budget[i].value.trim()
     
@@ -193,14 +193,14 @@ save_category_details.addEventListener("click",e=>{
                 }
             }
             else{
-                check2=1
-            }
+                check=1
+                
+            } 
         }
-        else{
-            check=1
-            
-        }
-        
+          
+    }
+    else{
+        check2=1
     }
     if (check==1||check1==1) {
         alert("The fields cannot be empty")
@@ -209,7 +209,16 @@ save_category_details.addEventListener("click",e=>{
         alert("The categorized budget overtakes total budget for the expenses")
         
     }
+    
     else{
+        if(total_category_value<(total_expense_allowed-1)){
+            let others={
+                category_name:"Others",
+                category_budget:total_expense_allowed-total_category_value
+            }
+            expense_categories.push(others)
+            active_user["category"]["expense"]["Others"]=[]
+        }
         let budget_data = {
             income,
             savings,
@@ -349,6 +358,7 @@ let sav_percentage
 let updated_monthly_income_value
 let updated_next_step=document.querySelectorAll(".updated_next_step")
 updated_next_step[0].addEventListener("click",e=>{
+    updated_next_step[0].classList.add("not_view")
     updated_monthly_income_value=document.getElementById("updated_monthly_income").value
 document.getElementById("updated_monthly_income").disabled=true
 
@@ -397,11 +407,18 @@ let updated_savings_percen
 let updated_remaining_amount = document.getElementById("updated_remaining_amount")
 
 updated_next_step[1].addEventListener("click",e=>{
+    updated_next_step[1].classList.add("not_view")
+
     console.log(pre_value,ex_percentage,sav_percentage,sav_value);
     updated_budget_range.disabled=true
     let category_values =document.querySelector(".updated_category_values")
     category_values.classList.remove("not_view")
-    updated_remaining_amount.innerHTML=`${pre_value} /-`
+    let category_budget = document.querySelectorAll(".updated_budget_value")
+    let total_expense_value=0
+category_budget.forEach(e=>{
+    total_expense_value+=Number(e.value)
+})
+    updated_remaining_amount.innerHTML=`${pre_value-total_expense_value} /-`
 
 })
 let add_category_button = document.getElementById("updated_add_category")
@@ -437,56 +454,75 @@ let update_button= document.getElementById("update_category_details")
 update_button.addEventListener("click",e=>{
     
     e.preventDefault()
-    let expense_categories=[]
+    let expense_categories=active_user["budget_plan"]["expense_categories"]
     let category_fields = document.querySelectorAll(".updated_budget_category")
     let category_budget = document.querySelectorAll(".updated_budget_value")
     let income =updated_monthly_income_value
     let savings =sav_value
     let total_expense_allowed=pre_value
 
-    active_user["category"]={}
-    active_user["category"]["expense"]={}
+    // active_user["category"]={}
+    // active_user["category"]["expense"]={}
     let check=0
     let check1=0
     let check2=0
+
+    let total_category_value=0
+    category_budget.forEach(e=>{
+        total_category_value+=Number(e.value)
+    })
+
+   
+    if(total_category_value<total_expense_allowed||total_category_value==total_expense_allowed){
 
     for(let i =0;i<category_fields.length;i++){
         let category_name
         let category_budget_value
 
         if(category_fields[i].value!=""&&category_budget[i].value!=""){
-            let total_category_value=0
-            category_budget.forEach(e=>{
-                total_category_value+=Number(e.value)
-            })
-            if(total_category_value<total_expense_allowed||total_category_value==total_expense_allowed){
-                
+       
                 category_name=category_fields[i].value.trim()
                 category_budget_value = category_budget[i].value.trim()
     
-    
                 if(category_name!=""&&category_budget_value>0){
-                    let category={
-                        category_name,
-                        category_budget :category_budget_value
+                    let current_category_index
+                    expense_categories.forEach((e,i)=>{
+                        if(e["category_name"]==category_name){
+                            current_category_index=i
+                           
+                        }
+                    })
+                    if(current_category_index!=undefined){
+                        expense_categories[current_category_index]["category_budget"]=category_budget_value
+                        console.log("updated");
                     }
-                    expense_categories.push(category)
-                    active_user["category"]["expense"][category_fields[i].value]=[]
+                    else{
+                        let category={
+                            category_name,
+                            category_budget :category_budget_value
+                        }
+                        console.log("created");
+                        expense_categories.push(category)
+                        active_user["category"]["expense"][category_fields[i].value]=[]
+                    }
+                   
                 }
                 else{
                     check1=1
                 }
             }
             else{
-                check2=1
+        check=1 
+
             }
         }
-        else{
-            check=1
-            
-        }
-        
+ 
     }
+    else{
+        check2=1
+
+    }
+    
     if (check==1||check1==1) {
         alert("The fields cannot be empty")
     }
@@ -495,6 +531,30 @@ update_button.addEventListener("click",e=>{
         
     }
     else{
+        if(total_category_value<(total_expense_allowed-1)){
+let cate="Others"
+let cate_ind
+            expense_categories.forEach((e,i)=>{
+                if(e["category_name"]==cate){
+                    cate_ind=i
+                }
+            })
+            if(cate_ind!=undefined){
+expense_categories[cate_ind]["category_budget"]=Number(expense_categories[cate_ind]["category_budget"])+ Number(total_expense_allowed-total_category_value)
+
+console.log("ooooooooo")
+            }
+            else{
+                let cate_detail={
+                    category_name:'Others',
+                    category_budget:total_expense_allowed-total_category_value
+                }
+                expense_categories.push(cate_detail)
+                console.log("iiiiiii");
+                active_user["category"]["expense"]["Others"]=[]
+            }
+
+        }
         let budget_data = {
             income,
             savings,

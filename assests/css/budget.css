@@ -289,12 +289,18 @@ cursor: pointer;
     width: 100px;
 }
 .category_create_header{
+
+}
+.category_values_header , .category_create_header{
     display: flex;
     justify-content: space-between;
     padding: 10px ;
     box-sizing: border-box;
+    position: sticky;
+    top: 0px;
+    background-color: white;
 }
-#remaining_amount{
+#remaining_amount,#updated_remaining_amount{
     font-weight: 600;
     color: rgb(57, 57, 57);
 }

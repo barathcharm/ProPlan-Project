@@ -142,6 +142,7 @@ if(active_user["budget_plan"]){
         }
     
     let expense_category_values = active_user["category"]["expense"][category_name]
+    console.log(expense_category_values);
 
     let amount_spent=0
     for(let y=0;y<expense_category_values.length;y++){

@@ -37,7 +37,7 @@ Already have a account? <a href="./assests/pages/login.html">Log in</a>
                 <form id="signup_form">
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control input" id="name" pattern="[A-Za-z]{0,32}"
+                        <input type="text" class="form-control input" id="name" pattern="(?=.*\ d)(?=.*[a-z])(?=.*[A-Z]).{2,}"
                             Title="1.Don't enter numbers, 2.Must include a uppercase character"
                             placeholder="enter your name" required>
                         <label for="name">Enter your name</label>
@@ -50,7 +50,7 @@ Already have a account? <a href="./assests/pages/login.html">Log in</a>
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control input" id="Profession" 
-                            title="Enter the type of occupation" placeholder="Profession" pattern="[A-Za-z]{0,32}" required>
+                            title="Enter the type of occupation" placeholder="Profession" pattern="(?=.*\ d)(?=.*[a-z])(?=.*[A-Z]).{2,}" required>
                         <label for="Profession">Profession</label>
                     </div>
 
@@ -64,7 +64,8 @@ Already have a account? <a href="./assests/pages/login.html">Log in</a>
 
                     <div class="password">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control input" id="password" pattern="[A-Za-z0-9]{8,16}"
+                            <input type="password" class="form-control input" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+
                                 title="Enter a password mixed of uppercase characters, lowercase characters and Numbers with min 8 characters"
                                 placeholder="Enter password" required>
                             <label for="password">Enter password</label>

@@ -25,11 +25,11 @@ function store(e) {
 
     const user_data = {
       display_name: "",
-      name: user_name,
-      email: user_email,
-      number: user_number,
-      profession: user_profession,
-      password: user_pass,
+      name: user_name.trim(),
+      email: user_email.trim(),
+      number: user_number.trim(),
+      profession: user_profession.trim(),
+      password: user_pass.trim(),
     };
 
     users = JSON.parse(localStorage.getItem("users")) ?? [];

@@ -19,7 +19,10 @@ let nothing_to_show=document.querySelector(".nothing_to_show")
 
 if(active_user["budget_plan"]){
     nothing_to_show.style.display ="none"
-
+    
+}
+else{
+    document.getElementById("edit_budget").style.display="none"
 }
 
 
@@ -32,7 +35,14 @@ if(active_user["budget_progress"]){
     console.log(expense_categories);
     for(let i=0;i<expense_categories.length;i++){
         let bar_height =(Number(expense_categories[i]["amount_spent"])/ Number(expense_categories[i]["category_budget"]))*180
-        console.log(bar_height);
+        console.log(bar_height,"bb");
+let chart_height=180
+        if(bar_height>180){
+chart_height-=(bar_height-180)
+bar_height=180
+console.log(chart_height);
+        }
+
         categories_data.innerHTML+=
         `
         <div class="cateogory_details">
@@ -40,7 +50,7 @@ if(active_user["budget_progress"]){
         <p>Budget - ₹ ${expense_categories[i]["category_budget"]}/-</p>
         <p>Spent - ₹ ${expense_categories[i]["amount_spent"]}/-</p>
         <div class="category_chart">
-            <div class="expenses_allowed" >
+            <div class="expenses_allowed" style=' height:${chart_height}px;' >
     
             </div>
             <div class="expenses_spent" style=' height:${bar_height}px;'>
@@ -89,9 +99,8 @@ next_step[0].addEventListener("click",e=>{
 
      }
      else{
-        // Sorry msg 
         swal("Sorry!", "Enter Valid Monthly income","error");
-        // function4("Enter Valid Monthly income")
+        
      }
    
 })
@@ -140,7 +149,6 @@ else{
                     <input type="text" class="budget_category" placeholder="ex,Shopping..">
                     <input type="number" class="budget_value" placeholder="ex,4000/-...">
                 </div>
-
     `
     category_create.insertAdjacentHTML('beforeend', div);
 
@@ -293,7 +301,7 @@ if(active_user["budget_plan"]){
 
     let total_expenses_allowed_percentage = (active_user["budget_plan"]["expenses_allowed_percentage"])
 
-    total_expenses_allowed_percen.innerHTML=`${total_expenses_allowed_percentage} %`
+    total_expenses_allowed_percen.innerHTML=`${Number(total_expenses_allowed_percentage).toFixed(2)} %`
 
     let total_amount_spent=0
     if(active_user["budget_progress"]){
@@ -312,7 +320,7 @@ if(active_user["budget_plan"]){
 
     let total_expenses_spent_percentage = (total_amount_spent/active_user["budget_plan"]["income"])*100
 
-    total_expenses_spent_percen.innerHTML=`${total_expenses_spent_percentage} %`
+    total_expenses_spent_percen.innerHTML=`${total_expenses_spent_percentage.toFixed(2)} %`
 
     // chart difference in the header--------
 
@@ -542,7 +550,6 @@ let cate_ind
             if(cate_ind!=undefined){
 expense_categories[cate_ind]["category_budget"]=Number(expense_categories[cate_ind]["category_budget"])+ Number(total_expense_allowed-total_category_value)
 
-console.log("ooooooooo")
             }
             else{
                 let cate_detail={

@@ -1,0 +1,187 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*  Header */
+header{
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding:15px; 
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    /* height: 50px; */
+}
+
+nav img {
+    width: 150px;
+    /* height: 25px; */
+    /* border: 1px solid black; */
+
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+
+}
+
+nav div p {
+    border-radius: 3px;
+    padding: 6px 15px;
+    margin: 0px 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #4d84ab;
+    height:min-content;
+}
+
+nav div p:hover {
+    background-color: #4d84ab;
+    color: white;
+}
+
+.center_side {
+    padding: 0px;
+}
+
+#about_icon {
+    background-color: rgb(71, 71, 71);
+    color: white;
+}
+
+
+/*  Content 1 */
+
+.container1{
+    display: flex;
+    padding: 30px;
+    box-sizing: border-box;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+.container1> div{
+    width: 43%;
+    padding: 0px 30px ;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+.container1 >div:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+}
+.container1 img{
+    width: 450px;
+}
+.c1_header{
+display: flex;
+flex-direction: row;
+align-items: center;
+color: #24597f;
+min-width: 100%;
+}
+.c1_content {
+min-width: 100%;
+text-indent: 30px;
+padding:20px 0px 30px 0px ;
+color: rgb(69, 69, 69);
+letter-spacing: .3px;
+line-height: 22px;
+}
+.c1_header p:nth-of-type(1){
+    font-size: 80px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.c1_header p:nth-of-type(2){
+    font-size: 22px;
+}
+.get_started{
+    color: white;
+    background-color: #4d84ab;
+    padding: 8px 15px;
+    width:fit-content;
+    border-radius: 3px;
+}
+
+/*  About savings income div */
+
+.about_exp_inc {
+    background-color: #eaf0f6;
+    padding: 50px 0px;
+}
+.about_exp_inc > h2{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: #41607b;
+}
+.expense_saving {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0px;
+}
+
+.about_expense,
+.about_saving {
+    width: 28%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0px 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.about_expense h2,
+.about_saving h2 {
+    color: #2e475d;
+    display: flex;
+    align-items: center;
+}
+
+.about_expense h2 img,
+.about_saving h2 img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.about_expense p,
+.about_saving p {
+    font-size: 14px;
+    font-weight: 300;
+    /* letter-spacing: .5px; */
+    margin: 20px 0px 10px 0px;
+    text-indent: 30px;
+}
+
+.about_expense a,
+.about_saving a {
+    color: #259191;
+    font-size: 14px;
+}
+
+.footer_img {
+    width: 100%;
+    height: 200px;
+    background-image: url(../images/footer_blue.svg);
+    background-size: 100%;
+}
+
+.footer {
+    width: 100%;
+    height: 300px;
+    background-color: #5da2d4;
+}

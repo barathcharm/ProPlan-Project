@@ -19,7 +19,7 @@
     border: 0px;
     border-radius: 5px;
     color: rgb(71, 71, 71);
-    font-weight: 1000;
+    font-weight: 700;
 }
 .create_note1 input{
     width: 100%;
@@ -27,7 +27,8 @@
     padding:8px 10px ;
     box-sizing: border-box;
     border: none;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 3px;
 }
 #txtarea{
     width: 100%;
@@ -37,12 +38,13 @@
     margin: 20px auto;
     border: 0px;
     /* box-shadow: rgba(67, 71, 85, 0.2) 0px 0px 5.6px 0px, rgba(90, 125, 188, 0.05) 0px 5.6px 8px 0px; */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 3px;
   
 }   
 #txtarea:focus,.create_note1 input:focus{
     outline: none;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-shadow: rgba(78, 80, 82, 0.3) 0px 1px 2px 0px, rgba(73, 76, 78, 0.15) 0px 1px 3px 1px;
     border-radius: 5px;
 }   
 #Notes_month{

@@ -1,5 +1,9 @@
+
 .center_side{
-    padding: 0px;
+    padding:0px ;
+
+    width: 87%;
+    margin: 110px auto 0px auto;
 }
 #about_icon{
     background-color: rgb(71, 71, 71);

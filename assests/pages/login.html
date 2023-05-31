@@ -49,10 +49,17 @@ Don't have a account? <a href="../../index.html">Sign Up</a>
                         <input type="email" class="form-control input" id="email" placeholder="Email id">
                         <label for="email">Email id</label>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control input" id="password" placeholder="Enter password">
-                        <label for="password">Enter password</label>
+                    <div class="password">
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control input password_input" id="password" placeholder="Enter password">
+                            <label for="password">Enter password</label>
+                        </div>
+                        <img src="../images/icons/invisible.png" alt="icon" id="pass_close">
+                        <img src="../images/icons/eye.png" alt="icon" id="pass_open">
                     </div>
+                   
+                    
+
 
                     <button type="submit">Log in</button>
                     <h5>OR</h5>
@@ -75,6 +82,7 @@ Don't have a account? <a href="../../index.html">Sign Up</a>
         </div>
         </div>
     </main>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
     <script src="../js/login.js"></script>
 </body>
 

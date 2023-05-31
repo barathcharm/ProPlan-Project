@@ -23,10 +23,24 @@
             <img src="../images/icons/proplan_logo.png" alt="logo">
             <div class="nav_right">
                 <input type="text" id="search" placeholder="Search">
-                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span id="nav_balance">0/-</span></a>
-                <h4>Jan 30, 2023</h4>
-                <a href="../../index.html" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
-                        id="log_out"></a>
+                <a href="./wallet.html">
+<img src="../images/icons/wallet_icon.png" alt="icon">
+ <span id="nav_balance">0/-</span>
+</a>
+                <div id="date">
+<span id="date_value"></span>
+ <img src="../images/icons/edit_img.png" alt="img" id="date_edit">
+</div>
+                <span id="log_out" title="Log out">
+<img src="../images/icons/log_out.png" alt="icon"
+                    ></span>
+
+         </div>
+         <div class="log_out_div ">
+             <input type="checkbox" id="remember_me">
+<label for="remember_me"> Remember me</label>
+             <button id="log_out_button"> Log Out</button>
+         </div>
 
             </div>
         </nav>
@@ -35,38 +49,62 @@
         <!-- --------------left side div--------------- -->
         <div class="left_side">
             <div class="tabs">
-                <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
-                <a href="analytics.html"><img src="../images/icons/statistics.png" alt="">Analytics</a>
-                <a href="wallet.html"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
-                <a href="notes.html"><img src="../images/icons/notes.png" alt="icons">Notes</a>
-                <a href="profile.html" id="profile"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
-                <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
+                <a href="home.html">
+<img src="../images/icons/home.png" alt="icons"> Home
+</a>
+                <a href="analytics.html">
+<img src="../images/icons/statistics.png" alt="">Analytics
+</a>
+<a href="budget.html">
+    <img src="../images/icons/budget.png" alt="icons"> Budget
+</a>
+                <a href="wallet.html">
+<img src="../images/icons/savings.png" alt="icons"> Wallet
+</a>
+                <a href="notes.html">
+<img src="../images/icons/notes.png" alt="icons">Notes
+</a>
+                <a href="profile.html" id="profile">
+<img src="../images/icons/white_user.png" alt="icons"> Profile
+</a>
+                <a href="about.html">
+<img src="../images/icons/about.png" alt="icons"> About
+</a>
             </div>
         </div>
         <!----------------center content div----------------->
         <div class="center_side">
 
             <div class="left_content">
-                <h2>Profile Page</h2>
                 <img src="../images/tony.jpg" alt="profile img">
-                <div class="bio">
+                <!-- <div class="bio">
                     <h3>BIO</h3>
                     <p>20 | I am a software developer. I have Broad mindset to learn new things. | Wander Lust | <br>
                         Don't be average,,,, Be Savage..!</p>
-                </div>
+                </div> -->
             </div>
             <div class="right_content">
-                <p> Display name <span id="display_name"></span>
+                <p>
+ Display name <span id="display_name"></span>
                 </p>
-                <p>Name<span class="name"></span>
+                <p>
+Name<span class="name"></span>
                 </p>
-                <p> Email <span id="email"></span>
+                <p>
+ Email <span id="email"></span>
                 </p>
-                <p> Phone Number <span id="ph_no"></span>
+                <p>
+ Phone Number <span id="ph_no"></span>
                 </p>
-                <p> Profession <span id="profession"></span>
+                <p>
+ Profession <span id="profession"></span>
                 </p>
-                <button id="edit"><img src="../images/icons/edit.svg" alt="icons"></button>
+                <!-- <p>
+ Monthly Budget<span id="budget_value"></span>
+                </p> -->
+                <button id="edit">
+<img src="../images/icons/edit.svg" alt="icons">
+</button>
 
             </div>
             <div class="right_content1"></div>
@@ -88,112 +126,28 @@
                 </div>
                 <div class="total_balance">
                     <p>Total Balance</p>
-                    <h1>&#8377; 8,000</h1>
+                    <h1>
+&#x20B9; <span id="total_balance">8,000</span> 
+</h1>
                 </div>
                 <div class="total_income">
                     <p>Total Income</p>
-                    <h1>&#8377; 28,000</h1>
+                    <h1>
+&#8377;<span id="total_income">28,000</span>
+</h1>
                 </div>
                 <div class="total_expense">
                     <p>Total Expense</p>
-                    <h1>&#8377; 20,000</h1>
+                    <h1>
+&#8377;<span id="total_expense">20,000</span>
+</h1>
                 </div>
             </div>
         </div>
     </main>
     <script src="../js/common.js"></script>
 
-    <script>
-        let active_user = JSON.parse(localStorage.getItem("active_user"))
-        console.log(active_user)
-        console.log(document.getElementById("display_name"));
-
-       
-        let user_name = document.querySelectorAll(".name")
-
-        let div = document.querySelector(".right_content")
-        let div1 = document.querySelector(".right_content1")
-        
-
-     add_details();
-     function add_details(){
-         user_name[0].innerHTML = active_user["name"]
-        document.getElementById("display_name").innerHTML = active_user["display_name"]
-        document.getElementById("email").innerHTML = active_user["email"]
-        document.getElementById("ph_no").innerHTML = active_user["number"]
-        document.getElementById("profession").innerHTML = active_user["profession"]
-     }
-        let edit_button = document.querySelector("#edit")
-        edit_button.addEventListener("click", edit)
-        function edit() {
-
-            div.classList.add("not_view")
-            div1.classList.add("view")
-            console.log(active_user["display_name"]);
-            div1.innerHTML =
-                `<p>Display Name 
-            <input type="text" id="new_display_name" value="${active_user["display_name"]}">
-            </p> 
-            <p>Name 
-            <input type="text" id="new_name" value="${active_user["name"]}">
-            </p> 
-            <p>Email 
-            <input type="email" id="new_email" value="${active_user["email"]}"> 
-            </p> 
-            <p>Phone number
-            <input type="tel" id="new_ph_no" pattern=[0-9]{10} value="${active_user["number"]}"> 
-            </p> 
-            <p>Profession 
-            <input type="text" id="new_profession" value="${active_user["profession"]}"> 
-            </p> 
- 
-            <button id="save"> 
-                <img src="../images/icons/save_icon.png" alt="icon"> 
-                </button> 
-        `
-            save_details();
-        }
-        function save_details() {
-            let save_button = document.querySelector("#save")
-            save_button.addEventListener("click", save)
-            function save(e) {
-                div.classList.remove("not_view")
-                div1.classList.remove("view")
-
-                e.preventDefault()
-                let new_display_name = document.getElementById("new_display_name").value
-
-                let new_name = document.getElementById("new_name").value
-                let new_email = document.getElementById("new_email").value
-                let new_ph_no = document.getElementById("new_ph_no").value
-                let new_profession = document.getElementById("new_profession").value
-
-                active_user["display_name"] = new_display_name
-                active_user["name"] = new_name
-                active_user["email"] = new_email
-                active_user["number"] = new_ph_no
-                active_user["profession"] = new_profession
-                localStorage.setItem("active_user", JSON.stringify(active_user))
-
-                let users = JSON.parse(localStorage.getItem("json"))
-                users.forEach(e => {
-                    if (e["email"] == active_user["email"]) {
-
-                        e["display_name"] = new_display_name
-                        e["name"] = new_name
-                        e["email"] = new_email
-                        e["number"] = new_ph_no
-                        e["profession"] = new_profession
-                    }
-                }
-                )
-                console.log(active_user);
-                localStorage.setItem("json", JSON.stringify(users))
-                window.location.href ="./profile.html"
-            }
-        }
-    </script>
-
+    <script src="../js/profile.js"></script>
 
 </body>
 

@@ -30,8 +30,12 @@
 
     <main>
         <div class="top">
-            <a href=""><img src="../images/icons/proplan_logo.png" alt="icon"></a>
-            <p>Don't have a account? <a href="../../signup.html">Sign Up</a></p>
+            <a href="">
+<img src="../images/icons/proplan_logo.png" alt="icon">
+</a>
+            <p>
+Don't have a account? <a href="../../index.html">Sign Up</a>
+</p>
         </div>
         <div class="maincontainer">
             <div class="left">
@@ -40,15 +44,22 @@
             <div class="right">
                 <h2>Log In !</h2>
                 <h5>Enter your details</h5>
-                <form onsubmit="check()" >
+                <form id="check">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control input" id="email" placeholder="Email id">
                         <label for="email">Email id</label>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control input" id="password" placeholder="Enter password">
-                        <label for="password">Enter password</label>
+                    <div class="password">
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control input password_input" id="password" placeholder="Enter password">
+                            <label for="password">Enter password</label>
+                        </div>
+                        <img src="../images/icons/invisible.png" alt="icon" id="pass_close">
+                        <img src="../images/icons/eye.png" alt="icon" id="pass_open">
                     </div>
+                   
+                    
+
 
                     <button type="submit">Log in</button>
                     <h5>OR</h5>
@@ -56,41 +67,23 @@
 
                 <div class="bottom">
                     <span>Login with</span>
-                    <a href="#"><img src="../images/icons/google icon.png" alt="icons"></a>
-                    <a href="#"><img src="../images/icons/fb icon.png" alt="icons"></a>
-                    <a href="#"><img src="../images/icons/twitter icon.png" alt="icons"></a>
+                    <a href="#">
+<img src="../images/icons/google icon.png" alt="icons">
+</a>
+                    <a href="#">
+<img src="../images/icons/fb icon.png" alt="icons">
+</a>
+                    <a href="#">
+<img src="../images/icons/twitter icon.png" alt="icons">
+</a>
 
                 </div>
             </div>
         </div>
         </div>
     </main>
-    <script>
-        function check() {
-            let user_email = document.getElementById("email").value
-            let user_pass = document.getElementById("password").value
-            let json = JSON.parse(localStorage.getItem("json"))
-            let check;
-            json.find(element => {
-                if (element["email"] == user_email && element["password"] == user_pass) {
-                    const active_user = JSON.stringify(element)
-                    localStorage.setItem("active_user", active_user)
-                    return check = 1
-                }
-                else {
-                    return check = 0
-                }
-            })
-            if (check == 1) {
-                
-                window.location.href = "home.html"
-                alert("Successfully logged in")
-            }
-            else {
-                alert("incorrect")
-            }
-        }
-    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>

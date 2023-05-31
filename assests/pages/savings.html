@@ -19,11 +19,24 @@
             <img src="../images/icons/proplan_logo.png" alt="logo">
             <div class="nav_right">
                 <input type="text" id="search" placeholder="Search">
-                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span id="nav_balance">0/-</span></a>
-                <h4>Jan 30, 2023</h4>
-                <a href="../../index.html" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
-                        id="log_out"></a>
+                <a href="./wallet.html">
+<img src="../images/icons/wallet_icon.png" alt="icon">
+ <span id="nav_balance">0/-</span>
+</a>
+                <div id="date">
+<span id="date_value"></span>
+ <img src="../images/icons/edit_img.png" alt="img" id="date_edit">
+</div>
+                <span id="log_out" title="Log out">
+<img src="../images/icons/log_out.png" alt="icon"
+                    ></span>
 
+         </div>
+         <div class="log_out_div ">
+             <input type="checkbox" id="remember_me">
+<label for="remember_me"> Remember me</label>
+             <button id="log_out_button"> Log Out</button>
+         </div>
             </div>
         </nav>
     </header>
@@ -31,12 +44,24 @@
         <!-- --------------left side div--------------- -->
         <div class="left_side">
             <div class="tabs">
-                <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
-                <a href="analytics.html"><img src="../images/icons/statistics.png" alt="">Analytics</a>
-                <a href="savings.html" id="savingsicon"><img src="../images/icons/savings.png" alt="icons"> Savings</a>
-                <a href="notes.html"><img src="../images/icons/notes.png" alt="icons">Notes</a>
-                <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
-                <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
+                <a href="home.html">
+<img src="../images/icons/home.png" alt="icons"> Home
+</a>
+                <a href="analytics.html">
+<img src="../images/icons/statistics.png" alt="">Analytics
+</a>
+                <a href="savings.html" id="savingsicon">
+<img src="../images/icons/savings.png" alt="icons"> Savings
+</a>
+                <a href="notes.html">
+<img src="../images/icons/notes.png" alt="icons">Notes
+</a>
+                <a href="profile.html">
+<img src="../images/icons/profile.png" alt="icons"> Profile
+</a>
+                <a href="about.html">
+<img src="../images/icons/about.png" alt="icons"> About
+</a>
             </div>
         </div>
         <!--------------------center side div-------------------->
@@ -154,11 +179,9 @@
                     </div>
                 </div>
 
-
             </div>
 
         </div>
-
 
         <!-------------------right side div-------------->
         <div class="right_side">
@@ -174,15 +197,21 @@
                 </div>
                 <div class="total_balance">
                     <p>Total Balance</p>
-                    <h1>&#8377; 8,000</h1>
+                    <h1>
+&#x20B9; <span id="total_balance">8,000</span> 
+</h1>
                 </div>
                 <div class="total_income">
                     <p>Total Income</p>
-                    <h1>&#8377; 28,000</h1>
+                    <h1>
+&#8377;<span id="total_income">28,000</span>
+</h1>
                 </div>
                 <div class="total_expense">
                     <p>Total Expense</p>
-                    <h1>&#8377; 20,000</h1>
+                    <h1>
+&#8377;<span id="total_expense">20,000</span>
+</h1>
                 </div>
             </div>
         </div>

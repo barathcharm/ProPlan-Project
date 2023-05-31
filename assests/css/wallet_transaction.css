@@ -1,0 +1,302 @@
+#date img{
+    width: 30px;
+    margin: 0px 3px;
+}
+#date{
+    display: flex;
+    align-items: center;
+}
+#walleticon{     
+    background-color: rgb(71, 71, 71);
+    color: white;
+
+}
+.transaction{
+    width: 83%;
+    margin: 150px 25px 0px 0px ;
+    overflow-y: hidden;
+    max-height: 740px;
+    overflow-y: scroll;
+    /* scrollbar-color: white; */
+}
+.transaction_list{
+    display: flex;
+    margin: 30px 0px 0px 0px;
+}
+.transaction_list a{
+    margin: 20px 20px 20px 10px;
+    color: rgb(27, 27, 27);
+    font-weight: 550;
+    font-size: 17px;
+}
+hr{
+    border: 1px solid rgb(213, 213, 213);
+}
+.transaction> h2{
+display: flex;
+align-items: center;
+}
+.transaction> h2 img{
+    width: 25px;
+    height: 23px;
+    margin: 0px 10px 0px 0px;
+    cursor: pointer;
+}
+.transaction_type{
+    display: flex;
+    align-items: center;
+}
+.transaction_data{
+    width: 95%;
+    margin: 0px auto;
+    height: 50px;
+    padding: 8px 15px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: solid grey;
+    border-width: 0px 0px .5px 0px;
+
+}
+.noborder{
+    border: none;
+}
+.transaction_type img{
+    width: 17px;
+    cursor: pointer;
+}
+.wallet_transaction_count{
+    margin: 0px 5px 0px 20px;
+    font-size: 18px;
+    color: rgb(52, 52, 52);
+}
+.wallet_transaction_amount{
+    margin: 0px 10px;
+}
+.wallet_transaction_deposited{
+font-weight: 550;
+color: rgb(59, 39, 14);
+}
+.transaction_date{
+font-size: 15px;
+    color: rgb(93, 93, 93);
+}
+.withdrawed{
+    color: #ef6c52;
+
+}
+.deposited{
+    color: #3dbe52;
+} 
+.withdrawed{
+    color: #e7633c !important;
+    font-size: 14px;
+}
+.grey{
+    color: rgb(97, 97, 97);
+}
+/* a.underline::after{
+    width: 100%;
+    height: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: #ef6c52;
+    display: block;
+     content: ""; 
+     transition: 1s; 
+} */
+.extra_details{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 95%;
+    padding: 0px 15px;
+    margin: 0px auto;
+    justify-content: space-between;
+    border: solid grey;
+    border-width: 0px 0px .5px 0px;
+    border-radius: 10px;
+    display: none;
+}
+.extra_details p{
+    display: flex;
+    align-items:center;
+    width: 300px;
+    /* border: 1px solid black; */
+    margin: 10px 20px;
+    font-size: 13px;
+    font-weight: 550;
+    color: rgb(89, 89, 89);
+}
+.extra_details p span{
+    font-size: 17px;
+    color: rgb(47, 27, 27);
+}
+.extra_details a{
+margin: 10px 20px;
+width: 300px;
+color: #ef6c52;
+font-weight: 550;
+}
+.plan_status{
+    color: #2db644 !important;
+}
+.transaction_details span{
+    margin: 0px 5px;
+}
+/* withdraw form------------------------------- */
+ .withdraw_form{
+    width: 43%;
+    /* height: 65vh; */
+    position: fixed;
+    top: 170px;
+    left: 480px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-weight: 450;
+    font-size: 15px;
+    z-index: 5;
+}
+.withdraw_form h2{
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.withdraw_form h2 img{
+    width: 50px;
+    margin: 0px 10px;
+}
+#transaction_id{
+    background-color: rgb(97, 97, 97);
+    padding: 5px 15px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    font-weight: 700;
+    color: white;
+}
+.hr{
+    margin: 15px 0px 20px 0px;
+}
+.withdraw_form input{
+    border: solid grey;
+    border-width:  0px 0px 1px 0px;
+    margin: 20px 30px;
+}
+.withdraw_form input:focus{
+    outline: none;
+}
+.step1,.step3{
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    height: 50px;
+}
+.payment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.withdraw_form p span{
+    padding: 7px 15px;
+    font-weight: 800;
+    background-color: #e7633c;
+    border-radius: 50%;
+    color: white;
+    margin:0px 15px 0px 15px ;
+}
+.step2_list div img{
+    width: 50px;
+    margin: 5px 0px;
+}
+.step2_list{
+    margin: 30px 0px 0px 0px ;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.step3 span{
+    padding: 6px 15px ;
+    border: none;
+    background-color: #4d8ab6;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.send_request_otp{
+    font-weight: 500;
+    color: #42464a;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.send_request_otp input{
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.send_request_otp img{
+    width: 30px;
+    margin-right: 10px;
+}
+.buttons{
+    margin: 25px 0px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.buttons a,.buttons button{
+    padding: 7px 20px;
+    margin: 0px 5px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+#back{
+    background-color: #4d8ab6;
+}
+#done,#withdraw_money{
+    background-color:#2db644;
+    display: flex;
+    align-items: center;
+}
+.withdraw_form p:nth-of-type(1){
+    display: inline;
+
+}
+#withdraw_wallet_balance{
+    display: inline;
+    font-weight: 600;
+    font-size: 18px;
+    color: #42464a;
+
+}
+.payment_method label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    /* height: 150px; */
+}
+.payment_method input{
+    display: none;
+}
+.view {
+    display:block !important;
+    transition: 1s;
+}
+.not_view{
+    display: none;
+}

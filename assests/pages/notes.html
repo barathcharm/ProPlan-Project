@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/notes.css">
     <title>Proplan</title>
 
@@ -19,10 +20,24 @@
             <img src="../images/icons/proplan_logo.png" alt="logo">
             <div class="nav_right">
                 <input type="text" id="search" placeholder="Search">
-                <a href="./wallet.html"><img src="../images/icons/wallet_icon.png" alt="icon"> <span id="nav_balance">0/-</span></a>
-                <h4>Jan 30, 2023</h4>
-                <a href="../../index.html" title="Log out"><img src="../images/icons/log_out.png" alt="icon"
-                        id="log_out"></a>
+                <a href="./wallet.html">
+<img src="../images/icons/wallet_icon.png" alt="icon">
+ <span
+                        id="nav_balance">0/-</span></a>
+                        <div id="date">
+<span id="date_value"></span>
+ <img src="../images/icons/edit_img.png" alt="img" id="date_edit">
+</div>
+                <span id="log_out" title="Log out">
+<img src="../images/icons/log_out.png" alt="icon">
+</span>
+
+            </div>
+            <div class="log_out_div ">
+                <input type="checkbox" id="remember_me">
+<label for="remember_me"> Remember me</label>
+                <button id="log_out_button"> Log Out</button>
+            </div>
 
             </div>
         </nav>
@@ -31,12 +46,27 @@
         <!-- --------------left side div--------------- -->
         <div class="left_side">
             <div class="tabs">
-                <a href="home.html"><img src="../images/icons/home.png" alt="icons"> Home</a>
-                <a href="analytics.html"><img src="../images/icons/statistics.png" alt=""> Analytics</a>
-                <a href="wallet.html"><img src="../images/icons/savings.png" alt="icons"> Wallet</a>
-                <a href="notes.html" id="notesicon"><img src="../images/icons/notes.png" alt="icons">Notes</a>
-                <a href="profile.html"><img src="../images/icons/profile.png" alt="icons"> Profile</a>
-                <a href="about.html"><img src="../images/icons/about.png" alt="icons"> About</a>
+                <a href="home.html">
+<img src="../images/icons/home.png" alt="icons"> Home
+</a>
+                <a href="analytics.html">
+<img src="../images/icons/statistics.png" alt=""> Analytics
+</a>
+<a href="budget.html">
+    <img src="../images/icons/budget.png" alt="icons"> Budget
+</a>
+                <a href="wallet.html">
+<img src="../images/icons/savings.png" alt="icons"> Wallet
+</a>
+                <a href="notes.html" id="notesicon">
+<img src="../images/icons/white_notes_icon.png" alt="icons">Notes
+</a>
+                <a href="profile.html">
+<img src="../images/icons/profile.png" alt="icons"> Profile
+</a>
+                <a href="about.html">
+<img src="../images/icons/about.png" alt="icons"> About
+</a>
             </div>
         </div>
         <!--------------- Center Content ------------------ -->
@@ -44,53 +74,39 @@
             <h1>Notes</h1>
             <div class="create_note">
                 <div class="create_note1">
+                    <div class="note_head">
                     <h3>Add a note</h3>
+                </div>
                     <input type="text" id="title" placeholder="Add a title here...">
-                    <textarea name="notes" id="txtarea" cols="30" rows="10" placeholder="Note something...">
-    </textarea>
-                    <button>Add note</button>
+                    <textarea name="notes" id="txtarea" cols="30" rows="10" placeholder="Note something..."></textarea>
+                    <button id="notes_submit">Add note</button>
                 </div>
                 <div class="center_note2">
                     <img src="../images/notes.png" alt="notes">
                 </div>
             </div>
+            <div class="notes_filter">
+                <label for="Notes_month">Month</label>
+                <select name="Month" id="Notes_month">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>                  
+                </select>
+            </div>
+
             <div class="notes">
-                <div class="note">
-                    <h3>1, Debt</h3>
+                <!-- <div class="note">
+                    <div class="note_header">
+                        <h3>1, Debt</h3>
+                        <img src="../images/icons/delete.png" alt="delete icon">
+                    </div>           
                     <hr class="hr">
                     <p>Borrowed 10,000 from Naveen for emergency suituation for Jeeva. Need to give that money back
                         before 05/02/2023 </p>
-                    <p> Edited 10/01/2023</p>
-                </div>
-                <div class="note">
-                    <h3>1, Debt</h3>
-                    <hr class="hr">
-                    <p>Borrowed 10,000 from Naveen for emergency suituation for Jeeva. Need to give that money back
-                        before </p>
-                    <p> Edited 10/01/2023</p>
-                </div>
-                <div class="note">
-                    <h3>1, Debt</h3>
-                    <hr class="hr">
-                    <p>Borrowed 10,000 from Naveen for emergency suituation for Jeeva. Need to give that money back
-                        before </p>
-                    <p> Edited 10/02/2023</p>
-                </div>
-                <div class="note">
-                    <h3>1, Debt</h3>
-                    <hr class="hr">
-                    <p>Borrowed 10,000 from Naveen for emergency suituation for Jeeva. Need to give that money back
-                        before </p>
-                    <p> Edited 10/02/2023</p>
-                </div>
-                <div class="note">
-                    <h3>1, Debt</h3>
-                    <hr class="hr">
-                    <p>Borrowed 10,000 from Naveen for emergency suituation for Jeeva. Need to give that money back
-                        before </p>
-                    <p> Edited 10/02/2023</p>
-                </div>
-
+                    <p> Noted 10/01/2023</p>
+                </div> -->
             </div>
 
         </div>
@@ -108,21 +124,83 @@
                 </div>
                 <div class="total_balance">
                     <p>Total Balance</p>
-                    <h1>&#8377; 8,000</h1>
+                    <h1>
+&#x20B9; <span id="total_balance">8,000</span> 
+</h1>
                 </div>
                 <div class="total_income">
                     <p>Total Income</p>
-                    <h1>&#8377; 28,000</h1>
+                    <h1>
+&#8377;<span id="total_income">28,000</span>
+</h1>
                 </div>
                 <div class="total_expense">
                     <p>Total Expense</p>
-                    <h1>&#8377; 20,000</h1>
+                    <h1>
+&#8377;<span id="total_expense">20,000</span>
+</h1>
                 </div>
             </div>
         </div>
     </main>
     <script src="../js/common.js"></script>
+    <script src="../js/notes.js"></script>
+    <script>        const submit_button = document.getElementById("notes_submit")
+        submit_button.addEventListener("click", e => {
+            console.log("hgvcf");
+            const note_title = document.getElementById("title").value
+            const notes_value = document.getElementById("txtarea").value
+            if (note_title != "" && notes_value != "") {
+                const note_obj = {
+            note_title,
+            notes_value
+        }
+                console.log(note_obj);
+                
+                const active_user = JSON.parse(localStorage.getItem("active_user"))
+                const active_user_notes = active_user.notes ?? []
+                active_user_notes.push(note_obj)
+                active_user.notes = active_user_notes
+                localStorage.setItem("active_user",JSON.stringify(active_user))
+                setDataInTheLocal()
+                window.location.href="./notes.html"
 
+            }
+            else{
+                alert("The Notes title and notes description cannot be empty")
+            }
+        })
+        const notes_data = JSON.parse(localStorage.getItem("active_user")).notes??[]
+        const notes_div = document.querySelector(".notes")
+        for(let i=0;i<notes_data.length;i++){
+            notes_div.innerHTML+=
+            ` <div class="note">
+                    <div class="note_header">
+                        <h3>${i+1}, ${notes_data[i].note_title}</h3>
+                        <img src="../images/icons/delete.png" alt="delete icon" id="delete_note">
+                    </div>           
+                    <hr class="hr">
+                    <p>${notes_data[i].notes_value} </p>
+                    <p> Noted 10/01/2023</p>
+                </div>`
+        }
+        const delete_note = document.querySelectorAll("#delete_note")
+        delete_note.forEach((e,index)=>{
+            console.log(
+                e
+            );
+            e.addEventListener("click",element=>{
+                console.log("suma");
+                const notes_data = JSON.parse(localStorage.getItem("active_user")).notes??[]
+                notes_data.splice(index,1)
+                const active_user = JSON.parse(localStorage.getItem("active_user"))
+                active_user.notes = notes_data
+                localStorage.setItem("active_user",JSON.stringify(active_user))
+                setDataInTheLocal()
+                location.reload()
+            })
+        })
+    </script>
 </body>
 
 </html>

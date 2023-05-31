@@ -1,9 +1,13 @@
+
 .center_side{
-    padding: 0px;
+    padding:0px ;
+
+    width: 87%;
+    margin: 110px auto 0px auto;
 }
 #about_icon{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #f0f1f1;
+    background-color: rgb(71, 71, 71);
+    color: white;
 }
 .about_content{
     width: 100%;

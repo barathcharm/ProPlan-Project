@@ -97,8 +97,17 @@ form {
     display: flex;
     justify-content: space-between;
 }
-.password input{
-    
+.password img{
+    width: 24px;
+    height: 23px;
+    margin:  10px;
+    cursor: pointer;
+}
+.password img:nth-of-type(2){
+    display: none;
+}
+.password_input{
+    min-width: 430px;
 }
 /* .num_gender{
     display: flex;

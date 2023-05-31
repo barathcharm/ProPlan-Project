@@ -18,26 +18,14 @@
 
     </div>
 
-    <!-- <label for="name">User-Name</label>
-        <input type="text" name="name" id="name" pattern="[A-Za-z]" required><br>
-
-        <label for="email">email</label>
-        <input type="email" id="email" name="email" pattern="[A-Za-z]" required><br>
-
-        <label for="phone_num"> Phone_number</label>
-        <input type="number" id="phone_num" name="email" pattern="[0-9]{10}" required><br>
-
-        <label for="password">Enter password</label>
-        <input type="password" name="password" id="password" pattern="[A-Za-z]{8}" required><br>
-
-        <label for="cpassword">Confirm password</label>
-        <input type="password" name="password" id="cpassword" pattern="[A-Za-z]{8}" required><br>
-        
-        <button onclick="store()">Submit</button> -->
     <main>
         <div class="top">
-            <a href=""><img src="./assests/images/icons/proplan_logo.png" alt="icon"></a>
-            <p>Already have a account? <a href="./assests/pages/login.html">Log in</a></p>
+            <a href="">
+<img src="./assests/images/icons/proplan_logo.png" alt="icon">
+</a>
+            <p>
+Already have a account? <a href="./assests/pages/login.html">Log in</a>
+</p>
         </div>
         <div class="maincontainer">
             <div class="left">
@@ -46,10 +34,10 @@
             <div class="right">
                 <h2>Get Started !</h2>
                 <h5>Enter your details</h5>
-                <form >
+                <form id="signup_form">
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control input" id="name" pattern="[A-Za-z]{0,32}"
+                        <input type="text" class="form-control input" id="name" pattern="(?=.*\ d)(?=.*[a-z])(?=.*[A-Z]).{2,}"
                             Title="1.Don't enter numbers, 2.Must include a uppercase character"
                             placeholder="enter your name" required>
                         <label for="name">Enter your name</label>
@@ -62,7 +50,7 @@
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control input" id="Profession" 
-                            title="Enter the type of occupation" placeholder="Profession" required>
+                            title="Enter the type of occupation" placeholder="Profession" pattern="(?=.*\ d)(?=.*[a-z])(?=.*[A-Z]).{2,}" required>
                         <label for="Profession">Profession</label>
                     </div>
 
@@ -73,29 +61,12 @@
                                 required>
                             <label for="phone_num">Mobile Number</label>
                         </div>
-                        <!-- <div class="gender">
-                            <p>Gender:</p>
-                            <label for="male">
-                                <input type="radio" id="male" name="gender" value="Male">
-                                Male
-                            </label>
-
-                            <label for="female">
-                                <input type="radio" id="female" name="gender" value="Female">
-                                Female
-                            </label>
-
-                            <label for="trans">
-                                <input type="radio" id="trans" name="gender" value="Trans">
-                                Transgender
-                            </label>
-                        </div> -->
-                    <!-- </div> -->
 
                     <div class="password">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control input" id="password" pattern="[A-Za-z0-9]{0,10}"
-                                title="Enter a password mixed of uppercase characters, lowercase characters and Numbers"
+                            <input type="password" class="form-control input" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+
+                                title="Enter a password mixed of uppercase characters, lowercase characters and Numbers with min 8 characters"
                                 placeholder="Enter password" required>
                             <label for="password">Enter password</label>
                         </div>
@@ -105,6 +76,10 @@
                                 placeholder="Confirm password" required>
                             <label for="cpassword" required>Confirm password</label>
                         </div>
+                        <img src="./assests/images/icons/invisible.png" alt="icon" id="pass_close">
+                        <img src="./assests/images/icons/eye.png" alt="icon" id="pass_open">
+                        
+
                     </div>
 
                     <button type="submit">Sign Up</button>
@@ -112,49 +87,20 @@
                 </form>
                 <div class="bottom">
                     <span>Signin with</span>
-                    <a href="#"><img src="./assests/images/icons/google icon.png" alt=""></a>
-                    <a href="#"><img src="./assests/images/icons/fb icon.png" alt=""></a>
-                    <a href="#"><img src="./assests/images/icons/twitter icon.png" alt=""></a>
+                    <a href="#">
+<img src="./assests/images/icons/google icon.png" alt="">
+</a>
+                    <a href="#">
+<img src="./assests/images/icons/fb icon.png" alt="">
+</a>
+                    <a href="#">
+<img src="./assests/images/icons/twitter icon.png" alt="">
+</a>
                 </div>
             </div>
         </div>
     </main>
-    <script>
-        let form = document.querySelector("form")
-        form.addEventListener("submit",store)
-        function store(e) {
-            e.preventDefault()
-            let password = document.getElementById("password").value
-            let cpassword = document.getElementById("cpassword").value
-
-
-            if (password == cpassword) {
-
-                let user_name = document.getElementById("name").value
-                let user_email = document.getElementById("email").value
-                let user_number = document.getElementById("phone_num").value
-                let user_profession = document.getElementById("Profession").value
-                let user_pass = document.getElementById("password").value
-
-                let user_data = {
-                    "display_name": "",
-                    "name": user_name,
-                    "email": user_email,
-                    "number": user_number,
-                    "profession": user_profession,
-                    "password": user_pass,
-                }
-
-                let json = JSON.parse(localStorage.getItem("json")) ?? [];
-                json.push(user_data)
-                localStorage.setItem("json", JSON.stringify(json))
-                window.location.href = "./assests/pages/login.html";
-            }
-            else {
-                alert("password & confirm password doesn't match")
-            }
-        }
-    </script>
+    <script src="assests/js/signup.js"></script>
 </body>
 
 </html>
